@@ -7,3 +7,8 @@ doc/api
 doc/app
 coverage
 db/*.sqlite3
+\.orig\..*$
+\.orig$
+\.chg\..*$
+\.rej$
+\.conflict\~$
