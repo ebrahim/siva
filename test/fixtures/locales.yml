@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 
+  iso_code: MyString
+  name: MyString
+
+two:
+  id: 
+  iso_code: MyString
+  name: MyString

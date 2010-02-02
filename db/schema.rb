@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080929171348) do
+ActiveRecord::Schema.define(:version => 20100202135540) do
+
+  create_table "locales", :force => true do |t|
+    t.string   "iso_code"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "locales", ["iso_code"], :name => "index_locales_on_iso_code", :unique => true
 
   create_table "open_id_authentication_associations", :force => true do |t|
     t.integer "issued"
@@ -71,5 +80,16 @@ ActiveRecord::Schema.define(:version => 20080929171348) do
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
+
+  create_table "word_representations", :force => true do |t|
+    t.string   "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "words", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
