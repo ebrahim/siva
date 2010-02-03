@@ -1,5 +1,5 @@
 CREATE TABLE "categories" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime);
-CREATE TABLE "locales" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "iso_code" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime);
+CREATE TABLE "locales" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "iso_code" varchar(255), "name" varchar(255), "created_at" datetime, "updated_at" datetime, "rtl" boolean);
 CREATE TABLE "open_id_authentication_associations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "issued" integer, "lifetime" integer, "handle" varchar(255), "assoc_type" varchar(255), "server_url" blob, "secret" blob);
 CREATE TABLE "open_id_authentication_nonces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "timestamp" integer NOT NULL, "server_url" varchar(255), "salt" varchar(255) NOT NULL);
 CREATE TABLE "passwords" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "reset_code" varchar(255), "expiration_date" datetime, "created_at" datetime, "updated_at" datetime);
@@ -25,3 +25,5 @@ INSERT INTO schema_migrations (version) VALUES ('20100202135459');
 INSERT INTO schema_migrations (version) VALUES ('20100202135540');
 
 INSERT INTO schema_migrations (version) VALUES ('20100202212122');
+
+INSERT INTO schema_migrations (version) VALUES ('20100203020625');

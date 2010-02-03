@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100202212122) do
+ActiveRecord::Schema.define(:version => 20100203020625) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20100202212122) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "rtl"
   end
 
   add_index "locales", ["iso_code"], :name => "index_locales_on_iso_code", :unique => true
