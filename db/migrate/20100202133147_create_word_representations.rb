@@ -2,6 +2,7 @@ class CreateWordRepresentations < ActiveRecord::Migration
   def self.up
     create_table :word_representations do |t|
       t.string :text
+      t.references :word
 
       t.timestamps
     end
