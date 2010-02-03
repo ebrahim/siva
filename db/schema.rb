@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100203020625) do
+ActiveRecord::Schema.define(:version => 20100203181711) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20100203020625) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "rtl"
+    t.boolean  "rtl",        :default => false, :null => false
   end
 
   add_index "locales", ["iso_code"], :name => "index_locales_on_iso_code", :unique => true
@@ -70,6 +70,14 @@ ActiveRecord::Schema.define(:version => 20100203020625) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "synonymies", :force => true do |t|
+    t.integer  "category_id"
+    t.integer  "word1_id"
+    t.integer  "word2_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40
