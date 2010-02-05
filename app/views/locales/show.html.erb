@@ -1,0 +1,7 @@
+<h1><%=h @locale.name %></h1>
+<h2><%=h @locale.code %></h2>
+<h2><%=h @locale.rtl ? 'راست به چپ' : 'چپ به راست' %></h2>
+
+<%= link_to 'ویرایش', edit_locale_path %>
+<%= link_to 'حذف', @locale, :confirm => 'همهٔ کلمات این زبان حذف خواهند شد! مطمئنید؟', :method => :delete %>
+<%= link_to 'بازگشت', locales_path %>

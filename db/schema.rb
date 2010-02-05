@@ -9,10 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100203234941) do
+ActiveRecord::Schema.define(:version => 20100204165319) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -20,14 +23,14 @@ ActiveRecord::Schema.define(:version => 20100203234941) do
   add_index "categories", ["name"], :name => "index_categories_on_name"
 
   create_table "locales", :force => true do |t|
-    t.string   "iso_code"
+    t.string   "code"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "rtl",        :default => false, :null => false
   end
 
-  add_index "locales", ["iso_code"], :name => "index_locales_on_iso_code", :unique => true
+  add_index "locales", ["code"], :name => "index_locales_on_code", :unique => true
   add_index "locales", ["name"], :name => "index_locales_on_name", :unique => true
 
   create_table "open_id_authentication_associations", :force => true do |t|
@@ -99,12 +102,14 @@ ActiveRecord::Schema.define(:version => 20100203234941) do
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
 
-  create_table "word_representations", :force => true do |t|
+  create_table "word_forms", :force => true do |t|
     t.string   "text"
     t.integer  "word_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "word_forms", ["text"], :name => "index_word_forms_on_text"
 
   create_table "words", :force => true do |t|
     t.integer  "locale_id"

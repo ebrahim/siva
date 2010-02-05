@@ -1,0 +1,10 @@
+<% semantic_form_for @locale do |form| %>
+	<% form.inputs do %>
+		<%= form.input :name %>
+		<%= form.input :code %>
+		<%= form.input :rtl, :as => :radio, :collection => [['چپ به راست', false], ['راست به چپ', true]] %>
+	<% end %>
+	<%= form.buttons %>
+<% end %>
+
+<%= link_to 'بازگشت', locales_path %>

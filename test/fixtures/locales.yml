@@ -2,10 +2,10 @@
 
 one:
   id: 
-  iso_code: MyString
+  code: MyString
   name: MyString
 
 two:
   id: 
-  iso_code: MyString
+  code: MyString
   name: MyString

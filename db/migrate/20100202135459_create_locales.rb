@@ -1,12 +1,12 @@
 class CreateLocales < ActiveRecord::Migration
 	def self.up
 		create_table :locales do |t|
-			t.string :iso_code
+			t.string :code
 			t.string :name
 
 			t.timestamps
 		end
-		add_index :locales, :iso_code, :unique => true
+		add_index :locales, :code, :unique => true
 	end
 
 	def self.down
