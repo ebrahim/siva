@@ -1,4 +1,4 @@
-class Locale < ActiveRecord::Base
+class Language < ActiveRecord::Base
 	has_many :words, :dependent => :destroy
 
 	validates_presence_of :name

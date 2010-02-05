@@ -15,33 +15,33 @@ development:
   
 test:
   # Sqlite Settings
-  #adapter: sqlite3
-  #database: db/test.sqlite3
-  #pool: 5
-  #timeout: 5000
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
 
   # Mysql Settings
-   adapter: mysql
-   encoding: utf8
-   database: bort_test
-   username: root
-   password:
-   pool: 5
+  # adapter: mysql
+  # encoding: utf8
+  # database: bort_test
+  # username: root
+  # password:
+  # pool: 5
   
 staging:
   # Sqlite Settings
-  #adapter: sqlite3
-  #database: db/staging.sqlite3
-  #pool: 5
-  #timeout: 5000
+  adapter: sqlite3
+  database: db/staging.sqlite3
+  pool: 5
+  timeout: 5000
 
   # Mysql Settings
-   adapter: mysql
-   encoding: utf8
-   database: bort_staging
-   username: root
-   password:
-   pool: 5
+  # adapter: mysql
+  # encoding: utf8
+  # database: bort_staging
+  # username: root
+  # password:
+  # pool: 5
   
 production:
   # Sqlite Settings
@@ -51,9 +51,9 @@ production:
   #timeout: 5000
 
   # Mysql Settings
-   adapter: mysql
-   encoding: utf8
-   database: bort_production
-   username: root
-   password:
-   pool: 5
+  # adapter: mysql
+  # encoding: utf8
+  # database: bort_production
+  # username: root
+  # password:
+  # pool: 5

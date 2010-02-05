@@ -4,7 +4,7 @@
 	<% @words.each do |word| %>
 	<tr>
 		<td><%= link_to h(word.word_forms.all.map { |form| form.text }.join ' | '), word %></td>
-		<td><%=h word.locale.name %></td>
+		<td><%=h word.language.name %></td>
 		<td><%= link_to 'ویرایش', edit_word_path(word) %></td>
 		<td><%= link_to 'حذف', word, :confirm => 'مطمئنید؟', :method => :delete %></td>
 	</tr>

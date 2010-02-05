@@ -20,7 +20,7 @@ ActionController::Routing::Routes.draw do |map|
 
 	# RESTful resources
 	map.resources :words
-	map.resources :locales
+	map.resources :languages
 
 	# Install the default routes as the lowest priority.
 	map.connect ':controller/:action/:id'

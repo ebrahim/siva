@@ -2,10 +2,10 @@
 
 one:
   id: 
-  code: MyString
-  name: MyString
+  code: fa
+  name: فارسی
 
 two:
   id: 
-  code: MyString
-  name: MyString
+  code: en
+  name: انگلیسی

@@ -1,4 +1,4 @@
-<% semantic_form_for @locale do |form| %>
+<% semantic_form_for @language do |form| %>
 	<% form.inputs do %>
 		<%= form.input :name %>
 		<%= form.input :code %>
@@ -7,6 +7,4 @@
 	<%= form.buttons %>
 <% end %>
 
-
-<%= link_to 'نمایش', @locale %>
-<%= link_to 'بازگشت', locales_path %>
+<%= link_to 'بازگشت', languages_path %>

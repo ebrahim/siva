@@ -1,7 +1,7 @@
 class CreateWords < ActiveRecord::Migration
 	def self.up
 		create_table :words do |t|
-			t.references :locale
+			t.references :language
 
 			t.timestamps
 		end

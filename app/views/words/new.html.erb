@@ -1,7 +1,7 @@
 <% semantic_form_for @word do |form| %>
 	<% form.inputs do %>
 		<%= form.input :word_forms, :collection => @word.word_forms.all.sort { |a,b| a.text <=> b.text } %>
-		<%= form.input :locale, :include_blank => false, :collection => Locale.all.sort { |a,b| a.name <=> b.name } %>
+		<%= form.input :language, :include_blank => false, :collection => Language.all.sort { |a,b| a.name <=> b.name } %>
 	<% end %>
 	<% form.buttons do %>
 		<%= form.commit_button %>
