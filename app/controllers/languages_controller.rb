@@ -18,7 +18,7 @@ class LanguagesController < ApplicationController
 	def create
 		@language = Language.new params[:language]
 		if @language.save
-			flash[:notice] = 'Language was created successfully'
+			flash[:notice] = t :language_created
 			redirect_to :action => :index
 		else
 			render :action => :new
@@ -28,7 +28,7 @@ class LanguagesController < ApplicationController
 	def update
 		@language = Language.find params[:id]
 		if @language.update_attributes params[:language]
-			flash[:notice] = "Language was updated successfully"
+			flash[:notice] = t :language_updated
 			redirect_to @language
 		else
 			redirect_to :action => :edit
@@ -38,7 +38,7 @@ class LanguagesController < ApplicationController
 	def destroy
 		@language = Language.find params[:id]
 		@language.destroy
-		flash[:notice] = "Language was removed successfully"
+		flash[:notice] = t :language_removed
 		redirect_to :action => :index
 	end
 

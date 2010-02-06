@@ -1,8 +1,8 @@
 <% @word.word_forms.each do |form| %>
 <p><%=h form.text %></p>
 <% end %>
-<p>زبان: <%=h "#{@word.language.name} [#{@word.language.code}]"  %></p>
+<p><%= Language.human_name %>: <%=h "#{@word.language.name} [#{@word.language.code}]"  %></p>
 
-<%= link_to 'ویرایش', edit_word_path %>
-<%= link_to 'حذف', @word, :confirm => 'مطمئنید؟', :method => :delete%>
-<%= link_to 'بازگشت', words_path %>
+<%= link_to t(:form_edit), edit_word_path %>
+<%= link_to t(:form_remove), @word, :confirm => t(:word_remove_confirm), :method => :delete%>
+<%= link_to t(:form_back), words_path %>

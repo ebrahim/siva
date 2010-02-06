@@ -1,14 +1,16 @@
-<h1>کلمات</h1>
 <table>
-	<tr><th>کلمه</th><th>زبان</th></tr>
+	<tr>
+		<th><%= Word.human_attribute_name :word_forms %></th>
+		<th><%= Word.human_attribute_name :language  %></th>
+	</tr>
 	<% @words.each do |word| %>
 	<tr>
 		<td><%= link_to h(word.word_forms.all.map { |form| form.text }.join ' | '), word %></td>
 		<td><%=h word.language.name %></td>
-		<td><%= link_to 'ویرایش', edit_word_path(word) %></td>
-		<td><%= link_to 'حذف', word, :confirm => 'مطمئنید؟', :method => :delete %></td>
+		<td><%= link_to t(:form_edit), edit_word_path(word) %></td>
+		<td><%= link_to t(:form_remove), word, :confirm => t(:word_remove_confirm), :method => :delete %></td>
 	</tr>
 	<% end %>
 </table>
 
-<%= link_to 'جدید', new_word_path %>
+<%= link_to t(:form_create), new_word_path %>

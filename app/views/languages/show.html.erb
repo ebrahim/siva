@@ -1,7 +1,7 @@
 <h1><%=h @language.name %></h1>
 <h2><%=h @language.code %></h2>
-<h2><%=h @language.rtl ? 'راست به چپ' : 'چپ به راست' %></h2>
+<h2><%=h @language.rtl ? t(:rtl) : t(:ltr) %></h2>
 
-<%= link_to 'ویرایش', edit_language_path %>
-<%= link_to 'حذف', @language, :confirm => 'همهٔ کلمات این زبان حذف خواهند شد! مطمئنید؟', :method => :delete %>
-<%= link_to 'بازگشت', languages_path %>
+<%= link_to t(:form_edit), edit_language_path %>
+<%= link_to t(:form_remove), @language, :confirm => t(:language_remove_confirm), :method => :delete %>
+<%= link_to t(:form_back), languages_path %>

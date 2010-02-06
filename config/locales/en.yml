@@ -1,0 +1,51 @@
+en:
+  # Generic terms
+  form_create: 'Create'
+  form_edit: 'Edit'
+  form_remove: 'Remove'
+  form_show: 'Show'
+  form_back: 'Back'
+
+  ltr: 'Left-to-Right'
+  rtl: 'Right-to-Left'
+
+  # Languages controller
+  language_created: 'Language was created successfully'
+  language_updated: 'Language was updated successfully'
+  language_removed: 'Language was removed successfully'
+  
+  # Languages views
+  language_remove_confirm: 'All words of this languages will get removed! Are you sure?'
+
+  # Words controller
+  word_created: 'Word was created successfully'
+  word_updated: 'Word was updated successfully'
+  word_removed: 'Word was removed successfully'
+
+  # Words views
+  word_remove_confirm: 'Are you sure?'
+
+  formtastic:
+    yes: 'Yes'
+    no: 'No'
+    save: 'Save'
+    submit: 'Submit'
+    required: 'Required'
+    create: 'Create'
+    update: 'Update'
+
+  activerecord:
+    models:
+      language: 'Language'
+      word: 'Word'
+      word_form: 'Word Form'
+    attributes:
+      language:
+        name: 'Name'
+        code: 'Code'
+        rtl: 'Direction'
+      word:
+        word_forms: 'Word Forms'
+        language: 'Language'
+      word_form:
+        name: 'Name'

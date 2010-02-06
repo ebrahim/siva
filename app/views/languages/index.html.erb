@@ -1,15 +1,18 @@
-<h1>زبان‌ها</h1>
 <table>
-	<tr><th>نام</th><th>نماد</th><th>جهت</th></tr>
+	<tr>
+		<th><%= Language.human_attribute_name :name %></th>
+		<th><%= Language.human_attribute_name :code %></th>
+		<th><%= Language.human_attribute_name :rtl %></th>
+	</tr>
 	<% for language in @languages.sort { |a,b| a.name <=> b.name } %>
 	<tr>
 		<td><%= link_to h(language.name), language %></td>
 		<td><%=h language.code %></td>
-		<td><%= language.rtl ? 'راست به چپ' : 'چپ به راست' %></td>
-		<td><%= link_to 'ویرایش', edit_language_path(language) %></td>
-		<td><%= link_to 'حذف', language, :confirm => 'همهٔ کلمات این زبان حذف خواهند شد! مطمئنید؟', :method => :delete %></td>
+		<td><%= language.rtl ? t(:rtl) : t(:ltr) %></td>
+		<td><%= link_to t(:form_edit), edit_language_path(language) %></td>
+		<td><%= link_to t(:form_remove), language, :confirm => t(:language_remove_confirm), :method => :delete %></td>
 	</tr>
 	<% end %>
 </table>
 
-<%= link_to 'جدید', new_language_path %>
+<%= link_to t(:form_create), new_language_path %>

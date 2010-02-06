@@ -1,0 +1,23 @@
+en:
+  # Routes
+  logout: 'logout'
+  login: 'login'
+  register: 'register'
+  signup: 'signup'
+  activate: 'activate'
+  forgot_password: 'forgot_password'
+  change_password: 'change_password'
+  open_id_complete: 'open_id_complete'
+  open_id_create: 'open_id_create'
+
+fa:
+  # Routes
+  logout: 'logout'
+  login: 'login'
+  register: 'register'
+  signup: 'signup'
+  activate: 'activate'
+  forgot_password: 'forgot_password'
+  change_password: 'change_password'
+  open_id_complete: 'open_id_complete'
+  open_id_create: 'open_id_create'

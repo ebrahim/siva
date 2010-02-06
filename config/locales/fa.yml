@@ -1,0 +1,51 @@
+fa:
+  # Generic terms
+  form_create: 'ایجاد'
+  form_edit: 'ویرایش'
+  form_remove: 'حذف'
+  form_show: 'نمایش'
+  form_back: 'بازگشت'
+
+  ltr: 'چپ به راست'
+  rtl: 'راست به چپ'
+
+  # Languages controller
+  language_created: 'زبان با موفقیت ایجاد شد'
+  language_updated: 'زبان با موفقیت به روز شد'
+  language_removed: 'زبان با موفقیت حذف شد'
+
+  # Languages views
+  language_remove_confirm: 'همهٔ کلمات این زبان حذف خواهند شد! آیا مطمئنید؟'
+
+  # Words controller
+  word_created: 'کلمه با موفقیت ایجاد شد'
+  word_updated: 'کلمه با موفقیت به روز شد'
+  word_removed: 'کلمه با موفقیت حذف شد'
+  
+  # Words views
+  word_remove_confirm: 'همهٔ کلمات این کلمه حذف خواهند شد! آیا مطمئنید؟'
+  
+  formtastic:
+    yes: 'بله'
+    no: 'نه'
+    save: 'ذخیره'
+    submit: 'اعمال'
+    required: 'الزامی'
+    create: 'ایجاد'
+    update: 'به‌روزرسانی'
+
+  activerecord:
+    models:
+      language: 'زبان'
+      word: 'کلمه'
+      word_form: 'شکل کلمه'
+    attributes:
+      language:
+        name: 'نام'
+        code: 'نماد'
+        rtl: 'جهت'
+      word:
+        word_forms: 'شکل‌های کلمه'
+        language: 'زبان'
+      word_form:
+        name: 'نام'

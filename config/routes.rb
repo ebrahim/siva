@@ -26,3 +26,6 @@ ActionController::Routing::Routes.draw do |map|
 	map.connect ':controller/:action/:id'
 	map.connect ':controller/:action/:id.:format'
 end
+
+#ActionController::Routing::Translator.i18n 'en'
+ActionController::Routing::Translator.translate_from_file 'config', 'routes-i18n.yml'
