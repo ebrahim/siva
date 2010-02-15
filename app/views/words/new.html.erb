@@ -1,16 +1,11 @@
-<table>
-
 <% semantic_form_for @word do |form| %>
-	<tr>
 	<% form.inputs do %>
 		<%= form.input :word_forms, :collection => @word.word_forms.all.sort { |a,b| a.text <=> b.text } %>
 		<%= form.input :language, :include_blank => false, :collection => Language.all.sort { |a,b| a.name <=> b.name } %>
 	<% end %>
-	</tr>
 	<% form.buttons do %>
 		<%= form.commit_button %>
 	<% end %>
 <% end %>
 
 <%= link_to t(:form_back), words_path %>
-</table>
