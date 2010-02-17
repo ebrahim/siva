@@ -1,8 +1,10 @@
-<table>
+<table width="100%" class="contentTable">
 	<tr>
 		<th><%= Language.human_attribute_name :name %></th>
 		<th><%= Language.human_attribute_name :code %></th>
 		<th><%= Language.human_attribute_name :rtl %></th>
+		<th colspan="2">عملیات</th>
+
 	</tr>
 	<% for language in @languages.sort { |a,b| a.name <=> b.name } %>
 	<tr>
