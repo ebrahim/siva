@@ -1,6 +1,9 @@
 en:
   siva: 'Siva'
 
+  # Locale layout direction
+  dir: 'ltr'
+
   # Generic terms
   form_create: 'Create'
   form_edit: 'Edit'
@@ -18,7 +21,7 @@ en:
   user_signup: 'Signup'
   user_username: 'Username'
   user_password: 'Password'
-  user_email: 'Email'
+  user_email: 'Email address'
   user_remember_me: 'Remember me'
   user_login_openid: 'Login with OpenID'
   user_openid_url: 'OpenID URL'

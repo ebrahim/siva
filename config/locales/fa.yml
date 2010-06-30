@@ -1,6 +1,9 @@
 fa:
   siva: 'سیوا'
 
+  # Locale layout direction
+  dir: 'rtl'
+
   # Generic terms
   form_create: 'ایجاد'
   form_edit: 'ویرایش'
@@ -18,7 +21,7 @@ fa:
   user_signup: 'ثبت نام'
   user_username: 'نام کاربری'
   user_password: 'گذرواژه'
-  user_email: 'رایانامه'
+  user_email: 'نشانی رایانامه'
   user_remember_me: 'مرا به خاطر بسپار'
   user_login_openid: 'ورود با اپن‌آی‌دی'
   user_openid_url: 'نشانی اپن‌آی‌دی'

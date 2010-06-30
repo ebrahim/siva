@@ -46,3 +46,114 @@ div.fieldWithErrors textarea
 {
 	
 }
+
+* {
+	margin: 1px;
+	padding: 1px;
+    font-family: Nazli;
+    font-size: 14pt;
+    /* direction: rtl; */
+}
+
+html, body
+{
+	height: 100%;
+	margin: 1px;
+	padding: 1px;
+	color: black;
+    background-color: #CCCCCC;
+}
+
+table
+{
+	height: 100%;
+	width: 100%;
+}
+
+#container
+{
+	height: 100%;
+	width: 100%;
+}
+
+#contentTD
+{
+	padding: 10px 50px 20px 50px;
+}
+
+#headerTD
+{
+	color: white;
+	background-color: #234;
+	border: 1px solid black;
+	height: 1px;
+	font-size: 32pt;
+}
+
+#footerTD
+{
+	color: white;
+	background-color: #234;
+	border: 1px solid black;
+	height: 1px;
+	font-size: 18pt;
+}
+
+#loginTD
+{
+	list-style-type: none;
+}
+
+fieldset ol li
+{
+	list-style-type: none;
+}
+
+a, a:visited
+{
+	color: maroon;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: red;
+	text-decoration: overline underline;
+}
+
+input, select
+{
+    color: black;
+}
+
+.contentTable th
+{
+    border: 1px solid #333;
+    background-color: #555;
+    color: #ff0;
+    font-weight: normal;
+}
+
+.contentTable
+{
+    padding: 0;
+}
+
+.contentTable td
+{
+    border: 1px solid #555;
+    background-color: #777;
+    color: #fff;
+    padding: 1px 4px 1px 4px;
+    text-align: center;
+}
+
+.contentTable a
+{
+    color: maroon;
+}
+
+.formTable td
+{
+    padding: 15px 50px 15px 50px;
+}
