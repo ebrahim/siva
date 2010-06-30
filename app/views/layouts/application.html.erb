@@ -68,10 +68,10 @@
 			<div id="header">
 				<ul>
 					<% if logged_in? %>
-					<li><%= link_to 'Logout', logout_path %></li>
+					<li><%= link_to t(:user_logout), logout_path %></li>
 					<% else %>
-					<li><%= link_to 'Login', login_path %></li>
-					<li><%= link_to 'Signup', signup_path %></li>
+					<li><%= link_to t(:user_login), login_path %></li>
+					<li><%= link_to t(:user_signup), signup_path %></li>
 					<% end %>
 				</ul>
 			</div>
@@ -91,7 +91,7 @@
 		<!-- Footer -->
 		<tr>
 			<td valign="bottom" height="1" align="center" id="footerTD">
-				Siva
+				<%= t(:siva) %>
 			</td>
 		</tr>
 		</table>

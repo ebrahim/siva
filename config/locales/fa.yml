@@ -1,13 +1,55 @@
 fa:
+  siva: 'سیوا'
+
   # Generic terms
   form_create: 'ایجاد'
   form_edit: 'ویرایش'
   form_remove: 'حذف'
   form_show: 'نمایش'
   form_back: 'بازگشت'
+  form_submit: 'ارائه'
 
   ltr: 'چپ به راست'
   rtl: 'راست به چپ'
+
+  # User management
+  user_login: 'ورود'
+  user_logout: 'خروج'
+  user_signup: 'ثبت نام'
+  user_username: 'نام کاربری'
+  user_password: 'گذرواژه'
+  user_email: 'رایانامه'
+  user_remember_me: 'مرا به خاطر بسپار'
+  user_login_openid: 'ورود با اپن‌آی‌دی'
+  user_openid_url: 'نشانی اپن‌آی‌دی'
+  user_update_password: 'به‌روزرسانی گذرواژه'
+  user_your_details: 'مشخصات شما'
+  user_enter_your_email: 'نشانی رایانامهٔ خود را وارد کنید'
+  user_forgot_password: 'آیا گذرواژهٔ خود را فراموش کرده‌اید؟'
+  user_forgotten_password: 'گذرواژه‌ام را فراموش کرده‌ام'
+  user_reset_password: 'گذرواژه‌تان را بازنشانی کنید'
+  user_enter_new_password: 'لطفاً یک گذرواژهٔ جدید وارد کنید و آن را تأیید نمایید.'
+  user_activated: '، حساب شما فعال شده است. خوش آمدید!'
+  user_confirm_password: 'تأیید گذرواژه'
+  user_signup_openid: 'ثبت نام با اپن‌آی‌دی'
+  user_logged_in: 'وارد شدید'
+  user_logged_out: 'خارج شدید'
+  user_bad_openid: 'شرمنده، هیچ کاربری با آن نشانی شناسه موجود نیست'
+  user_login_failed_as: 'ناتوان از ورود شما به عنوان'
+  user_something_wrong: 'شرمنده، اشکالی پیش آمد'
+  user_singup_complete: 'ثبت نام کامل شد! برای ادامه وارد شوید.'
+  user_activation_missing: 'کد فعال‌سازی یافت نشدیافت نش. لطفاً نشانی ارسال شده به رایانامه‌تان را ببینید.د'
+  user_activation_invalid: 'کاربری با آن کد فعال‌سازی یافت نشد -- رایانامه‌تان را بررسی کیند. یا شاید قبلاً فعال شده‌اید. ورود را امتحان کنید.'
+  user_signup_thanks: 'متشکر بابت ثبت نام!'
+  user_sending_activation: 'ما یک رایانامه حاوی کد فعال‌سازی‌تان به شما ارسال می‌کنیم.'
+  user_openid_enabled: 'حال می‌توانید با اپن‌آی‌دی خود وارد شوید.'
+  user_signup_error: 'ببخشید، در ایجاد حساب شما اشکالی پیش آمد'
+  user_password_reset_sent: 'پیوندی برای تغییر گذرواژه‌تان فرستاده شد به'
+  user_password_reset_invalid: 'نشانی تغییر گذرواژه‌ای که به آن آمده‌اید نامعتبر یا منقضی است.'
+  user_password_updated: 'گذرواژه به خوبی به‌هنگام شد.'
+  user_fail: 'خطایی رخ داد!'
+  user_email_invalid: 'یک نشانی رایانامهٔ معتبر نیست'
+  user_openid_invalid: 'نشانی اپن‌آی‌دی نامعتبر است'
 
   # Languages controller
   language_created: 'زبان با موفقیت ایجاد شد'
@@ -40,6 +82,10 @@ fa:
       word: 'کلمه'
       word_form: 'شکل کلمه'
     attributes:
+      user:
+        login: 'نام کاربری'
+        password: 'گذرواژه'
+        email: 'نشانی رایانامه'
       language:
         name: 'نام'
         code: 'نماد'
@@ -49,3 +95,16 @@ fa:
         language: 'زبان'
       word_form:
         name: 'نام'
+    errors:
+      template:
+        header: ''
+        body: ''
+      models:
+        user:
+          attributes:
+            password:
+              too_short: 'بیش از حد کوچک است'
+            login:
+              too_short: 'بیش از حد کوچک است'
+            email:
+              too_short: 'بیش از حد کوچک است'

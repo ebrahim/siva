@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         if result.successful?
           create_new_user(:identity_url => identity_url, :login => registration['nickname'], :email => registration['email'])
         else
-          failed_creation(result.message || "Sorry, something went wrong")
+          failed_creation(result.message || t(:user_something_wrong))
         end
       end
     else
@@ -27,13 +27,13 @@ class UsersController < ApplicationController
     case
     when (!params[:activation_code].blank?) && user && !user.active?
       user.activate!
-      flash[:notice] = "Signup complete! Please sign in to continue."
+      flash[:notice] = t(:user_singup_complete)
       redirect_to login_path
     when params[:activation_code].blank?
-      flash[:error] = "The activation code was missing.  Please follow the URL from your email."
+      flash[:error] = t(:user_activation_missing)
       redirect_back_or_default(root_path)
     else 
-      flash[:error]  = "We couldn't find a user with that activation code -- check your email? Or maybe you've already activated -- try signing in."
+      flash[:error]  = t(:user_activation_invalid)
       redirect_back_or_default(root_path)
     end
   end
@@ -59,12 +59,12 @@ class UsersController < ApplicationController
   
   def successful_creation(user)
     redirect_back_or_default(root_path)
-    flash[:notice] = "Thanks for signing up!"
-    flash[:notice] << " We're sending you an email with your activation code." if @user.not_using_openid?
-    flash[:notice] << " You can now login with your OpenID." unless @user.not_using_openid?
+    flash[:notice] = t(:user_signup_thanks)
+    flash[:notice] << " " + t(:user_sending_activation) if @user.not_using_openid?
+    flash[:notice] << " " + t(:user_openid_enabled) unless @user.not_using_openid?
   end
   
-  def failed_creation(message = 'Sorry, there was an error creating your account')
+  def failed_creation(message = t(:user_signup_error))
     flash[:error] = message
     render :action => :new
   end

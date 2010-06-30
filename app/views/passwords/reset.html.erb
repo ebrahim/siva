@@ -1,9 +1,9 @@
-<%= title "Reset Your Password", :h2 %>
+<%= title t(:user_reset_password), :h2 %>
 <% form_for :user, :url => { :action => 'update_after_forgetting' } do |f| %>
   <%= f.error_messages %>
-  <p>Please enter a new password and confirm it.</p>
+  <p><%= t(:user_enter_new_password) %></p>
 	<fieldset>
-		<legend>Update Password</legend>
+		<legend><%= t(:user_update_password) %></legend>
 		<ol>
 			<li>
 		    <%= f.label :password %>
@@ -17,6 +17,6 @@
 	</fieldset>
 	<%= hidden_field_tag :reset_code, params[:reset_code] %>
 	<div class="buttons">
-    <%= f.submit "Submit" %>
+    <%= f.submit t(:form_submit) %>
 	</div>
 <% end %>

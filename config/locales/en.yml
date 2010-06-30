@@ -1,13 +1,55 @@
 en:
+  siva: 'Siva'
+
   # Generic terms
   form_create: 'Create'
   form_edit: 'Edit'
   form_remove: 'Remove'
   form_show: 'Show'
   form_back: 'Back'
+  form_submit: 'Submit'
 
   ltr: 'Left-to-Right'
   rtl: 'Right-to-Left'
+
+  # User management
+  user_login: 'Login'
+  user_logout: 'Logout'
+  user_signup: 'Signup'
+  user_username: 'Username'
+  user_password: 'Password'
+  user_email: 'Email'
+  user_remember_me: 'Remember me'
+  user_login_openid: 'Login with OpenID'
+  user_openid_url: 'OpenID URL'
+  user_update_password: 'Update Password'
+  user_your_details: 'Your Details'
+  user_enter_your_email: 'Enter Your Email Address'
+  user_forgot_password: 'Forgot Your Password?'
+  user_forgotten_password: 'Forgotten Password'
+  user_reset_password: 'Reset Your Password'
+  user_enter_new_password: 'Please enter a new password and confirm it.'
+  user_activated: ', your account has been activated.  Welcome aboard!'
+  user_confirm_password: 'Confirm Password'
+  user_signup_openid: 'Signup with OpenID'
+  user_logged_in: 'Logged in successfully'
+  user_logged_out: 'You have been logged out'
+  user_bad_openid: 'Sorry no user with that identity URL exists'
+  user_login_failed_as: 'Couldn''t log you in as'
+  user_something_wrong: 'Sorry, something went wrong'
+  user_singup_complete: 'Signup complete! Please sign in to continue.'
+  user_activation_missing: 'The activation code was missing.  Please follow the URL from your email.'
+  user_activation_invalid: 'We couldn''t find a user with that activation code -- check your email? Or maybe you''ve already activated -- try signing in.'
+  user_signup_thanks: 'Thanks for signing up!'
+  user_sending_activation: 'We''re sending you an email with your activation code.'
+  user_openid_enabled: 'You can now login with your OpenID.'
+  user_signup_error: 'Sorry, there was an error creating your account'
+  user_password_reset_sent: 'A link to change your password has been sent to'
+  user_password_reset_invalid: 'The change password URL you visited is either invalid or expired.'
+  user_password_updated: 'Password was successfully updated.'
+  user_fail: 'EPIC FAIL!'
+  user_email_invalid: 'is not a valid email address'
+  user_openid_invalid: 'Invalid OpenID URL'
 
   # Languages controller
   language_created: 'Language was created successfully'
@@ -40,6 +82,10 @@ en:
       word: 'Word'
       word_form: 'Word Form'
     attributes:
+      user:
+        login: 'Username'
+        password: 'Password'
+        email: 'Email address'
       language:
         name: 'Name'
         code: 'Code'
@@ -49,3 +95,16 @@ en:
         language: 'Language'
       word_form:
         name: 'Name'
+    errors:
+      template:
+        header: ''
+        body: ''
+      models:
+        user:
+          attributes:
+            password:
+              too_short: 'is too short'
+            login:
+              too_short: 'is too short'
+            email:
+              too_short: 'is too short'

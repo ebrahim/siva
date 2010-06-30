@@ -60,6 +60,6 @@ class User < ActiveRecord::Base
 	def normalize_identity_url
 		self.identity_url = OpenIdAuthentication.normalize_url(identity_url) unless not_using_openid?
 	rescue URI::InvalidURIError
-		errors.add_to_base("Invalid OpenID URL")
+		errors.add_to_base(t(:user_invalid_openid))
 	end
 end
