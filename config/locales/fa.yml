@@ -1,8 +1,13 @@
 fa:
   siva: 'سیوا'
+  siva_tagline: 'زیرا یک‌پارچگی مهم است'
 
   # Locale layout direction
   dir: 'rtl'
+
+  # Navigation menu
+  nav_words: 'کلمات'
+  nav_languages: 'زبان‌ها'
 
   # Generic terms
   form_create: 'ایجاد'
@@ -68,7 +73,7 @@ fa:
   word_removed: 'کلمه با موفقیت حذف شد'
   
   # Words views
-  word_remove_confirm: 'همهٔ کلمات این کلمه حذف خواهند شد! آیا مطمئنید؟'
+  word_remove_confirm: 'همهٔ شکل‌های این کلمه حذف خواهند شد! آیا مطمئنید؟'
   
   formtastic:
     yes: 'بله'

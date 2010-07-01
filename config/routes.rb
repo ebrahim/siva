@@ -17,6 +17,7 @@ ActionController::Routing::Routes.draw do |map|
   
 	# Home Page
 	map.root :controller => 'sessions', :action => 'new'
+	#map.root :controller => 'words', :action => 'index'
 
 	# RESTful resources
 	map.resources :words

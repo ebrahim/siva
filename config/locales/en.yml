@@ -1,8 +1,13 @@
 en:
   siva: 'Siva'
+  siva_tagline: 'because consistency matters'
 
   # Locale layout direction
   dir: 'ltr'
+
+  # Navigation menu
+  nav_words: 'Words'
+  nav_languages: 'Languages'
 
   # Generic terms
   form_create: 'Create'

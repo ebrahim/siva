@@ -85,9 +85,20 @@ table
 {
 	color: white;
 	background-color: #234;
-	border: 1px solid black;
-	height: 1px;
+	height: 60px;
+	width: 16%;
 	font-size: 32pt;
+	font-weight: bolder;
+	border: 2px solid black;
+}
+
+#taglineTD
+{
+	padding: 10px;
+	font-size: 18pt;
+	font-style: italic;
+	background-color: #8899AA;
+	border: 2px solid #456;
 }
 
 #footerTD
@@ -99,12 +110,23 @@ table
 	font-size: 18pt;
 }
 
-#loginTD
+#leftSidebarTD
 {
-	list-style-type: none;
+	width: 16%;
+	background-color: #8899AA;
+	padding: 5px;
+	border: 2px solid #456;
 }
 
-fieldset ol li
+#rightSidebarTD
+{
+	width: 16%;
+	background-color: #8899AA;
+	padding: 5px;
+	border: 2px solid #456;
+}
+
+td fieldset ol li
 {
 	list-style-type: none;
 }

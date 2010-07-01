@@ -23,31 +23,44 @@
 			<td valign="middle" align="center" id="headerTD">
 				<%= t(:siva) %>
 			</td>
-		</tr>
-		<tr>
-			<td valign="top" id="loginTD">
-				<% if logged_in? %>
-				<li><%= link_to t(:user_logout), logout_path %></li>
-				<% else %>
-				<li><%= link_to t(:user_login), login_path %></li>
-				<li><%= link_to t(:user_signup), signup_path %></li>
-				<% end %>
+			<td colspan="2" valign="middle" id="taglineTD">
+				<%= t(:siva_tagline) %>
 			</td>
 		</tr>
 
-		<!-- Body -->
 		<tr>
+			<!-- Left sidebar -->
+			<td valign="top" id="leftSidebarTD">
+				<%= link_to t(:siva), root_path %><br/>
+				<%= link_to t(:nav_words), words_path %><br/>
+				<%= link_to t(:nav_languages), languages_path %><br/>
+			</td>
+
+			<!-- Body -->
 			<td valign="top" id="contentTD">
 				<div id="content">
 					<%= flash_messages %>
 					<%= yield :layout %>
 				</div>
 			</td>
+
+			<!-- Right sidebar -->
+			<td valign="top" id="rightSidebarTD">
+				<div>
+				<% if logged_in? %>
+				<%= t(:user_username) %>: <%= current_user.login %><br/>
+				<%= link_to t(:user_logout), logout_path %>
+				<% else %>
+				<%= link_to t(:user_login), login_path %><br/>
+				<%= link_to t(:user_signup), signup_path %>
+				<% end %>
+				</div>
+			</td>
 		</tr>
 
 		<!-- Footer -->
 		<tr>
-			<td valign="middle" align="center" id="footerTD">
+			<td colspan="3" valign="middle" align="center" id="footerTD">
 				<%= t(:siva) %>
 			</td>
 		</tr>
