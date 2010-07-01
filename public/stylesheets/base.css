@@ -150,22 +150,21 @@ input, select
 
 .contentTable th
 {
-    border: 1px solid #333;
-    background-color: #555;
-    color: #ff0;
-    font-weight: normal;
+    border: 1px solid #112233;
+    background-color: #445566;
+    color: white;
+    font-weight: bold;
 }
 
 .contentTable
 {
-    padding: 0;
+    padding: 3px;
 }
 
 .contentTable td
 {
-    border: 1px solid #555;
-    background-color: #777;
-    color: #fff;
+    border: 1px solid #334455;
+    background-color: #8899AA;
     padding: 1px 4px 1px 4px;
     text-align: center;
 }

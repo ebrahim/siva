@@ -20,6 +20,8 @@ en:
   ltr: 'Left-to-Right'
   rtl: 'Right-to-Left'
 
+  actions: 'Actions'
+
   # User management
   user_login: 'Login'
   user_logout: 'Logout'

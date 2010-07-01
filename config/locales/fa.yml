@@ -20,6 +20,8 @@ fa:
   ltr: 'چپ به راست'
   rtl: 'راست به چپ'
 
+  actions: 'عملیات'
+
   # User management
   user_login: 'ورود'
   user_logout: 'خروج'

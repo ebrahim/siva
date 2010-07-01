@@ -1,7 +1,8 @@
-<table>
+<table width="100%" class="contentTable">
 	<tr>
 		<th><%= Word.human_attribute_name :word_forms %></th>
 		<th><%= Word.human_attribute_name :language  %></th>
+		<th colspan="2"><%= t(:actions) %></th>
 	</tr>
 	<% @words.each do |word| %>
 	<tr>
