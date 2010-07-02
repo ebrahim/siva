@@ -91,10 +91,16 @@ en:
       language: 'Language'
       word: 'Word'
       word_form: 'Word Form'
+      user: 'User'
+      password: 'Password'
+      session: 'Session'
     attributes:
       user:
         login: 'Username'
         password: 'Password'
+        email: 'Email address'
+      password:
+        user: 'User'
         email: 'Email address'
       language:
         name: 'Name'
@@ -118,3 +124,7 @@ en:
               too_short: 'is too short'
             email:
               too_short: 'is too short'
+        password:
+          attributes:
+            user:
+              blank: 'not found'

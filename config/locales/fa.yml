@@ -91,10 +91,16 @@ fa:
       language: 'زبان'
       word: 'کلمه'
       word_form: 'شکل کلمه'
+      user: 'کاربر'
+      password: 'گذرواژه'
+      session: 'نشست'
     attributes:
       user:
         login: 'نام کاربری'
         password: 'گذرواژه'
+        email: 'نشانی رایانامه'
+      password:
+        user: 'کاربر'
         email: 'نشانی رایانامه'
       language:
         name: 'نام'
@@ -118,3 +124,7 @@ fa:
               too_short: 'بیش از حد کوچک است'
             email:
               too_short: 'بیش از حد کوچک است'
+        password:
+          attributes:
+            user:
+              blank: 'یافت نشد'

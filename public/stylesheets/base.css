@@ -1,19 +1,31 @@
 /* === FLASH MESSAGES === */
 div#flash-notice {
-	
+	background-color: #EEE;
+	margin: 3px;
+	padding: 3px;
+	border: 2px solid #456;
 }
 
 div#flash-warning {
-	
+	background-color: yellow;
+	margin: 3px;
+	padding: 3px;
+	border: 2px solid #456;
 }
 
 div#flash-error {
-	
+	background-color: #FF6666;
+	margin: 3px;
+	padding: 3px;
+	border: 2px solid #456;
 }
 
 /* === ERROR MESSAGES === */
 div#errorExplanation {
-	
+	background-color: #FF6666;
+	margin: 3px;
+	padding: 3px 20px 3px;
+	border: 2px solid #456;
 }
 
 div#errorExplanation h2 {
@@ -34,7 +46,6 @@ div#errorExplanation ul li {
 
 /* === FORMS === */
 div.fieldWithErrors {
-	
 }
 
 div.fieldWithErrors label {
@@ -44,7 +55,8 @@ div.fieldWithErrors label {
 div.fieldWithErrors input, div.fieldWithErrors select, 
 div.fieldWithErrors textarea
 {
-	
+	background-color: #FF6666;
+	border: 2px solid #456;
 }
 
 * {
