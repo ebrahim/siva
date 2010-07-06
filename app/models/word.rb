@@ -5,4 +5,7 @@ class Word < ActiveRecord::Base
 	has_many :synonymies, :foreign_key => :word2_id, :dependent => :destroy
 
 	validates_presence_of :language
+	validates_presence_of :word_forms
+
+	accepts_nested_attributes_for :word_forms, :allow_destroy => true, :reject_if => lambda { |a| a[:text].blank? }
 end

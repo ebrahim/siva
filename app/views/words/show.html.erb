@@ -1,7 +1,11 @@
 <% @word.word_forms.each do |form| %>
-<p><%=h form.text %></p>
+<p dir="<%= @word.language.rtl ? 'rtl' : 'ltr' %>"><%=h form.text %></p>
 <% end %>
-<p><%= Language.human_name %>: <%=h "#{@word.language.name} [#{@word.language.code}]"  %></p>
+<p><%= Language.human_name %>:
+	<span dir="<%= @word.language.rtl ? 'rtl' : 'ltr' %>">
+	<%=h "#{@word.language.name} [#{@word.language.code}]" %>
+	</span>
+</p>
 
 <%= link_to t(:form_edit), edit_word_path %>
 <%= link_to t(:form_remove), @word, :confirm => t(:word_remove_confirm), :method => :delete%>

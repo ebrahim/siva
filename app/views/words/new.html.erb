@@ -1,6 +1,11 @@
 <% semantic_form_for @word do |form| %>
 	<% form.inputs do %>
-		<%= form.input :word_forms, :collection => @word.word_forms.all.sort { |a,b| a.text <=> b.text } %>
+		<% form.inputs :for => :word_forms do |word_forms_fields| %>
+			<%= word_forms_fields.input :text %>
+			<%= word_forms_fields.input :_destroy, :as => :hidden %>
+			<%= link_to_function t(:form_remove), 'remove_fields(this)' %>
+		<% end %>
+		<%= link_to_add_fields t(:form_add), form, :word_forms %>
 		<%= form.input :language, :include_blank => false, :collection => Language.all.sort { |a,b| a.name <=> b.name } %>
 	<% end %>
 	<% form.buttons do %>

@@ -9,6 +9,7 @@ class WordsController < ApplicationController
 
 	def new
 		@word = Word.new
+		@word.word_forms.build
 	end
 
 	def edit

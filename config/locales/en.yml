@@ -16,6 +16,7 @@ en:
   form_show: 'Show'
   form_back: 'Back'
   form_submit: 'Submit'
+  form_add: 'Add'
 
   ltr: 'Left-to-Right'
   rtl: 'Right-to-Left'
@@ -115,7 +116,7 @@ en:
         word_forms: 'Word Forms'
         language: 'Language'
       word_form:
-        name: 'Name'
+        text: 'Text'
     errors:
       template:
         header: ''

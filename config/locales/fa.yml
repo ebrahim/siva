@@ -16,6 +16,7 @@ fa:
   form_show: 'نمایش'
   form_back: 'بازگشت'
   form_submit: 'ارائه'
+  form_add: 'اضافه'
 
   ltr: 'چپ به راست'
   rtl: 'راست به چپ'
@@ -115,7 +116,7 @@ fa:
         word_forms: 'شکل‌های کلمه'
         language: 'زبان'
       word_form:
-        name: 'نام'
+        text: 'متن'
     errors:
       template:
         header: ''
