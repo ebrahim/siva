@@ -1,3 +1,5 @@
 <% f.inputs do %>
   <%= f.input :text %>
+  <%= f.input :_destroy, :as => :hidden %>
+  <%= link_to_function t(:form_remove), 'remove_fields(this)' %>
 <% end %>
