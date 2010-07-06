@@ -1,19 +1,22 @@
 /* === FLASH MESSAGES === */
-div#flash-notice {
+div#flash-notice
+{
 	background-color: #EEE;
 	margin: 3px;
 	padding: 3px;
 	border: 2px solid #456;
 }
 
-div#flash-warning {
+div#flash-warning
+{
 	background-color: yellow;
 	margin: 3px;
 	padding: 3px;
 	border: 2px solid #456;
 }
 
-div#flash-error {
+div#flash-error
+{
 	background-color: #FF6666;
 	margin: 3px;
 	padding: 3px;
@@ -21,35 +24,37 @@ div#flash-error {
 }
 
 /* === ERROR MESSAGES === */
-div#errorExplanation {
+div#errorExplanation
+{
 	background-color: #FF6666;
 	margin: 3px;
 	padding: 3px 20px 3px;
 	border: 2px solid #456;
 }
 
-div#errorExplanation h2 {
-	
+div#errorExplanation h2
+{
 }
 
-div#errorExplanation p {
-	
+div#errorExplanation p
+{
 }
 
-div#errorExplanation ul {
-	
+div#errorExplanation ul
+{
 }
 
-div#errorExplanation ul li {
-	
+div#errorExplanation ul li
+{
 }
 
 /* === FORMS === */
-div.fieldWithErrors {
+div.fieldWithErrors
+{
 }
 
-div.fieldWithErrors label {
-	
+div.fieldWithErrors label
+{
 }
 
 div.fieldWithErrors input, div.fieldWithErrors select, 
@@ -95,22 +100,20 @@ table
 
 #headerTD
 {
-	color: white;
+	color: #CDE;
 	background-color: #234;
-	height: 60px;
-	width: 16%;
-	font-size: 32pt;
+	height: 80px;
+	width: 100%;
+	font-size: 36pt;
 	font-weight: bolder;
 	border: 2px solid black;
 }
 
 #taglineTD
 {
-	padding: 10px;
-	font-size: 18pt;
+	font-size: 16pt;
 	font-style: italic;
-	background-color: #8899AA;
-	border: 2px solid #456;
+	vertical-align: baseline;
 }
 
 #footerTD
