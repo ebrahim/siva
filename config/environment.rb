@@ -27,10 +27,10 @@ Rails::Initializer.run do |config|
 	# config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
 	# config.gem "sqlite3-ruby", :lib => "sqlite3"
 	# config.gem "aws-s3", :lib => "aws/s3"
-	config.gem "capistrano-ext", :lib => "capistrano"
-	config.gem 'rubyist-aasm', :lib => 'aasm', :source => 'http://gems.github.com', :version => '2.0.2'
+	config.gem 'capistrano-ext', :lib => 'capistrano'
 	config.gem 'will_paginate'
 	config.gem 'formtastic'
+	config.gem 'rubyist-aasm', :lib => 'aasm', :source => 'http://gems.github.com' #, :version => '2.0.2'
 
 	# These cause problems with irb. Left in for reference
 	# config.gem 'rspec-rails', :lib => 'spec/rails', :version => '1.1.11'
