@@ -60,6 +60,11 @@ fa:
   user_fail: 'خطایی رخ داد!'
   user_email_invalid: 'یک نشانی رایانامهٔ معتبر نیست'
   user_openid_invalid: 'نشانی اپن‌آی‌دی نامعتبر است'
+  openid_missing: 'شرمنده، خادم اپن‌آی‌دی یافت نشد'
+  openid_invalid: 'شرمنده، این به نظر یک نشانی اپن‌آی‌دی معتبر نمی‌آید'
+  openid_canceled: 'اعتبارسنجی اپن‌آی‌دی لغو شد'
+  openid_failed: 'اعتبارسنجی اپن‌آی‌دی موفق نبود'
+  openid_setup_needed: 'اعتبارسنجی اپن‌آی‌دی به برپاسازی نیاز دارد'
 
   # Languages controller
   language_created: 'زبان با موفقیت ایجاد شد'

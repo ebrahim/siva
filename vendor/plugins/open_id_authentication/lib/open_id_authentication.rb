@@ -36,11 +36,11 @@ module OpenIdAuthentication
 
   class Result
     ERROR_MESSAGES = {
-      :missing      => "Sorry, the OpenID server couldn't be found",
-      :invalid      => "Sorry, but this does not appear to be a valid OpenID",
-      :canceled     => "OpenID verification was canceled",
-      :failed       => "OpenID verification failed",
-      :setup_needed => "OpenID verification needs setup"
+	  :missing      => I18n.t(:openid_missing),
+      :invalid      => I18n.t(:openid_invalid),
+      :canceled     => I18n.t(:openid_canceled),
+      :failed       => I18n.t(:openid_failed),
+      :setup_needed => I18n.t(:openid_setup_needed)
     }
 
     def self.[](code)

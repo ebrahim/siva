@@ -60,6 +60,11 @@ en:
   user_fail: 'EPIC FAIL!'
   user_email_invalid: 'is not a valid email address'
   user_openid_invalid: 'Invalid OpenID URL'
+  openid_missing: 'Sorry, the OpenID server couldn''t be found'
+  openid_invalid: 'Sorry, but this does not appear to be a valid OpenID'
+  openid_canceled: 'OpenID verification was canceled'
+  openid_failed: 'OpenID verification failed'
+  openid_setup_needed: 'OpenID verification needs setup'
 
   # Languages controller
   language_created: 'Language was created successfully'
