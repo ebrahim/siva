@@ -59,12 +59,12 @@ div.fieldWithErrors textarea
 	border: 2px solid #456;
 }
 
-* {
+*
+{
 	margin: 1px;
 	padding: 1px;
     font-family: Nazli;
     font-size: 14pt;
-    /* direction: rtl; */
 }
 
 html, body
