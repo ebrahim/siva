@@ -8,6 +8,7 @@ en:
   # Navigation menu
   nav_words: 'Words'
   nav_languages: 'Languages'
+  nav_categories: 'Domains'
 
   # Generic terms
   form_create: 'Create'
@@ -83,6 +84,14 @@ en:
   # Words views
   word_remove_confirm: 'Are you sure?'
 
+  # Domains controller
+  category_created: 'Domain was created successfully'
+  category_updated: 'Domain was updated successfully'
+  category_removed: 'Domain was removed successfully'
+
+  # Domains views
+  category_remove_confirm: 'Are you sure?'
+
   formtastic:
     yes: 'Yes'
     no: 'No'
@@ -100,6 +109,7 @@ en:
       user: 'User'
       password: 'Password'
       session: 'Session'
+      category: 'Domain'
     attributes:
       user:
         login: 'Username'
@@ -117,6 +127,9 @@ en:
         language: 'Language'
       word_form:
         text: 'Text'
+      category:
+        parent_id: 'Parent'
+        name: 'Name'
     errors:
       template:
         header: ''
