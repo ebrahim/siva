@@ -1,4 +1,4 @@
-<%= (@parent_category.nil? ? '' : @parent_category.name + ' > ') + @category.name %><br/>
+<%=h (@parent_category.nil? ? '' : @parent_category.name + ' > ') + @category.name %><br/>
 
 <%= link_to t(:form_edit), edit_category_path %>
 <%= link_to t(:form_remove), @category, :confirm => t(:category_remove_confirm), :method => :delete%>
