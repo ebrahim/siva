@@ -22,6 +22,7 @@ class WordsController < ApplicationController
 			flash[:notice] = t :word_created
 			redirect_to @word
 		else
+			flash[:error] = @word.errors.full_messages
 			render :action => :new
 		end
 	end

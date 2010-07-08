@@ -114,6 +114,7 @@ en:
       user:
         login: 'Username'
         password: 'Password'
+        password_confirmation: 'Password confirmation'
         email: 'Email address'
       password:
         user: 'User'
@@ -137,13 +138,29 @@ en:
       models:
         user:
           attributes:
+            name:
+              bad_chars: 'cannot contain non-printing characters and \\&gt;&lt;&amp;/'
             password:
               too_short: 'is too short'
+              blank: 'cannot be empty'
+            password_confirmation:
+              too_short: 'is too short'
+              blank: 'cannot be empty'
             login:
+              blank: 'cannot be empty'
               too_short: 'is too short'
+              bad_chars: 'must only consist of letters, numbers, and .-_@'
             email:
+              blank: 'cannot be empty'
               too_short: 'is too short'
+              bad_format: 'should look like an email address'
         password:
           attributes:
             user:
-              blank: 'not found'
+              blank: 'cannot be empty'
+        language:
+          attributes:
+            name:
+              blank: 'cannot be empty'
+            code:
+              blank: 'cannot be empty'

@@ -114,6 +114,7 @@ fa:
       user:
         login: 'نام کاربری'
         password: 'گذرواژه'
+        password_confirmation: 'تأیید گذرواژه'
         email: 'نشانی رایانامه'
       password:
         user: 'کاربر'
@@ -137,13 +138,29 @@ fa:
       models:
         user:
           attributes:
+            name:
+              bad_chars: 'نمی‌تواند شمال حروف چاپ‌نشدنی و  \\&gt;&lt;&amp;/باشد'
             password:
               too_short: 'بیش از حد کوچک است'
+              blank: 'نمی‌تواند خالی باشد'
+            password_confirmation:
+              too_short: 'بیش از حد کوچک است'
+              blank: 'نمی‌تواند خالی باشد'
             login:
               too_short: 'بیش از حد کوچک است'
+              blank: 'نمی‌تواند خالی باشد'
+              bad_chars: 'باید فقط از حروف،  ارقام و .-ـ@ تشکیل شده باشد'
             email:
               too_short: 'بیش از حد کوچک است'
+              blank: 'نمی‌تواند خالی باشد'
+              bad_format: 'باید شبیه یک نشانی رایانامه باشد'
         password:
           attributes:
             user:
-              blank: 'یافت نشد'
+              blank: 'نمی‌تواند خالی باشد'
+        language:
+          attributes:
+            name:
+              blank: 'نمی‌تواند خالی باشد'
+            code:
+              blank: 'نمی‌تواند خالی باشد'

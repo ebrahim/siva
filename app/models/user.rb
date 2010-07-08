@@ -10,13 +10,13 @@ class User < ActiveRecord::Base
 	validates_presence_of :login, :if => :not_using_openid?
 	validates_length_of :login, :within => 3..40, :if => :not_using_openid?
 	validates_uniqueness_of :login, :case_sensitive => false, :if => :not_using_openid?
-	validates_format_of :login, :with => RE_LOGIN_OK, :message => MSG_LOGIN_BAD, :if => :not_using_openid?
-	validates_format_of :name, :with => RE_NAME_OK, :message => MSG_NAME_BAD, :allow_nil => true
+	validates_format_of :login, :with => RE_LOGIN_OK, :message => I18n.t(:'activerecord.errors.models.user.attributes.login.bad_chars'), :if => :not_using_openid?
+	validates_format_of :name, :with => RE_NAME_OK, :message => I18n.t(:'activerecord.errors.models.user.attributes.name.bad_chars'), :allow_nil => true
 	validates_length_of :name, :maximum => 100
 	validates_presence_of :email, :if => :not_using_openid?
 	validates_length_of :email, :within => 6..100, :if => :not_using_openid?
 	validates_uniqueness_of :email, :case_sensitive => false, :if => :not_using_openid?
-	validates_format_of :email, :with => RE_EMAIL_OK, :message => MSG_EMAIL_BAD, :if => :not_using_openid?
+	validates_format_of :email, :with => RE_EMAIL_OK, :message => I18n.t(:'activerecord.errors.models.user.attributes.email.bad_format'), :if => :not_using_openid?
 	validates_uniqueness_of :identity_url, :unless => :not_using_openid?
 	validate :normalize_identity_url
   
