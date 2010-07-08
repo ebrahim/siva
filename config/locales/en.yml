@@ -164,3 +164,13 @@ en:
               blank: 'cannot be empty'
             code:
               blank: 'cannot be empty'
+        word:
+          attributes:
+            word_forms:
+              too_short: 'must be specified'
+        word_form:
+          attributes:
+            text:
+              taken: 'already exists'
+              too_short: 'is too short'
+              blank: 'cannot be empty'

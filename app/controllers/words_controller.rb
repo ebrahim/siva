@@ -33,6 +33,7 @@ class WordsController < ApplicationController
 			flash[:notice] = t :word_updated
 			redirect_to @word
 		else
+			flash[:error] = @word.errors.full_messages
 			redirect_to :action => :edit
 		end
 	end

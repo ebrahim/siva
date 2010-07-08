@@ -164,3 +164,13 @@ fa:
               blank: 'نمی‌تواند خالی باشد'
             code:
               blank: 'نمی‌تواند خالی باشد'
+        word:
+          attributes:
+            word_forms:
+              too_short: 'باید تعریف شوند'
+        word_form:
+          attributes:
+            text:
+              taken: 'از قبل وجود دارد'
+              too_short: 'بیش از حد کوچک است'
+              blank: 'نمی‌تواند خالی باشد'

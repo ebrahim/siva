@@ -5,8 +5,7 @@ class Word < ActiveRecord::Base
 	has_many :synonymies, :foreign_key => :word2_id, :dependent => :destroy
 
 	validates_presence_of :language
-	validates_exclusion_of :word_forms, :in => [[]]
-	validates_associated :word_forms
+	#validates_size_of :word_forms, :minimum => 1		# FIXME: Disables destoying word_forms
 
-	accepts_nested_attributes_for :word_forms, :allow_destroy => true, :reject_if => lambda { |a| a[:text].blank? }
+	accepts_nested_attributes_for :word_forms, :allow_destroy => true, :reject_if => lambda { |params| params[:text].blank? }
 end
