@@ -65,6 +65,7 @@ class UsersController < ApplicationController
   end
   
   def failed_creation(message = t(:user_signup_error))
+	@user = User.new if @user.nil?
     flash[:error] = message
     render :action => :new
   end
