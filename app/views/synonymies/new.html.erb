@@ -1,8 +1,9 @@
 <% semantic_form_for @synonymy do |form| %>
 	<% form.inputs do %>
-		<%= form.input :word1, :include_blank => false %>
-		<%= form.input :word2, :include_blank => false %>
 		<%= form.input :category, :include_blank => false, :collection => nested_set_options(Category) { |i| "#{'-' * i.level} #{i.name}" } %>
+		<% all_word_forms = Hash[WordForm.all.collect { |wf| [wf.text, wf.word_id] }] %>
+		<%= form.input :word1, :include_blank => false, :collection => all_word_forms %>
+		<%= form.input :word2, :include_blank => false, :collection => all_word_forms %>
 	<% end %>
 	<%= form.buttons %>
 <% end %>

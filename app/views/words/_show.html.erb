@@ -9,7 +9,7 @@
 			</span>
 		</td>
 	</tr>
-	<tr>
+	<tr style="height: 100%">
 		<td colspan="2">
 		<% word.word_forms.each do |form| %>
 		<p dir="<%= word.language.rtl ? 'rtl' : 'ltr' %>"><%=h form.text %></p>
