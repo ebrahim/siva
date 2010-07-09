@@ -192,3 +192,9 @@ en:
           words_same: 'Both words cannot be the same'
           words_taken: 'This synonymy is already defined'
           languages_same: 'Both languages cannot be the same'
+          attributes:
+            word1:
+                blank: 'cannot be empty'
+            word2:
+                blank: 'cannot be empty'
+

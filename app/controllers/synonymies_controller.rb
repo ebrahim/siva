@@ -46,4 +46,18 @@ class SynonymiesController < ApplicationController
 		flash[:notice] = t :synonymy_removed
 		redirect_to :action => :index
 	end
+
+	def auto_complete_model_for_word_form_text
+		@word_forms = WordForm.find(
+			:all,
+			:conditions => ['LOWER(text) LIKE ?', "%#{params[:word_form][:text]}%"],
+			:limit => 10
+		)
+		render :inline => '
+		<ul>
+		<% for word_form in @word_forms %>
+			<li id="<%= word_form.word_id %>"><%=h word_form.text %></li>
+		<% end %>
+		</ul>'
+	end
 end
