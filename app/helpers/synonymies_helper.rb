@@ -1,0 +1,2 @@
+module SynonymiesHelper
+end

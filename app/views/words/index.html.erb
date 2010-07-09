@@ -6,7 +6,7 @@
 	</tr>
 	<% @words.each do |word| %>
 	<tr>
-		<td><%= link_to h(word.word_forms.all.map { |form| form.text }.join ' | '), word %></td>
+		<td><%= link_to forms_summary(word), word %></td>
 		<td><%=h word.language.name %></td>
 		<td><%= link_to t(:form_edit), edit_word_path(word) %></td>
 		<td><%= link_to t(:form_remove), word, :confirm => t(:word_remove_confirm), :method => :delete %></td>

@@ -9,6 +9,7 @@ en:
   nav_words: 'Words'
   nav_languages: 'Languages'
   nav_categories: 'Domains'
+  nav_synonymies: 'Synonymies'
 
   # Generic terms
   form_create: 'Create'
@@ -92,6 +93,14 @@ en:
   # Domains views
   category_remove_confirm: 'Are you sure?'
 
+  # Synonymys controller
+  synonymy_created: 'Synonymy was created successfully'
+  synonymy_updated: 'Synonymy was updated successfully'
+  synonymy_removed: 'Synonymy was removed successfully'
+
+  # Synonymys views
+  synonymy_remove_confirm: 'Are you sure?'
+
   formtastic:
     yes: 'Yes'
     no: 'No'
@@ -110,6 +119,7 @@ en:
       password: 'Password'
       session: 'Session'
       category: 'Domain'
+      synonymy: 'Synonymy'
     attributes:
       user:
         login: 'Username'
@@ -131,6 +141,10 @@ en:
       category:
         parent_id: 'Parent'
         name: 'Name'
+      synonymy:
+        word1: 'First Word'
+        word2: 'Second Word'
+        category: 'Domain'
     errors:
       template:
         header: ''
@@ -174,3 +188,7 @@ en:
               taken: 'already exists'
               too_short: 'is too short'
               blank: 'cannot be empty'
+        synonymy:
+          words_same: 'Both words cannot be the same'
+          words_taken: 'This synonymy is already defined'
+          languages_same: 'Both languages cannot be the same'

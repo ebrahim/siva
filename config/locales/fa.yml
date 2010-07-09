@@ -9,6 +9,7 @@ fa:
   nav_words: 'کلمات'
   nav_languages: 'زبان‌ها'
   nav_categories: 'حوزه‌ها'
+  nav_synonymies: 'ترادف‌ها'
 
   # Generic terms
   form_create: 'ایجاد'
@@ -83,14 +84,22 @@ fa:
   
   # Words views
   word_remove_confirm: 'همهٔ شکل‌های این کلمه حذف خواهند شد! آیا مطمئنید؟'
-  
+
   # Domains controller
   category_created: 'حوزه با موفقیت ایجاد شد'
   category_updated: 'حوزه با موفقیت به روز شد'
   category_removed: 'حوزه با موفقیت حذف شد'
-
+  
   # Domains views
   category_remove_confirm: 'آیا مطمئنید؟'
+
+  # Synonymys controller
+  synonymy_created: 'ترادف با موفقیت ایجاد شد'
+  synonymy_updated: 'ترادف با موفقیت به روز شد'
+  synonymy_removed: 'ترادف با موفقیت حذف شد'
+
+  # Synonymys views
+  synonymy_remove_confirm: 'آیا مطمئنید؟'
 
   formtastic:
     yes: 'بله'
@@ -131,6 +140,10 @@ fa:
       category:
         parent_id: 'پدر'
         name: 'نام'
+      synonymy:
+        word1: 'کلمهٔ اول'
+        word2: 'کلمهٔ دوم'
+        category: 'حوزه'
     errors:
       template:
         header: ''
@@ -174,3 +187,7 @@ fa:
               taken: 'از قبل وجود دارد'
               too_short: 'بیش از حد کوچک است'
               blank: 'نمی‌تواند خالی باشد'
+        synonymy:
+          words_same: 'هر دو کلمه نباید یک‌سان باشند'
+          words_taken: 'این ترادف قبلاً تعریف شده است'
+          languages_same: 'هر دو زبان نباید یک‌سان باشند'
