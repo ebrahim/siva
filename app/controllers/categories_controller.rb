@@ -22,6 +22,7 @@ class CategoriesController < ApplicationController
 			flash[:notice] = t :category_created
 			redirect_to @category
 		else
+			flash[:error] = @category.errors.full_messages
 			render :action => :new
 		end
 	end
@@ -32,6 +33,7 @@ class CategoriesController < ApplicationController
 			flash[:notice] = t :category_updated
 			redirect_to @category
 		else
+			flash[:error] = @category.errors.full_messages
 			redirect_to :action => :edit
 		end
 	end

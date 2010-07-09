@@ -21,6 +21,7 @@ class LanguagesController < ApplicationController
 			flash[:notice] = t :language_created
 			redirect_to :action => :index
 		else
+			flash[:error] = @language.errors.full_messages
 			render :action => :new
 		end
 	end
@@ -31,6 +32,7 @@ class LanguagesController < ApplicationController
 			flash[:notice] = t :language_updated
 			redirect_to @language
 		else
+			flash[:error] = @language.errors.full_messages
 			redirect_to :action => :edit
 		end
 	end
