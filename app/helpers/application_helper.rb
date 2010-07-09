@@ -25,4 +25,7 @@ module ApplicationHelper
 		link_to_function name, h("add_fields(this, \"#{association}\", \"#{escape_javascript(fields)}\")")
 	end
 
+	def link_to_back
+		link_to t(:form_back), :back
+	end
 end
