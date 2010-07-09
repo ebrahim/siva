@@ -3,7 +3,7 @@
 		<th colspan="2"><%= Synonymy.human_attribute_name :word1 %></th>
 		<th colspan="2"><%= Synonymy.human_attribute_name :word2 %></th>
 		<th><%= Synonymy.human_attribute_name :category %></th>
-		<th colspan="3"><%= t(:actions) %></th>
+		<th colspan="2" width="80px"><%= t(:actions) %></th>
 	</tr>
 	<% @synonymies.each do |synonymy| %>
 	<tr>
@@ -13,7 +13,6 @@
 		<td><%= link_to forms_summary(synonymy.word2), synonymy.word2 %></td>
 		<td><%= link_to synonymy.category.name, synonymy.category %></td>
 		<td><%= link_to t(:form_show), synonymy %></td>
-		<td><%= link_to t(:form_edit), edit_synonymy_path(synonymy) %></td>
 		<td><%= link_to t(:form_remove), synonymy, :confirm => t(:synonymy_remove_confirm), :method => :delete %></td>
 	</tr>
 	<% end %>

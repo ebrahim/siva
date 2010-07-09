@@ -1,14 +1,3 @@
-<% semantic_form_for @word do |form| %>
-	<% form.inputs do %>
-		<% form.inputs :for => :word_forms do |word_forms_fields| %>
-			<%= render 'word_form_fields', :f => word_forms_fields %>
-		<% end %>
-		<%= link_to_add_fields t(:form_add), form, :word_forms %>
-		<%= form.input :language, :include_blank => false, :collection => Language.all.sort { |a,b| a.name <=> b.name } %>
-	<% end %>
-	<% form.buttons do %>
-		<%= form.commit_button %>
-	<% end %>
-<% end %>
+<%= render 'edit', :word => @word %>
 
 <%= link_to t(:form_back), words_path %>

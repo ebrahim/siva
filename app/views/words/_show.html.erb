@@ -1,0 +1,19 @@
+<table class="contentTable">
+	<tr>
+		<th>
+			<%= Language.human_name %>
+		</th>
+		<td>
+			<span dir="<%= word.language.rtl ? 'rtl' : 'ltr' %>">
+			<%=h word.language.name %>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<% word.word_forms.each do |form| %>
+		<p dir="<%= word.language.rtl ? 'rtl' : 'ltr' %>"><%=h form.text %></p>
+		<% end %>
+		</td>
+	</tr>
+</table>

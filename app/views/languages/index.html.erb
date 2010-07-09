@@ -3,7 +3,7 @@
 		<th><%= Language.human_attribute_name :name %></th>
 		<th><%= Language.human_attribute_name :code %></th>
 		<th><%= Language.human_attribute_name :rtl %></th>
-		<th colspan="2"><%= t(:actions) %></th>
+		<th colspan="2" width="80px"><%= t(:actions) %></th>
 	</tr>
 	<% for language in @languages.sort { |a,b| a.name <=> b.name } %>
 	<tr>

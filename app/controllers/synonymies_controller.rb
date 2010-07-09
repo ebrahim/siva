@@ -18,10 +18,6 @@ class SynonymiesController < ApplicationController
 		@synonymy = Synonymy.new
 	end
 
-	def edit
-		@synonymy = Synonymy.find params[:id]
-	end
-
 	def create
 		@synonymy = Synonymy.new params[:synonymy]
 		if @synonymy.save
