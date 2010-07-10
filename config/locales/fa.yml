@@ -16,9 +16,10 @@ fa:
   form_edit: 'ویرایش'
   form_remove: 'حذف'
   form_show: 'نمایش'
-  form_back: 'بازگشت'
+  form_back: 'عقب'
   form_submit: 'ارائه'
   form_add: 'اضافه'
+  form_index: 'بالا'
 
   ltr: 'چپ به راست'
   rtl: 'راست به چپ'

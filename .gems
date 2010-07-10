@@ -1,4 +1,4 @@
-rails --version 2.3.8
+rails --version 2.3.5
 ruby-openid --version 2.1.7
 will_paginate --version 2.3.14
 formtastic --version 0.9.10

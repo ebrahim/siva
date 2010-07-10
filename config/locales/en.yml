@@ -19,6 +19,7 @@ en:
   form_back: 'Back'
   form_submit: 'Submit'
   form_add: 'Add'
+  form_index: 'Up'
 
   ltr: 'Left-to-Right'
   rtl: 'Right-to-Left'
