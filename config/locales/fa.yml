@@ -181,6 +181,7 @@ fa:
           attributes:
             word_forms:
               too_short: 'باید تعریف شوند'
+              invalid: 'نامعتبر هستند'
         word_form:
           attributes:
             text:

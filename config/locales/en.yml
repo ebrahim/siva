@@ -182,6 +182,7 @@ en:
           attributes:
             word_forms:
               too_short: 'must be specified'
+              invalid: 'are invalid'
         word_form:
           attributes:
             text:
@@ -197,4 +198,3 @@ en:
                 blank: 'cannot be empty'
             word2:
                 blank: 'cannot be empty'
-
