@@ -1,7 +1,7 @@
 rails --version 2.3.5
 ruby-openid --version 2.1.7
 will_paginate --version 2.3.14
-formtastic --version 0.9.10
+formtastic --version 0.9.10 --ignore-dependencies
 capistrano-ext --version 1.2.1
 erubis --version 2.6.6
 rubyist-aasm --version 2.1.1 --source http://gems.github.com/

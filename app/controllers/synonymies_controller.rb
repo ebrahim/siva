@@ -29,17 +29,6 @@ class SynonymiesController < ApplicationController
 		end
 	end
 
-	def update
-		@synonymy = Synonymy.find params[:id]
-		if @synonymy.update_attributes params[:synonymy]
-			flash[:notice] = t :synonymy_updated
-			redirect_to @synonymy
-		else
-			flash[:error] = @synonymy.errors.full_messages
-			redirect_to :action => :edit
-		end
-	end
-
 	def destroy
 		@synonymy = Synonymy.find params[:id]
 		@synonymy.destroy
