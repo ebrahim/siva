@@ -30,7 +30,9 @@ Rails::Initializer.run do |config|
 	config.gem 'capistrano-ext', :lib => 'capistrano'
 	config.gem 'will_paginate'
 	config.gem 'formtastic'
-	config.gem 'rubyist-aasm', :lib => 'aasm', :source => 'http://gems.github.com' #, :version => '2.0.2'
+	config.gem 'ruby-openid', :lib => 'openid'
+	config.gem 'erubis'
+	config.gem 'rubyist-aasm', :lib => 'aasm', :source => 'http://gems.github.com'
 
 	# These cause problems with irb. Left in for reference
 	# config.gem 'rspec-rails', :lib => 'spec/rails', :version => '1.1.11'
