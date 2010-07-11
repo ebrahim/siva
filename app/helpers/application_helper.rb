@@ -30,4 +30,8 @@ module ApplicationHelper
 	def link_to_back
 		link_to t(:form_back), :back
 	end
+
+	def paginate(list)
+		will_paginate list, :next_label => t(:form_next), :previous_label => t(:form_previous)
+	end
 end

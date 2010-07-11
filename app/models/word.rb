@@ -1,4 +1,7 @@
 class Word < ActiveRecord::Base
+	cattr_reader :per_page
+	@@per_page = 10
+
 	belongs_to :language
 	has_many :word_forms, :dependent => :destroy
 	has_many :synonymies, :foreign_key => :word1_id

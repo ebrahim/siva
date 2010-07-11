@@ -21,6 +21,8 @@ en:
   form_add: 'Add'
   form_index: 'Up'
   form_search: 'Search'
+  form_previous: 'Previous'
+  form_next: 'Next'
 
   ltr: 'Left-to-Right'
   rtl: 'Right-to-Left'

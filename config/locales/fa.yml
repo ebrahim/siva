@@ -21,6 +21,8 @@ fa:
   form_add: 'اضافه'
   form_index: 'بالا'
   form_search: 'جست و جو'
+  form_previous: 'قبل'
+  form_next: 'بعد'
 
   ltr: 'چپ به راست'
   rtl: 'راست به چپ'
