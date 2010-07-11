@@ -29,7 +29,8 @@ REST_AUTH_DIGEST_STRETCHES = 10
 
 config.action_mailer.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
-  :address => "mail.ebrahim.ir",
+  :address => "mail.mohammadi.ir",
+  :domain => "ebrahim.ir",
   :port => 25,
   :user_name => "siva@ebrahim.ir",
   :password => "sivajoondoosetdarim!",
