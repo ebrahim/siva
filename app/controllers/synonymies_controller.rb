@@ -3,28 +3,23 @@ class SynonymiesController < ApplicationController
 	end
 
 	def search
-		word_id = params[:word_id]
+		word_form = params[:word_form]
 		category_id = params[:category_id]
-		word_set = !word_id.nil? && !word_id.blank?
+		word_form_set = !word_form.nil? && !word_form.blank?
 		category_set = !category_id.nil? && !category_id.blank?
-		if word_set and category_set
-			@synonymies = Synonymy.paginate :page => params[:page], :conditions => \
-				[ '(word1_id = ? OR word2_id = ?) AND category_id = ?', \
-					word_id, word_id, category_id ]
-		elsif word_set
-			@synonymies = Synonymy.paginate :page => params[:page], :conditions => \
-				[ 'word1_id = ? OR word2_id = ?', word_id, word_id ]
+		if word_form_set and category_set
+			@synonymies = Synonymy.paginate :page => params[:page], \
+			  :include => [ { :word1 => :word_forms }, { :word2 => :word_forms } ], \
+			  :conditions => [ 'LOWER(word_forms.text) LIKE ? AND category_id = ?', "%#{word_form}%", category_id ]
+		elsif word_form_set
+			@synonymies = Synonymy.paginate :page => params[:page], \
+			  :include => [ { :word1 => :word_forms }, { :word2 => :word_forms } ], \
+			  :conditions => [ 'LOWER(word_forms.text) LIKE ?', "%#{word_form}%" ]
 		elsif category_set
-			@synonymies = Synonymy.paginate :page => params[:page], :conditions => { :category_id => category_id }
+			@synonymies = Synonymy.paginate :page => params[:page], \
+			  :conditions => { :category_id => category_id }
 		else
 			@synonymies = Synonymy.paginate :page => params[:page]
-		end
-		@synonymies.each do |syn|
-			if syn.word1.language.name > syn.word2.language.name
-				temp = syn.word1
-				syn.word1 = syn.word2
-				syn.word2 = temp
-			end
 		end
 		if @synonymies.blank?
 			flash[:warning] = t(:not_found)
@@ -58,7 +53,7 @@ class SynonymiesController < ApplicationController
 	end
 
 	def auto_complete_model_for_word_form
-		@word_forms = WordForm.find :all, :limit => 10, \
+		@word_forms = WordForm.find :all, :limit => 10, :group => :text, \
 			:conditions => [ 'LOWER(text) LIKE ?', "%#{params[:word_form]}%" ]
 		render :inline => '<ul>
 <% for word_form in @word_forms %>

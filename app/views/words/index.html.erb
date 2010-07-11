@@ -2,7 +2,7 @@
 	<% form.inputs do %>
 		<li class="string required">
 		<label><%= WordForm.human_name %></label>
-		<%= raw model_auto_completer 'word_form', '', 'word_id', '' %><br/>
+		<%= raw model_auto_completer 'word_form', '', 'word_id', '', :allow_free_text => true %><br/>
 		</li>
 	<% end %>
 	<% form.buttons do %>

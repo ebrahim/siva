@@ -5,7 +5,7 @@
 		  :collection => nested_set_options(Category) { |i| "#{'-' * i.level} #{i.name}" } %>
 		<li class="string required">
 		<label><%= Word.human_name %></label>
-		<%= raw model_auto_completer 'word_form', '', 'word_id', '' %><br/>
+		<%= raw model_auto_completer 'word_form', '', 'word_id', '', :allow_free_text => true %><br/>
 		</li>
 	<% end %>
 	<% form.buttons do %>
