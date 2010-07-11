@@ -20,6 +20,7 @@ fa:
   form_submit: 'ارائه'
   form_add: 'اضافه'
   form_index: 'بالا'
+  form_search: 'جست و جو'
 
   ltr: 'چپ به راست'
   rtl: 'راست به چپ'

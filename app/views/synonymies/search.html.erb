@@ -1,0 +1,21 @@
+<table width="100%" class="contentTable">
+	<tr>
+		<th colspan="2"><%= Synonymy.human_attribute_name :word1 %></th>
+		<th colspan="2"><%= Synonymy.human_attribute_name :word2 %></th>
+		<th><%= Synonymy.human_attribute_name :category %></th>
+		<th><%= t(:actions) %></th>
+	</tr>
+	<% @synonymies.each do |synonymy| %>
+	<tr>
+		<td><%= h synonymy.word1.language.name %></td>
+		<td><%= link_to forms_summary(synonymy.word1), synonymy %></td>
+		<td><%= h synonymy.word2.language.name %></td>
+		<td><%= link_to forms_summary(synonymy.word2), synonymy %></td>
+		<td><%= link_to h(synonymy.category.name), synonymy.category %></td>
+		<td><%= link_to t(:form_remove), synonymy, :confirm => t(:synonymy_remove_confirm), :method => :delete %></td>
+	</tr>
+	<% end %>
+</table>
+
+<%= link_to t(:form_index), synonymies_path %>
+<%= link_to_back %>

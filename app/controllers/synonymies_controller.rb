@@ -1,6 +1,24 @@
 class SynonymiesController < ApplicationController
 	def index
-		@synonymies = Synonymy.all
+	end
+
+	def search
+		word_id = params[:word_id]
+		category_id = params[:category_id]
+		word_set = !word_id.nil? && !word_id.blank?
+		category_set = !category_id.nil? && !category_id.blank?
+		if word_set and category_set
+			@synonymies = Synonymy.find :all, :conditions => \
+				[ '(word1_id = ? OR word2_id = ?) AND category_id = ?', \
+					word_id, word_id, category_id ]
+		elsif word_set
+			@synonymies = Synonymy.find :all, :conditions => \
+				[ 'word1_id = ? OR word2_id = ?', word_id, word_id ]
+		elsif category_set
+			@synonymies = Synonymy.find :all , :conditions => { :category_id => category_id }
+		else
+			@synonymies = Synonymy.all
+		end
 		@synonymies.each do |syn|
 			if syn.word1.language.name > syn.word2.language.name
 				temp = syn.word1
@@ -42,11 +60,10 @@ class SynonymiesController < ApplicationController
 			:conditions => ['LOWER(text) LIKE ?', "%#{params[:word_form][:text]}%"],
 			:limit => 10
 		)
-		render :inline => '
-		<ul>
-		<% for word_form in @word_forms %>
-			<li id="<%= word_form.word_id %>"><%=h word_form.text %></li>
-		<% end %>
-		</ul>'
+		render :inline => '<ul>
+<% for word_form in @word_forms %>
+<li id="<%= word_form.word_id %>"><%=h word_form.text %></li>
+<% end %>
+</ul>'
 	end
 end

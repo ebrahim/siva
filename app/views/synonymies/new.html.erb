@@ -1,6 +1,7 @@
 <% semantic_form_for @synonymy do |form| %>
 	<% form.inputs do %>
-		<%= form.input :category, :include_blank => false, :collection => nested_set_options(Category) { |i| "#{'-' * i.level} #{i.name}" } %>
+		<%= form.input :category, :include_blank => false, :required => false, \
+		  :collection => nested_set_options(Category) { |i| "#{'-' * i.level} #{i.name}" } %>
 		<li class="string required">
 		<label><%= Synonymy.human_attribute_name :word1 %></label>
 		<%= raw model_auto_completer 'word_form[text]', '', 'synonymy[word1_id]', '-1' %><br/>

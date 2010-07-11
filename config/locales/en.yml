@@ -20,6 +20,7 @@ en:
   form_submit: 'Submit'
   form_add: 'Add'
   form_index: 'Up'
+  form_search: 'Search'
 
   ltr: 'Left-to-Right'
   rtl: 'Right-to-Left'
