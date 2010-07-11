@@ -43,7 +43,6 @@ en:
   user_forgotten_password: 'Forgotten Password'
   user_reset_password: 'Reset Your Password'
   user_enter_new_password: 'Please enter a new password and confirm it.'
-  user_activated: ', your account has been activated.  Welcome aboard!'
   user_confirm_password: 'Confirm Password'
   user_signup_openid: 'Signup with OpenID'
   user_logged_in: 'Logged in successfully'

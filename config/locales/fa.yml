@@ -43,7 +43,6 @@ fa:
   user_forgotten_password: 'گذرواژه‌ام را فراموش کرده‌ام'
   user_reset_password: 'گذرواژه‌تان را بازنشانی کنید'
   user_enter_new_password: 'لطفاً یک گذرواژهٔ جدید وارد کنید و آن را تأیید نمایید.'
-  user_activated: '، حساب شما فعال شده است. خوش آمدید!'
   user_confirm_password: 'تأیید گذرواژه'
   user_signup_openid: 'ثبت نام با اپن‌آی‌دی'
   user_logged_in: 'وارد شدید'
