@@ -28,6 +28,7 @@ fa:
   rtl: 'راست به چپ'
 
   actions: 'عملیات'
+  not_found: 'چیزی یافت نشد'
 
   # User management
   user_login: 'ورود'

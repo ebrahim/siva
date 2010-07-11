@@ -1,4 +1,7 @@
 class Synonymy < ActiveRecord::Base
+	cattr_reader :per_page
+	@@per_page = 10
+
 	belongs_to :category
 	belongs_to :word1, :class_name => 'Word'
 	belongs_to :word2, :class_name => 'Word'

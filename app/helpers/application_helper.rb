@@ -32,6 +32,6 @@ module ApplicationHelper
 	end
 
 	def paginate(list)
-		will_paginate list, :next_label => t(:form_next), :previous_label => t(:form_previous)
+		will_paginate list, :next_label => t(:form_next), :previous_label => t(:form_previous), :container => false
 	end
 end

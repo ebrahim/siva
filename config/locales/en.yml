@@ -28,6 +28,7 @@ en:
   rtl: 'Right-to-Left'
 
   actions: 'Actions'
+  not_found: 'Nothing found'
 
   # User management
   user_login: 'Login'
