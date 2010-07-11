@@ -16,14 +16,14 @@ ActionController::Routing::Routes.draw do |map|
 	map.resource :session
   
 	# Home Page
-	map.root :controller => 'sessions', :action => 'new'
+	map.root :controller => 'synonymies', :action => 'index'
 	#map.root :controller => 'words', :action => 'index'
 
 	# RESTful resources
-	map.resources :words
-	map.resources :languages
-	map.resources :categories
+	map.resources :words, :collection => { :search => :get }
 	map.resources :synonymies, :collection => { :search => :get }
+	map.resources :categories
+	map.resources :languages
 
 	# Install the default routes as the lowest priority.
 	map.connect ':controller/:action/:id'

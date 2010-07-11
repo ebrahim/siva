@@ -1,22 +1,13 @@
-<table width="100%" class="contentTable">
-	<tr>
-		<th><%= Word.human_attribute_name :word_forms %></th>
-		<th><%= Word.human_attribute_name :language  %></th>
-		<th colspan="2"><%= t(:actions) %></th>
-	</tr>
-	<% @words.each do |word| %>
-	<tr>
-		<td><%= link_to forms_summary(word), word %></td>
-		<td><%= h word.language.name %></td>
-		<td><%= link_to t(:form_edit), edit_word_path(word) %></td>
-		<td><%= link_to t(:form_remove), word, :confirm => t(:word_remove_confirm), :method => :delete %></td>
-	</tr>
+<% semantic_form_for :search, :url => search_words_path, :html => { :method => :get } do |form| %>
+	<% form.inputs do %>
+		<li class="string required">
+		<label><%= WordForm.human_name %></label>
+		<%= raw model_auto_completer 'word_form', '', 'word_id', '' %><br/>
+		</li>
 	<% end %>
-	<tr>
-		<td colspan="4">
-			<%= paginate @words %>
-		</td>
-	</tr>
-</table>
+	<% form.buttons do %>
+		<%= form.commit_button :label => t(:form_search) %>
+	<% end %>
+<% end %>
 
 <%= link_to t(:form_create), new_word_path %>

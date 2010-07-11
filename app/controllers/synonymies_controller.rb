@@ -8,14 +8,14 @@ class SynonymiesController < ApplicationController
 		word_set = !word_id.nil? && !word_id.blank?
 		category_set = !category_id.nil? && !category_id.blank?
 		if word_set and category_set
-			@synonymies = Synonymy.paginate :all, :page => params[:page], :conditions => \
+			@synonymies = Synonymy.paginate :page => params[:page], :conditions => \
 				[ '(word1_id = ? OR word2_id = ?) AND category_id = ?', \
 					word_id, word_id, category_id ]
 		elsif word_set
-			@synonymies = Synonymy.paginate :all, :page => params[:page], :conditions => \
+			@synonymies = Synonymy.paginate :page => params[:page], :conditions => \
 				[ 'word1_id = ? OR word2_id = ?', word_id, word_id ]
 		elsif category_set
-			@synonymies = Synonymy.paginate :all, :page => params[:page], :conditions => { :category_id => category_id }
+			@synonymies = Synonymy.paginate :page => params[:page], :conditions => { :category_id => category_id }
 		else
 			@synonymies = Synonymy.paginate :page => params[:page]
 		end
@@ -57,15 +57,12 @@ class SynonymiesController < ApplicationController
 		redirect_to :action => :index
 	end
 
-	def auto_complete_model_for_word_form_text
-		@word_forms = WordForm.find(
-			:all,
-			:conditions => ['LOWER(text) LIKE ?', "%#{params[:word_form][:text]}%"],
-			:limit => 10
-		)
+	def auto_complete_model_for_word_form
+		@word_forms = WordForm.find :all, :limit => 10, \
+			:conditions => [ 'LOWER(text) LIKE ?', "%#{params[:word_form]}%" ]
 		render :inline => '<ul>
 <% for word_form in @word_forms %>
-<li id="<%= word_form.word_id %>"><%=h word_form.text %></li>
+<li id="<%= word_form.word_id %>"><%= h word_form.text %></li>
 <% end %>
 </ul>'
 	end
