@@ -77,4 +77,15 @@ Rails::Initializer.run do |config|
 	# Activate observers that should always be running
 	# Please note that observers generated using script/generate observer need to have an _observer suffix
 	config.active_record.observers = :user_observer
+
+	config.action_mailer.delivery_method = :smtp
+	ActionMailer::Base.smtp_settings = {
+	  :address => "mail.mohammadi.ir",
+	  :domain => "ebrahim.ir",
+	  :port => 587,
+	  :user_name => "siva@ebrahim.ir",
+	  :password => "sivajoondoosetdarim!",
+	  :authentication => :plain,
+	  :tls => true
+	}
 end
