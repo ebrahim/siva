@@ -6,11 +6,11 @@
 		  :collection => nested_set_options(Domain) { |i| "#{'-' * i.level} #{i.name}" } %>
 		<li class="string required">
 		<label><%= Synonymy.human_attribute_name :word1 %></label>
-		<%= raw model_auto_completer 'word_form', '', 'synonymy[word1_id]', '-1' %><br/>
+		<%= raw model_auto_completer 'word_form_verbose', '', 'synonymy[word1_id]', '-1' %><br/>
 		</li>
 		<li class="string required">
 		<label><%= Synonymy.human_attribute_name :word2 %></label>
-		<%= raw model_auto_completer 'word_form', '', 'synonymy[word2_id]', '-1', :skip_style => true %><br/>
+		<%= raw model_auto_completer 'word_form_verbose', '', 'synonymy[word2_id]', '-1', :skip_style => true %><br/>
 		</li>
 	<% end %>
 	<%= form.buttons %>
