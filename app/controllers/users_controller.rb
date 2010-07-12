@@ -50,9 +50,14 @@ class UsersController < ApplicationController
 
 	def destroy
 		@user = User.find params[:id]
-		@user.destroy
-		flash[:notice] = t :user_removed
-		redirect_to :action => :index
+		if current_user && @user && (current_user.id == @user.id || current_user.has_role?('admin'))
+			@user.destroy
+			flash[:notice] = t :user_removed
+			redirect_to :action => :index
+		else
+			flash[:error] = t :user_fail
+			redirect_to :logout
+		end
 	end
 
 	def activate
