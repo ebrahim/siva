@@ -3,8 +3,8 @@
 <% semantic_form_for :user, :url => { :action => 'update_after_forgetting' } do |form| %>
 	<p><%= t(:user_enter_new_password) %></p>
 	<% form.inputs :name => t(:user_update_password) do %>
-		<%= form.input :password %>
-		<%= form.input :password_confirmation %>
+		<%= form.input :password, :label => User.human_attribute_name(:password) %>
+		<%= form.input :password_confirmation, :label => User.human_attribute_name(:password_confirmation) %>
 	<% end %>
 	<%= hidden_field_tag :reset_code, params[:reset_code] %>
 	<%= form.buttons %>
