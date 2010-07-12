@@ -1,3 +1,5 @@
+<%= siva_title :nav_synonymies %>
+
 <% semantic_form_for :search, :url => search_synonymies_path, :html => { :method => :get } do |form| %>
 	<% form.inputs do %>
 		<%= form.input :domain, :input_html => { :name => 'domain_id' }, :required => false, \

@@ -34,4 +34,11 @@ module ApplicationHelper
 	def paginate(list)
 		will_paginate list, :next_label => t(:form_next), :previous_label => t(:form_previous), :container => false
 	end
+
+	def siva_title(controller = nil, action = nil)
+		title_text = t(:siva)
+		title_text += ' :: ' + t(controller) if controller
+		title_text += ' :: ' + t(action) if action
+		title title_text
+	end
 end

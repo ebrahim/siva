@@ -1,4 +1,6 @@
-<%=h (@parent_domain.nil? ? '' : @parent_domain.name + ' > ') + @domain.name %><br/>
+<%= siva_title :nav_domains, :form_show %>
+
+<%= h (@parent_domain.nil? ? '' : @parent_domain.name + ' > ') + @domain.name %><br/>
 
 <%= link_to t(:form_edit), edit_domain_path %>
 <%= link_to t(:form_remove), @domain, :confirm => t(:domain_remove_confirm), :method => :delete%>
