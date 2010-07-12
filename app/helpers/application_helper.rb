@@ -15,6 +15,7 @@ module ApplicationHelper
 			flash_msg = flash[msg.to_sym]
 			flash_msg = [flash_msg] unless flash_msg.blank? or flash_msg.kind_of? Array
 			messages << content_tag(:div, raw(flash_msg.map { |m| html_escape m }.join '<br/>'), :id => "flash-#{msg}") unless flash_msg.blank?
+			flash[msg.to_sym] = []
 		end
 		messages
 	end
