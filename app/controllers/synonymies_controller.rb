@@ -1,4 +1,6 @@
 class SynonymiesController < ApplicationController
+	require_role :editor, :except => [ :index, :search, :show, :auto_complete_model_for_word_form, :auto_complete_model_for_word_form_verbose ]
+
 	def index
 	end
 

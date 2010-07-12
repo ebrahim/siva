@@ -5,22 +5,30 @@
 	<tr>
 		<th><%= Word.human_attribute_name :word_forms %></th>
 		<th><%= Word.human_attribute_name :language  %></th>
+		<% if authorized?(:update, :words) %>
 		<th colspan="2"><%= t(:actions) %></th>
+		<% end %>
 	</tr>
 	<% @words.each do |word| %>
 	<tr>
 		<td><%= link_to forms_summary(word), word %></td>
 		<td><%= h word.language.name %></td>
+		<% if authorized?(:update, :words) %>
 		<td><%= link_to t(:form_edit), edit_word_path(word) %></td>
 		<td><%= link_to t(:form_remove), word, :confirm => t(:word_remove_confirm), :method => :delete %></td>
+		<% end %>
 	</tr>
 	<% end %>
 	<tr>
-		<td colspan="4">
-			<%= paginate @words %>
-		</td>
+		<% if authorized?(:update, :words) %>
+		<td colspan="4"><%= paginate @words %></td>
+		<% else %>
+		<td colspan="2"><%= paginate @words %></td>
+		<% end %>
 	</tr>
 </table>
 <% end %>
 
-<%= link_to t(:form_create), new_word_path %>
+<%= if_authorized?(:create, :words) do link_to t(:form_create), new_word_path end %>
+<%= link_to t(:form_index), words_path %>
+<%= link_to_back %>

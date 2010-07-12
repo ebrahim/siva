@@ -49,6 +49,8 @@ class UsersController < ApplicationController
         @user.register_openid!
       end
     end
+
+	@user.roles << Role.find_by_name('editor')
     
     if @user.errors.empty?
       successful_creation(@user)

@@ -5,12 +5,14 @@
 		<td><%= render 'words/show', :word => @synonymy.word1 %></td>
 		<td><%= render 'words/show', :word => @synonymy.word2 %></td>
 	</tr>
+	<% if authorized?(:update, :synonymies) %>
 	<tr>
 		<td><%= link_to "#{t(:form_edit)} #{Word.human_name}", edit_word_path(@synonymy.word1) %></td>
 		<td><%= link_to "#{t(:form_edit)} #{Word.human_name}", edit_word_path(@synonymy.word2) %></td>
 	</tr>
+	<% end %>
 </table>
 
-<%= link_to t(:form_remove), @synonymy, :confirm => t(:synonymy_remove_confirm), :method => :delete%>
+<%= if_authorized?(:remove, :synonymies) do link_to t(:form_remove), @synonymy, :confirm => t(:synonymy_remove_confirm), :method => :delete end %>
 <%= link_to t(:form_index), synonymies_path %>
 <%= link_to_back %>

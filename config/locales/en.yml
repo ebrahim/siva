@@ -168,10 +168,12 @@ en:
               blank: 'cannot be empty'
               too_short: 'is too short'
               bad_chars: 'must only consist of letters, numbers, and .-_@'
+              taken: 'already exists'
             email:
               blank: 'cannot be empty'
               too_short: 'is too short'
               bad_format: 'should look like an email address'
+              taken: 'already exists'
         password:
           attributes:
             user:

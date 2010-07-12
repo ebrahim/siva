@@ -62,6 +62,7 @@ class BortMigration < ActiveRecord::Migration
     
 		# Create admin role
 		admin_role = Role.create(:name => 'admin')
+		Role.create(:name => 'editor')
     
 		# Create default admin user
 		user = User.create do |u|
