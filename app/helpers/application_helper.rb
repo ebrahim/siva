@@ -39,6 +39,6 @@ module ApplicationHelper
 		title_text = t(:siva)
 		title_text += ' :: ' + t(controller) if controller
 		title_text += ' :: ' + t(action) if action
-		title title_text
+		title title_text, :h2
 	end
 end

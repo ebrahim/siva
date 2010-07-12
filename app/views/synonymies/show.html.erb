@@ -5,7 +5,7 @@
 		<td><%= render 'words/show', :word => @synonymy.word1 %></td>
 		<td><%= render 'words/show', :word => @synonymy.word2 %></td>
 	</tr>
-	<% if authorized?(:update, :synonymies) %>
+	<% if authorized? :update, :synonymies %>
 	<tr>
 		<td><%= link_to "#{t(:form_edit)} #{Word.human_name}", edit_word_path(@synonymy.word1) %></td>
 		<td><%= link_to "#{t(:form_edit)} #{Word.human_name}", edit_word_path(@synonymy.word2) %></td>

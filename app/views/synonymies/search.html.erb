@@ -6,7 +6,7 @@
 		<th colspan="2"><%= Synonymy.human_attribute_name :word1 %></th>
 		<th colspan="2"><%= Synonymy.human_attribute_name :word2 %></th>
 		<th><%= Synonymy.human_attribute_name :domain %></th>
-		<% if authorized?(:remove, :synonymies) %>
+		<% if authorized? :remove, :synonymies %>
 		<th><%= t(:actions) %></th>
 		<% end %>
 	</tr>
@@ -17,13 +17,13 @@
 		<td><%= h synonymy.word2.language.name %></td>
 		<td><%= link_to forms_summary(synonymy.word2), synonymy %></td>
 		<td><%= h synonymy.domain.name %></td>
-		<% if authorized?(:remove, :synonymies) %>
+		<% if authorized? :remove, :synonymies %>
 		<td><%= link_to t(:form_remove), synonymy, :confirm => t(:synonymy_remove_confirm), :method => :delete %></td>
 		<% end %>
 	</tr>
 	<% end %>
 	<tr>
-		<% if authorized?(:remove, :synonymies) %>
+		<% if authorized? :remove, :synonymies %>
 		<td colspan="6"><%= paginate @words %></td>
 		<% else %>
 		<td colspan="5"><%= paginate @words %></td>

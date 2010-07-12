@@ -1,17 +1,8 @@
-<%= title t(:user_forgot_password), :h2 %>
-<% form_for @password do |f| %>
-  <%= f.error_messages %>
-	<fieldset>
-		<legend><%= t(:user_enter_your_email) %></legend>
-		<ol>
-			<li>			
-		    <%= f.label :email, t(:user_email) %>
-		    <%= f.text_field :email %>
-			</li>
-		</ol>
-	</fieldset>
-	<div class="buttons">
-  	<%= f.submit t(:form_submit) %>
-	</div>
-<% end %>
+<%= siva_title :user_forgot_password %>
 
+<% semantic_form_for @password do |form| %>
+	<% form.inputs :name => t(:user_enter_your_email) do %>
+		<%= form.input :email %>
+	<% end %>
+	<%= form.buttons %>
+<% end %>

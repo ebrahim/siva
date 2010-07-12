@@ -37,7 +37,7 @@ fa:
   user_username: 'نام کاربری'
   user_password: 'گذرواژه'
   user_email: 'نشانی رایانامه'
-  user_remember_me: 'مرا به خاطر بسپار'
+  user_remember_me: 'به خاطرم بسپار'
   user_login_openid: 'ورود با اپن‌آی‌دی'
   user_openid_url: 'نشانی اپن‌آی‌دی'
   user_update_password: 'به‌روزرسانی گذرواژه'

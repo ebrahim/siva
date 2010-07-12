@@ -1,38 +1,21 @@
+<%= siva_title :user_signup %>
+
 <% @user.password = @user.password_confirmation = nil %>
-<%= title t(:user_signup), :h2 %>
-<% form_for @user do |f| %>
-	<%= f.error_messages %>
-	<fieldset>
-		<legend><%= t(:user_your_details) %></legend>
-		<ol>
-			<li>
-				<%= f.label :login, t(:user_username) %>
-				<%= f.text_field :login %>
-			</li>
-			<li>
-				<%= f.label :email, t(:user_email) %>
-				<%= f.text_field :email %>
-			</li>
-			<li>
-				<%= f.label :password, t(:user_password) %>
-				<%= f.password_field :password %>
-			</li>
-			<li>
-				<%= f.label :password_confirmation, t(:user_confirm_password) %>
-				<%= f.password_field :password_confirmation %>
-			</li>
-		</ol>
-	</fieldset>
-	<fieldset>
-		<legend><%= t(:user_signup_openid) %></legend>
-		<ol>
-			<li>
-				<label for="openid_url"><%= t(:user_openid_url) %></label>
-				<%= text_field_tag :openid_url, params[:openid_url] || params['openid.identity'] %>
-			</li>
-		</ol>
-	</fieldset>
-	<div class="buttons">
-		<%= submit_tag t(:user_signup) %>
-	</div>
+<% semantic_form_for @user do |form| %>
+	<% form.inputs :name => t(:user_your_details) do %>
+		<%= form.input :login %>
+		<%= form.input :email %>
+		<%= form.input :password %>
+		<%= form.input :password_confirmation %>
+	<% end %>
+	<% form.inputs :name => t(:user_signup_openid) do %>
+		<li class="string required">
+		<label for="openid_url"><%= t(:user_openid_url) %></label>
+		<%= text_field_tag :openid_url, params[:openid_url] || params['openid.identity'] %>
+		</li>
+	<% end %>
+	<% form.buttons do %>
+		<%= form.commit_button :label => t(:user_signup) %>
+	<% end %>
 <% end %>
+

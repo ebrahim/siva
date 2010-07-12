@@ -1,22 +1,11 @@
-<%= title t(:user_reset_password), :h2 %>
-<% form_for :user, :url => { :action => 'update_after_forgetting' } do |f| %>
-  <%= f.error_messages %>
-  <p><%= t(:user_enter_new_password) %></p>
-	<fieldset>
-		<legend><%= t(:user_update_password) %></legend>
-		<ol>
-			<li>
-		    <%= f.label :password %>
-		    <%= f.password_field :password %>
-			</li>
-			<li>
-		    <%= f.label :password_confirmation %>
-		    <%= f.password_field :password_confirmation %>
-			</li>
-		</ol>
-	</fieldset>
+<%= siva_title :user_reset_password %>
+
+<% semantic_form_for :user, :url => { :action => 'update_after_forgetting' } do |form| %>
+	<p><%= t(:user_enter_new_password) %></p>
+	<% form.inputs :name => t(:user_update_password) do %>
+		<%= form.input :password %>
+		<%= form.input :password_confirmation %>
+	<% end %>
 	<%= hidden_field_tag :reset_code, params[:reset_code] %>
-	<div class="buttons">
-    <%= f.submit t(:form_submit) %>
-	</div>
+	<%= form.buttons %>
 <% end %>

@@ -1,33 +1,28 @@
-<%= title t(:user_login), :h2 %>
-<% form_tag session_path do %>
-	<fieldset>
-		<legend><%= t(:user_your_details) %></legend>
-		<ol>
-			<li>
-				<%= label_tag 'login', t(:user_username) %>
-				<%= text_field_tag 'login', @login %>
-			</li>
-			<li>
-				<%= label_tag 'password', t(:user_password) %>
-				<%= password_field_tag 'password', nil %>
-			</li>
-			<li>
-				<%= label_tag 'remember_me', t(:user_remember_me) %>
-				<%= check_box_tag 'remember_me', '1', @remember_me %>
-			</li>
-		</ol>
-	</fieldset>
-	<fieldset>
-		<legend><%= t(:user_login_openid) %></legend>
-		<ol>
-			<li>
-				<%= label_tag 'openid_url', t(:user_openid_url) %>
-				<%= text_field_tag 'openid_url' %>
-			</li>
-		</ol>
-	</fieldset>
-	<div class="buttons">
+<%= siva_title :user_login %>
+
+<% semantic_form_for :session, :url => session_path do |form| %>
+	<% form.inputs :name => t(:user_your_details) do %>
+		<li class="string required">
+		<%= label_tag 'login', t(:user_username) %>
+		<%= text_field_tag 'login', @login %>
+		</li>
+		<li class="string required">
+		<%= label_tag 'password', t(:user_password) %>
+		<%= password_field_tag 'password', nil %>
+		</li>
+		<li class="string required">
+		<%= label_tag 'remember_me', t(:user_remember_me) %>
+		<%= check_box_tag 'remember_me', '1', @remember_me %>
+		</li>
+	<% end %>
+	<% form.inputs :name => t(:user_login_openid) do %>
+		<li class="string required">
+		<%= label_tag 'openid_url', t(:user_openid_url) %>
+		<%= text_field_tag 'openid_url' %>
+		</li>
+	<% end %>
+	<% form.buttons do %>
 		<%= submit_tag t(:user_login) %>
 		<%= link_to t(:user_forgotten_password), forgot_password_path %>
-	</div>
-<% end -%>
+	<% end %>
+<% end %>
