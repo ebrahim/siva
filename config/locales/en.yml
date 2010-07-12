@@ -114,6 +114,12 @@ en:
     create: 'Create'
     update: 'Update'
 
+  support:
+    array:
+      words_connector: ', '
+      two_words_connector: ' and '
+      last_word_connector: ', and '
+
   activerecord:
     models:
       language: 'Language'
