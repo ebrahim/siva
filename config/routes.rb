@@ -16,7 +16,7 @@ ActionController::Routing::Routes.draw do |map|
 	map.resource :session
   
 	# Home Page
-	map.root :controller => 'synonymies', :action => 'index'
+	map.root :controller => 'application', :action => 'index'
 	#map.root :controller => 'words', :action => 'index'
 
 	# RESTful resources

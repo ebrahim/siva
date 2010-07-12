@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
   
 	before_filter :set_locale_from_url
 
+	def index
+		redirect_to :controller => :synonymies, :action => :index
+	end
+
 	protected
   
 	# Automatically respond with 404 for ActiveRecord::RecordNotFound
