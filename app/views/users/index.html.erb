@@ -10,8 +10,8 @@
 	<% @users.each do |user| %>
 	<tr>
 		<td><%= link_to user.login, user %></td>
-		<td><%= mail_to user.email %></td>
-		<td><%= h user.identity_url %></td>
+		<td dir="ltr"><%= mail_to user.email %></td>
+		<td dir="ltr"><%= link_to user.identity_url, user.identity_url %></td>
 		<td><%= link_to t(:form_edit), edit_user_path(user) %></td>
 		<td><%= link_to t(:form_remove), user, :confirm => t(:user_remove_confirm), :method => :delete %></td>
 	</tr>

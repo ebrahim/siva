@@ -7,11 +7,11 @@
 	</tr>
 	<tr>
 		<th><%= User.human_attribute_name :email %></th>
-		<td><%= mail_to @user.email %></td>
+		<td dir="ltr"><%= mail_to @user.email %></td>
 	</tr>
 	<tr>
 		<th><%= User.human_attribute_name :identity_url %></th>
-		<td><%= h @user.identity_url %></td>
+		<td dir="ltr"><%= link_to @user.identity_url, @user.identity_url %></td>
 	</tr>
 </table>
 
