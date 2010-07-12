@@ -161,6 +161,7 @@ en:
             password:
               too_short: 'is too short'
               blank: 'cannot be empty'
+              confirmation: 'doesn''t match the confirmation'
             password_confirmation:
               too_short: 'is too short'
               blank: 'cannot be empty'

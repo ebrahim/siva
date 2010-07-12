@@ -160,6 +160,7 @@ fa:
             password:
               too_short: 'بیش از حد کوچک است'
               blank: 'نمی‌تواند خالی باشد'
+              confirmation: 'با تأییدش نمی‌خواند'
             password_confirmation:
               too_short: 'بیش از حد کوچک است'
               blank: 'نمی‌تواند خالی باشد'
