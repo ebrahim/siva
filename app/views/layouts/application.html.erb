@@ -29,10 +29,10 @@
 			<td valign="top" id="leftSidebarTD">
 				<%= link_to t(:nav_synonymies), synonymies_path %><br/>
 				<%= link_to t(:nav_words), words_path %><br/>
-				<% if authorized? :index, :domains %>
+				<% if current_user && current_user.has_role?(:admin) %>
 				<%= link_to t(:nav_domains), domains_path %><br/>
 				<% end %>
-				<% if authorized? :index, :languages %>
+				<% if current_user && current_user.has_role?(:admin) %>
 				<%= link_to t(:nav_languages), languages_path %><br/>
 				<% end %>
 			</td>
