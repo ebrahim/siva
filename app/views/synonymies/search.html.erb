@@ -14,7 +14,7 @@
 		<td><%= link_to forms_summary(synonymy.word1), synonymy %></td>
 		<td><%= h synonymy.word2.language.name %></td>
 		<td><%= link_to forms_summary(synonymy.word2), synonymy %></td>
-		<td><%= link_to h(synonymy.domain.name), synonymy.domain %></td>
+		<td><%= h synonymy.domain.name %></td>
 		<td><%= link_to t(:form_remove), synonymy, :confirm => t(:synonymy_remove_confirm), :method => :delete %></td>
 	</tr>
 	<% end %>

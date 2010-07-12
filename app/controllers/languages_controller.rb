@@ -1,4 +1,6 @@
 class LanguagesController < ApplicationController
+	require_role :admin
+
 	def index
 		@languages = Language.all
 	end

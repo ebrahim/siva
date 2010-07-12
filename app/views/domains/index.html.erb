@@ -3,12 +3,14 @@
 <table width="100%" class="contentTable">
 	<tr>
 		<th><%= Domain.human_attribute_name :name %></th>
+		<th><%= Domain.human_attribute_name :parent_id %></th>
 		<th colspan="2"><%= t(:actions) %></th>
 	</tr>
 <% @domains.each do |domain| %>
 	<tr>
 	<% form_for domain do %>
 		<td><%= link_to domain.name, domain %></td>
+		<td><%= h domain.parent.name unless domain.parent.nil? %></td>
 		<td><%= link_to t(:form_edit), edit_domain_path(domain) %></td>
 		<td><%= link_to t(:form_remove), domain, :confirm => t(:domain_remove_confirm), :method => :delete %></td>
 	<% end %>

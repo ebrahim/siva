@@ -3,16 +3,14 @@
 		<th>
 			<%= Language.human_name %>
 		</th>
-		<td>
-			<span dir="<%= word.language.rtl ? 'rtl' : 'ltr' %>">
-			<%=h word.language.name %>
-			</span>
+		<td dir="<%= word.language.rtl ? 'rtl' : 'ltr' %>">
+			<%= h word.language.name %>
 		</td>
 	</tr>
 	<tr style="height: 100%">
-		<td colspan="2">
+		<td colspan="2" dir="<%= word.language.rtl ? 'rtl' : 'ltr' %>">
 		<% word.word_forms.each do |form| %>
-		<p dir="<%= word.language.rtl ? 'rtl' : 'ltr' %>"><%=h form.text %></p>
+		<%= h form.text %><br/>
 		<% end %>
 		</td>
 	</tr>

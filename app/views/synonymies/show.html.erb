@@ -9,11 +9,6 @@
 		<td><%= link_to "#{t(:form_edit)} #{Word.human_name}", edit_word_path(@synonymy.word1) %></td>
 		<td><%= link_to "#{t(:form_edit)} #{Word.human_name}", edit_word_path(@synonymy.word2) %></td>
 	</tr>
-	<tr>
-		<td>
-			Examples
-		</td>
-	</tr>
 </table>
 
 <%= link_to t(:form_remove), @synonymy, :confirm => t(:synonymy_remove_confirm), :method => :delete%>

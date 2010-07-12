@@ -1,4 +1,6 @@
 class DomainsController < ApplicationController
+	require_role :admin
+
 	def index
 		@domains = Domain.all
 	end
