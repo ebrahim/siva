@@ -10,6 +10,7 @@ en:
   nav_languages: 'Languages'
   nav_domains: 'Domains'
   nav_synonymies: 'Synonymies'
+  nav_users: 'Users'
 
   # Generic terms
   form_create: 'Create'
@@ -97,13 +98,21 @@ en:
   # Domains views
   domain_remove_confirm: 'Are you sure?'
 
-  # Synonymys controller
+  # Synonymies controller
   synonymy_created: 'Synonymy was created successfully'
   synonymy_updated: 'Synonymy was updated successfully'
   synonymy_removed: 'Synonymy was removed successfully'
 
-  # Synonymys views
+  # Synonymies views
   synonymy_remove_confirm: 'Are you sure?'
+
+  # Users controller
+  user_created: 'User was created successfully'
+  user_updated: 'User was updated successfully'
+  user_removed: 'User was removed successfully'
+
+  # Users views
+  user_remove_confirm: 'Are you sure?'
 
   formtastic:
     yes: 'Yes'
@@ -136,6 +145,7 @@ en:
         password: 'Password'
         password_confirmation: 'Password confirmation'
         email: 'Email address'
+        identity_url: 'Identity URL'
       password:
         user: 'User'
         email: 'Email address'

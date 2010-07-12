@@ -1,0 +1,10 @@
+<%= siva_title :user_update_password %>
+
+<% semantic_form_for @user do |form| %>
+	<p><%= t(:user_enter_new_password) %></p>
+	<% form.inputs :name => t(:user_update_password) do %>
+		<%= form.input :password %>
+		<%= form.input :password_confirmation %>
+	<% end %>
+	<%= form.buttons %>
+<% end %>

@@ -1,0 +1,20 @@
+<%= siva_title :nav_users %>
+
+<table width="100%" class="contentTable">
+	<tr>
+		<th><%= User.human_attribute_name :login %></th>
+		<th><%= User.human_attribute_name :email %></th>
+		<th><%= User.human_attribute_name :identity_url %></th>
+		<th colspan="2"><%= t(:actions) %></th>
+	</tr>
+	<% @users.each do |user| %>
+	<tr>
+		<td><%= link_to user.login, user %></td>
+		<td><%= mail_to user.email %></td>
+		<td><%= h user.identity_url %></td>
+		<td><%= link_to t(:form_edit), edit_user_path(user) %></td>
+		<td><%= link_to t(:form_remove), user, :confirm => t(:user_remove_confirm), :method => :delete %></td>
+	</tr>
+	<% end %>
+	<tr><td colspan="5"><%= paginate @users %></td></tr>
+</table>

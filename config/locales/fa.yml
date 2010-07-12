@@ -10,6 +10,7 @@ fa:
   nav_languages: 'زبان‌ها'
   nav_domains: 'حوزه‌ها'
   nav_synonymies: 'ترادف‌ها'
+  nav_users: 'کاربران'
 
   # Generic terms
   form_create: 'ایجاد'
@@ -97,13 +98,21 @@ fa:
   # Domains views
   domain_remove_confirm: 'آیا مطمئنید؟'
 
-  # Synonymys controller
+  # Synonymies controller
   synonymy_created: 'ترادف با موفقیت ایجاد شد'
   synonymy_updated: 'ترادف با موفقیت به روز شد'
   synonymy_removed: 'ترادف با موفقیت حذف شد'
 
-  # Synonymys views
+  # Synonymies views
   synonymy_remove_confirm: 'آیا مطمئنید؟'
+
+  # Users controller
+  user_created: 'کاربر با موفقیت ایجاد شد'
+  user_updated: 'کاربر با موفقیت به روز شد'
+  user_removed: 'کاربر با موفقیت حذف شد'
+
+  # Users views
+  user_remove_confirm: 'آیا مطمئنید؟'
 
   formtastic:
     yes: 'بله'
@@ -135,6 +144,7 @@ fa:
         password: 'گذرواژه'
         password_confirmation: 'تأیید گذرواژه'
         email: 'نشانی رایانامه'
+        identity_url: 'نشانی شناسه'
       password:
         user: 'کاربر'
         email: 'نشانی رایانامه'

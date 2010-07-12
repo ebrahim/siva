@@ -1,0 +1,21 @@
+<%= siva_title :nav_users, :form_show %>
+
+<table class="contentTable">
+	<tr>
+		<th><%= User.human_attribute_name :login %></th>
+		<td><%= h @user.login %></td>
+	</tr>
+	<tr>
+		<th><%= User.human_attribute_name :email %></th>
+		<td><%= mail_to @user.email %></td>
+	</tr>
+	<tr>
+		<th><%= User.human_attribute_name :identity_url %></th>
+		<td><%= h @user.identity_url %></td>
+	</tr>
+</table>
+
+<%= link_to t(:form_edit), edit_user_path %>
+<%= link_to t(:form_remove), @user, :confirm => t(:user_remove_confirm), :method => :delete %>
+<%= link_to t(:form_index), users_path if current_user && current_user.has_role?('admin') %>
+<%= link_to_back %>

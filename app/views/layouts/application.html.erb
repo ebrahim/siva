@@ -31,9 +31,8 @@
 				<%= link_to t(:nav_words), words_path %><br/>
 				<% if current_user && current_user.has_role?(:admin) %>
 				<%= link_to t(:nav_domains), domains_path %><br/>
-				<% end %>
-				<% if current_user && current_user.has_role?(:admin) %>
 				<%= link_to t(:nav_languages), languages_path %><br/>
+				<%= link_to t(:nav_users), users_path %><br/>
 				<% end %>
 			</td>
 
@@ -49,7 +48,7 @@
 			<td valign="top" id="rightSidebarTD">
 				<div>
 				<% if logged_in? %>
-				<%= t(:user_username) %>: <%= current_user.login %><br/>
+				<%= t(:user_username) %>: <%= link_to_current_user %><br/>
 				<%= link_to t(:user_logout), logout_path %>
 				<% else %>
 				<%= link_to t(:user_login), login_path %><br/>
