@@ -1,8 +1,8 @@
 <% semantic_form_for :search, :url => search_synonymies_path, :html => { :method => :get } do |form| %>
 	<% form.inputs do %>
-		<%= form.input :category, :input_html => { :name => 'category_id' }, :required => false, \
-		  :include_blank => true, :label => Synonymy.human_attribute_name(:category), \
-		  :collection => nested_set_options(Category) { |i| "#{'-' * i.level} #{i.name}" } %>
+		<%= form.input :domain, :input_html => { :name => 'domain_id' }, :required => false, \
+		  :include_blank => true, :label => Synonymy.human_attribute_name(:domain), \
+		  :collection => nested_set_options(Domain) { |i| "#{'-' * i.level} #{i.name}" } %>
 		<li class="string required">
 		<label><%= Word.human_name %></label>
 		<%= raw model_auto_completer 'word_form', '', 'word_id', '', :allow_free_text => true %><br/>

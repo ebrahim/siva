@@ -8,7 +8,7 @@ en:
   # Navigation menu
   nav_words: 'Words'
   nav_languages: 'Languages'
-  nav_categories: 'Domains'
+  nav_domains: 'Domains'
   nav_synonymies: 'Synonymies'
 
   # Generic terms
@@ -90,12 +90,12 @@ en:
   word_remove_confirm: 'Are you sure?'
 
   # Domains controller
-  category_created: 'Domain was created successfully'
-  category_updated: 'Domain was updated successfully'
-  category_removed: 'Domain was removed successfully'
+  domain_created: 'Domain was created successfully'
+  domain_updated: 'Domain was updated successfully'
+  domain_removed: 'Domain was removed successfully'
 
   # Domains views
-  category_remove_confirm: 'Are you sure?'
+  domain_remove_confirm: 'Are you sure?'
 
   # Synonymys controller
   synonymy_created: 'Synonymy was created successfully'
@@ -122,7 +122,7 @@ en:
       user: 'User'
       password: 'Password'
       session: 'Session'
-      category: 'Domain'
+      domain: 'Domain'
       synonymy: 'Synonymy'
     attributes:
       user:
@@ -142,13 +142,13 @@ en:
         language: 'Language'
       word_form:
         text: 'Text'
-      category:
+      domain:
         parent_id: 'Parent'
         name: 'Name'
       synonymy:
         word1: 'First Word'
         word2: 'Second Word'
-        category: 'Domain'
+        domain: 'Domain'
     errors:
       template:
         header: ''

@@ -8,7 +8,7 @@ fa:
   # Navigation menu
   nav_words: 'کلمات'
   nav_languages: 'زبان‌ها'
-  nav_categories: 'حوزه‌ها'
+  nav_domains: 'حوزه‌ها'
   nav_synonymies: 'ترادف‌ها'
 
   # Generic terms
@@ -90,12 +90,12 @@ fa:
   word_remove_confirm: 'همهٔ شکل‌های این کلمه حذف خواهند شد! آیا مطمئنید؟'
 
   # Domains controller
-  category_created: 'حوزه با موفقیت ایجاد شد'
-  category_updated: 'حوزه با موفقیت به روز شد'
-  category_removed: 'حوزه با موفقیت حذف شد'
+  domain_created: 'حوزه با موفقیت ایجاد شد'
+  domain_updated: 'حوزه با موفقیت به روز شد'
+  domain_removed: 'حوزه با موفقیت حذف شد'
   
   # Domains views
-  category_remove_confirm: 'آیا مطمئنید؟'
+  domain_remove_confirm: 'آیا مطمئنید؟'
 
   # Synonymys controller
   synonymy_created: 'ترادف با موفقیت ایجاد شد'
@@ -122,7 +122,7 @@ fa:
       user: 'کاربر'
       password: 'گذرواژه'
       session: 'نشست'
-      category: 'حوزه'
+      domain: 'حوزه'
     attributes:
       user:
         login: 'نام کاربری'
@@ -141,13 +141,13 @@ fa:
         language: 'زبان'
       word_form:
         text: 'متن'
-      category:
+      domain:
         parent_id: 'پدر'
         name: 'نام'
       synonymy:
         word1: 'کلمهٔ اول'
         word2: 'کلمهٔ دوم'
-        category: 'حوزه'
+        domain: 'حوزه'
     errors:
       template:
         header: ''

@@ -1,6 +1,6 @@
-class CreateCategories < ActiveRecord::Migration
+class CreateDomains < ActiveRecord::Migration
 	def self.up
-		create_table :categories do |t|
+		create_table :domains do |t|
 			t.string :name
 			t.integer :parent_id
 			t.integer :lft
@@ -8,10 +8,10 @@ class CreateCategories < ActiveRecord::Migration
 
 			t.timestamps
 		end
-		add_index :categories, :name
+		add_index :domains, :name
 	end
 
 	def self.down
-		drop_table :categories
+		drop_table :domains
 	end
 end

@@ -4,20 +4,20 @@ class SynonymiesController < ApplicationController
 
 	def search
 		word_form = params[:word_form]
-		category_id = params[:category_id]
+		domain_id = params[:domain_id]
 		word_form_set = !word_form.nil? && !word_form.blank?
-		category_set = !category_id.nil? && !category_id.blank?
-		if word_form_set and category_set
+		domain_set = !domain_id.nil? && !domain_id.blank?
+		if word_form_set and domain_set
 			@synonymies = Synonymy.paginate :page => params[:page], \
 			  :include => [ { :word1 => :word_forms }, { :word2 => :word_forms } ], \
-			  :conditions => [ 'LOWER(word_forms.text) LIKE ? AND category_id = ?', "%#{word_form}%", category_id ]
+			  :conditions => [ 'LOWER(word_forms.text) LIKE ? AND domain_id = ?', "%#{word_form}%", domain_id ]
 		elsif word_form_set
 			@synonymies = Synonymy.paginate :page => params[:page], \
 			  :include => [ { :word1 => :word_forms }, { :word2 => :word_forms } ], \
 			  :conditions => [ 'LOWER(word_forms.text) LIKE ?', "%#{word_form}%" ]
-		elsif category_set
+		elsif domain_set
 			@synonymies = Synonymy.paginate :page => params[:page], \
-			  :conditions => { :category_id => category_id }
+			  :conditions => { :domain_id => domain_id }
 		else
 			@synonymies = Synonymy.paginate :page => params[:page]
 		end

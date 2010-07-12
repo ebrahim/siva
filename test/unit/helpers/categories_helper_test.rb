@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class CategoriesHelperTest < ActionView::TestCase
+class DomainsHelperTest < ActionView::TestCase
 end

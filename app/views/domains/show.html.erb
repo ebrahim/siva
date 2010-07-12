@@ -1,0 +1,6 @@
+<%=h (@parent_domain.nil? ? '' : @parent_domain.name + ' > ') + @domain.name %><br/>
+
+<%= link_to t(:form_edit), edit_domain_path %>
+<%= link_to t(:form_remove), @domain, :confirm => t(:domain_remove_confirm), :method => :delete%>
+<%= link_to t(:form_index), domains_path %>
+<%= link_to_back %>

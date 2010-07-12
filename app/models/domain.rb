@@ -1,4 +1,4 @@
-class Category < ActiveRecord::Base
+class Domain < ActiveRecord::Base
 	acts_as_nested_set
 
 	has_many :synonymies, :dependent => :nullify

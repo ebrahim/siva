@@ -22,7 +22,7 @@ ActionController::Routing::Routes.draw do |map|
 	# RESTful resources
 	map.resources :words, :collection => { :search => :get }
 	map.resources :synonymies, :collection => { :search => :get }
-	map.resources :categories
+	map.resources :domains
 	map.resources :languages
 
 	# Install the default routes as the lowest priority.
