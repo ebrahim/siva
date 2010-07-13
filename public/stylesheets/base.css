@@ -104,7 +104,7 @@ table
 
 #headerTD
 {
-	color: #CDE;
+	color: #CCDDEE;
 	background-color: #234;
 	height: 80px;
 	width: 100%;
@@ -134,7 +134,7 @@ table
 #leftSidebarTD
 {
 	width: 16%;
-	background-color: #8899AA;
+	background-color: #99AABB;
 	padding: 5px;
 	border: 2px solid #456;
 	font-size: 20pt;
@@ -151,7 +151,7 @@ table
 #rightSidebarTD
 {
 	width: 16%;
-	background-color: #8899AA;
+	background-color: #99AABB;
 	padding: 5px;
 	border: 2px solid #456;
 	font-size: 16pt;
@@ -172,13 +172,13 @@ td fieldset ol li
 
 a, a:visited
 {
-	color: maroon;
+	color: #051555;
 	text-decoration: none;
 }
 
 a:hover
 {
-	color: red;
+	color: maroon;
 	text-decoration: overline underline;
 }
 
@@ -219,7 +219,12 @@ input, select
     text-align: center;
 }
 
-.contentTable a
+.contentTable a, .contentTable a:visited
+{
+    color: #001122;
+}
+
+.contentTable a:hover
 {
     color: maroon;
 }
@@ -227,4 +232,11 @@ input, select
 .formTable td
 {
     padding: 15px 50px 15px 50px;
+}
+
+h2
+{
+	color: #8899AA;
+	font-size: 18pt;
+	font-weight: bold;
 }
