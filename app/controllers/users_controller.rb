@@ -31,6 +31,11 @@ class UsersController < ApplicationController
 		redirect_to :logout unless current_user && @user && (current_user.id == @user.id || current_user.has_role?('admin'))
 	end
 
+	def edit
+		@user = User.find params[:id]
+		redirect_to :logout unless current_user && @user && (current_user.id == @user.id || current_user.has_role?('admin'))
+	end
+
 	def passwd
 		@user = User.find params[:id]
 		redirect_to :logout unless current_user && @user && (current_user.id == @user.id || current_user.has_role?('admin'))
@@ -50,14 +55,13 @@ class UsersController < ApplicationController
 
 	def destroy
 		@user = User.find params[:id]
-		if current_user && @user && (current_user.id == @user.id || current_user.has_role?('admin'))
+		if current_user && @user && (current_user.id == @user.id || current_user.has_role?('admin')) and !@user.has_role?('admin')
 			@user.destroy
 			flash[:notice] = t :user_removed
-			redirect_to :action => :index
 		else
 			flash[:error] = t :user_fail
-			redirect_to :logout
 		end
+		redirect_to :action => :index
 	end
 
 	def activate

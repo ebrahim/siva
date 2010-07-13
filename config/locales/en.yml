@@ -147,6 +147,7 @@ en:
         password_confirmation: 'Password confirmation'
         email: 'Email address'
         identity_url: 'Identity URL'
+        name: 'Real name'
       password:
         user: 'User'
         email: 'Email address'

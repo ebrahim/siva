@@ -1,0 +1,15 @@
+<%= siva_title :nav_users, :form_edit %>
+
+<% semantic_form_for @user do |form| %>
+	<% form.inputs do %>
+		<%= form.input :login %>
+		<%= form.input :email %>
+		<%= form.input :name, :required => false %>
+	<% end %>
+	<%= form.buttons %>
+<% end %>
+
+<%= link_to t(:form_show), @user %>
+<%= link_to t(:user_change_password), "#{passwd_users_path}/#{@user.id}" %>
+<%= link_to t(:form_index), users_path if current_user && current_user.has_role?('admin') %>
+<%= link_to_back %>

@@ -10,11 +10,16 @@
 		<td dir="ltr"><%= mail_to @user.email %></td>
 	</tr>
 	<tr>
+		<th><%= User.human_attribute_name :name %></th>
+		<td><%= h @user.name %></td>
+	</tr>
+	<tr>
 		<th><%= User.human_attribute_name :identity_url %></th>
 		<td dir="ltr"><%= link_to @user.identity_url, @user.identity_url unless @user.not_using_openid? %></td>
 	</tr>
 </table>
 
+<%= link_to t(:form_edit), edit_user_path(@user) %>
 <%= link_to t(:user_change_password), "#{passwd_users_path}/#{@user.id}" %>
 <%= link_to t(:form_remove), @user, :confirm => t(:user_remove_confirm), :method => :delete %>
 <%= link_to t(:form_index), users_path if current_user && current_user.has_role?('admin') %>

@@ -146,6 +146,7 @@ fa:
         password_confirmation: 'تأیید گذرواژه'
         email: 'نشانی رایانامه'
         identity_url: 'نشانی شناسه'
+        name: 'نام واقعی'
       password:
         user: 'کاربر'
         email: 'نشانی رایانامه'
