@@ -196,6 +196,16 @@ input, select
 	-moz-border-radius: 7px;
 }
 
+.contentTable th a
+{
+	color: orange;
+}
+
+.contentTable th a:hover
+{
+	color: yellow;
+}
+
 .contentTable
 {
     padding: 3px;

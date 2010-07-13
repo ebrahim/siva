@@ -24,9 +24,9 @@
 	<% end %>
 	<tr>
 		<% if authorized? :remove, :synonymies %>
-		<td colspan="6"><%= paginate @words %></td>
+		<th colspan="6"><%= paginate @words %></th>
 		<% else %>
-		<td colspan="5"><%= paginate @words %></td>
+		<th colspan="5"><%= paginate @words %></th>
 		<% end %>
 	</tr>
 </table>
