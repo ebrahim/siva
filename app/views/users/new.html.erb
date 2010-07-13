@@ -1,4 +1,6 @@
+<% content_for :head do %>
 <%= siva_title :user_signup %>
+<% end %>
 
 <% @user.password = @user.password_confirmation = nil %>
 <% semantic_form_for @user do |form| %>

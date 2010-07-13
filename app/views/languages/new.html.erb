@@ -1,13 +1,8 @@
+<% content_for :head do %>
 <%= siva_title :nav_languages, :form_create %>
-
-<% semantic_form_for @language do |form| %>
-	<% form.inputs do %>
-		<%= form.input :name %>
-		<%= form.input :code %>
-		<%= form.input :rtl, :as => :radio, :collection => [[t(:ltr), false], [t(:rtl), true]] %>
-	<% end %>
-	<%= form.buttons %>
 <% end %>
+
+<%= render 'edit' %>
 
 <%= link_to t(:form_index), languages_path %>
 <%= link_to_back %>

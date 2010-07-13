@@ -1,4 +1,6 @@
+<% content_for :head do %>
 <%= siva_title :nav_domains, :form_show %>
+<% end %>
 
 <%= h (@parent_domain.nil? ? '' : @parent_domain.name + ' > ') + @domain.name %><br/>
 

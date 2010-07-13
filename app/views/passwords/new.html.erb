@@ -1,4 +1,6 @@
+<% content_for :head do %>
 <%= siva_title :user_forgot_password %>
+<% end %>
 
 <% semantic_form_for @password do |form| %>
 	<% form.inputs :name => t(:user_enter_your_email) do %>

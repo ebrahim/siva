@@ -1,4 +1,6 @@
+<% content_for :head do %>
 <%= siva_title :nav_synonymies %>
+<% end %>
 
 <% semantic_form_for :search, :url => search_synonymies_path, :html => { :method => :get } do |form| %>
 	<% form.inputs do %>

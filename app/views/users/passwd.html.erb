@@ -1,4 +1,6 @@
+<% content_for :head do %>
 <%= siva_title :nav_users, :user_change_password %>
+<% end %>
 
 <% semantic_form_for @user do |form| %>
 	<p><%= t(:user_enter_new_password) %></p>

@@ -39,6 +39,7 @@
 			<!-- Body -->
 			<td valign="top" id="contentTD">
 				<div id="content">
+					<%= yield :head %>
 					<%= raw flash_messages %>
 					<%= yield :layout %>
 				</div>

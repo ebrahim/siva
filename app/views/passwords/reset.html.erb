@@ -1,4 +1,6 @@
+<% content_for :head do %>
 <%= siva_title :user_reset_password %>
+<% end %>
 
 <% semantic_form_for :user, :url => { :action => 'update_after_forgetting' } do |form| %>
 	<p><%= t(:user_enter_new_password) %></p>

@@ -1,4 +1,6 @@
+<% content_for :head do %>
 <%= siva_title :nav_words %>
+<% end %>
 
 <% semantic_form_for :search, :url => search_words_path, :html => { :method => :get } do |form| %>
 	<% form.inputs do %>

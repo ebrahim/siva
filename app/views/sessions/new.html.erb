@@ -1,4 +1,6 @@
+<% content_for :head do %>
 <%= siva_title :user_login %>
+<% end %>
 
 <% semantic_form_for :session, :url => session_path do |form| %>
 	<% form.inputs :name => t(:user_your_details) do %>
