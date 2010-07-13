@@ -8,7 +8,7 @@ class WordsController < ApplicationController
 		word_form = params[:word_form]
 		word_form_set = !word_form.nil? && !word_form.blank?
 		if word_form_set
-			@words = Word.paginate :page => params[:page], :include => :word_forms,\
+			@words = Word.paginate :page => params[:page], :include => :word_forms, \
 			  :conditions => [ 'LOWER(word_forms.text) LIKE ?', "%#{word_form}%" ]
 		else
 			@words = Word.paginate :page => params[:page]
@@ -16,10 +16,21 @@ class WordsController < ApplicationController
 		if @words.blank?
 			flash[:warning] = t(:not_found)
 		end
+		@words.each { |w| w.word_forms(true) }		# Fetch all 'word_forms'es from DB
+		respond_to do |format|
+			format.html {}
+			format.json { render :json => word_to_json(@words) }
+			format.xml { render :xml => word_to_xml(@words) }
+		end
 	end
 
 	def show
 		@word = Word.find params[:id]
+		respond_to do |format|
+			format.html {}
+			format.json { render :json => word_to_json(@word) }
+			format.xml { render :xml => word_to_xml(@word) }
+		end
 	end
 
 	def new
@@ -68,5 +79,27 @@ class WordsController < ApplicationController
 <li id=""><%= h word_form.text %></li>
 <% end %>
 </ul>'
+	end
+
+	protected
+
+	def word_to_json(word)
+		word.to_json(
+				:except => [:created_at, :updated_at, :id, :language_id],
+				:include => {
+					:word_forms => { :only => [:text] },
+					:language => { :only => [:code, :name] }
+				}
+			)
+	end
+
+	def word_to_xml(word)
+		word.to_xml(
+				:except => [:created_at, :updated_at, :id, :language_id],
+				:include => {
+					:word_forms => { :only => [:text] },
+					:language => { :only => [:code, :name] }
+				}
+			)
 	end
 end

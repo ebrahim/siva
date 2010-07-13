@@ -26,10 +26,24 @@ class SynonymiesController < ApplicationController
 		if @synonymies.blank?
 			flash[:warning] = t(:not_found)
 		end
+		@synonymies.each do |s|		# Fetch all 'word_forms'es from DB
+			s.word1.word_forms(true)
+			s.word2.word_forms(true)
+		end
+		respond_to do |format|
+			format.html {}
+			format.json { render :json => synonymy_to_json(@synonymies) }
+			format.xml { render :xml => synonymy_to_xml(@synonymies) }
+		end
 	end
 
 	def show
 		@synonymy = Synonymy.find params[:id]
+		respond_to do |format|
+			format.html {}
+			format.json { render :json => synonymy_to_json(@synonymy) }
+			format.xml { render :xml => synonymy_to_xml(@synonymy) }
+		end
 	end
 
 	def new
@@ -72,5 +86,53 @@ class SynonymiesController < ApplicationController
 <li id="<%= word_form.word_id %>"><%= h "#{forms_summary(word_form.word)} -> #{word_form.word.language.name}" %></li>
 <% end %>
 </ul>'
+	end
+
+	protected
+
+	def synonymy_to_json(synonymy)
+		synonymy.to_json(
+				:except => [:created_at, :updated_at, :id, :domain_id, :word1_id, :word2_id],
+				:include => {
+					:word1 => {
+						:except => [:created_at, :updated_at, :id, :language_id],
+						:include => {
+							:word_forms => { :only => [:text] },
+							:language => { :only => [:code, :name] }
+						}
+					},
+					:word2 => {
+						:except => [:created_at, :updated_at, :id, :language_id],
+						:include => {
+							:word_forms => { :only => [:text] },
+							:language => { :only => [:code, :name] }
+						}
+					},
+					:domain => { :only => [:name] }
+				}
+			)
+	end
+
+	def synonymy_to_xml(synonymy)
+		synonymy.to_xml(
+				:except => [:created_at, :updated_at, :id, :domain_id, :word1_id, :word2_id],
+				:include => {
+					:word1 => {
+						:except => [:created_at, :updated_at, :id, :language_id],
+						:include => {
+							:word_forms => { :only => [:text] },
+							:language => { :only => [:code, :name] }
+						}
+					},
+					:word2 => {
+						:except => [:created_at, :updated_at, :id, :language_id],
+						:include => {
+							:word_forms => { :only => [:text] },
+							:language => { :only => [:code, :name] }
+						}
+					},
+					:domain => { :only => [:name] }
+				}
+			)
 	end
 end
