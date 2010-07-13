@@ -1,12 +1,6 @@
 <%= siva_title :nav_domains, :form_create %>
 
-<% semantic_form_for @domain do |form| %>
-	<% form.inputs do %>
-		<%= form.input :parent_id, :collection => nested_set_options(Domain) { |i| "#{'-' * i.level} #{i.name}" } %>
-		<%= form.input :name %>
-	<% end %>
-	<%= form.buttons %>
-<% end %>
+<%= render 'edit' %>
 
 <%= link_to t(:form_index), domains_path %>
 <%= link_to_back %>
