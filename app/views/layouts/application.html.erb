@@ -27,12 +27,12 @@
 		<tr>
 			<!-- Left sidebar -->
 			<td valign="top" id="leftSidebarTD">
-				<%= link_to t(:nav_synonymies), synonymies_path %><br/>
-				<%= link_to t(:nav_words), words_path %><br/>
+				<%= menu_to t(:nav_synonymies), :synonymies, synonymies_path %><br/>
+				<%= menu_to t(:nav_words), :words, words_path %><br/>
 				<% if current_user && current_user.has_role?(:admin) %>
-				<%= link_to t(:nav_domains), domains_path %><br/>
-				<%= link_to t(:nav_languages), languages_path %><br/>
-				<%= link_to t(:nav_users), users_path %><br/>
+				<%= menu_to t(:nav_domains), :domains, domains_path %><br/>
+				<%= menu_to t(:nav_languages), :languages, languages_path %><br/>
+				<%= menu_to t(:nav_users), :users, users_path %><br/>
 				<% end %>
 			</td>
 
