@@ -2,7 +2,11 @@
 <%= siva_title :nav_synonymies, :form_show %>
 <% end %>
 
-<table width="100%">
+<table width="100%" class="contentTable">
+	<tr>
+		<th><%= Synonymy.human_attribute_name :domain %></th>
+		<td><%= h @synonymy.domain.name %></td>
+	</tr>
 	<tr>
 		<td><%= render 'words/show', :word => @synonymy.word1 %></td>
 		<td><%= render 'words/show', :word => @synonymy.word2 %></td>

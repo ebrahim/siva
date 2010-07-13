@@ -98,14 +98,14 @@ class SynonymiesController < ApplicationController
 						:except => [:created_at, :updated_at, :id, :language_id],
 						:include => {
 							:word_forms => { :only => [:text] },
-							:language => { :only => [:code, :name] }
+							:language => { :only => [:code, :name, :rtl] }
 						}
 					},
 					:word2 => {
 						:except => [:created_at, :updated_at, :id, :language_id],
 						:include => {
 							:word_forms => { :only => [:text] },
-							:language => { :only => [:code, :name] }
+							:language => { :only => [:code, :name, :rtl] }
 						}
 					},
 					:domain => { :only => [:name] }
@@ -121,14 +121,14 @@ class SynonymiesController < ApplicationController
 						:except => [:created_at, :updated_at, :id, :language_id],
 						:include => {
 							:word_forms => { :only => [:text] },
-							:language => { :only => [:code, :name] }
+							:language => { :only => [:code, :name, :rtl] }
 						}
 					},
 					:word2 => {
 						:except => [:created_at, :updated_at, :id, :language_id],
 						:include => {
 							:word_forms => { :only => [:text] },
-							:language => { :only => [:code, :name] }
+							:language => { :only => [:code, :name, :rtl] }
 						}
 					},
 					:domain => { :only => [:name] }

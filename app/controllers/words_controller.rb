@@ -88,7 +88,7 @@ class WordsController < ApplicationController
 				:except => [:created_at, :updated_at, :id, :language_id],
 				:include => {
 					:word_forms => { :only => [:text] },
-					:language => { :only => [:code, :name] }
+					:language => { :only => [:code, :name, :rtl] }
 				}
 			)
 	end
@@ -98,7 +98,7 @@ class WordsController < ApplicationController
 				:except => [:created_at, :updated_at, :id, :language_id],
 				:include => {
 					:word_forms => { :only => [:text] },
-					:language => { :only => [:code, :name] }
+					:language => { :only => [:code, :name, :rtl] }
 				}
 			)
 	end
