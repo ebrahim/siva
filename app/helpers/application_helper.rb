@@ -46,14 +46,14 @@ module ApplicationHelper
 	def switch_language_links
 		links = ''
 		orig_locale = I18n.locale
-		Language.all.each do |language|
-			I18n.locale = language.code.to_sym
-			language_name = language.name
-			language_name = language.code if language_name.blank?
-			links << link_to(language_name, '/' + language.code) + '<br/>' \
-				unless (language.code == orig_locale.to_s) || (language.code == I18n.default_locale.to_s)
-			links << link_to(language_name, '/') + '<br/>' \
-			  if (language.code == I18n.default_locale.to_s) && (language.code != orig_locale.to_s)
+		Language.all.each do |lang|
+			I18n.locale = lang.code.to_sym if I18n.available_locales.index lang.code.to_sym
+			lang_name = lang.name if I18n.available_locales.index lang.code.to_sym
+			lang_name = lang.code unless lang_name && !lang_name.blank?
+			links << (link_to(lang_name, '/' + lang.code) + '<br/>') \
+				unless (lang.code == orig_locale.to_s) || (lang.code == I18n.default_locale.to_s)
+			links << (link_to(lang_name, '/') + '<br/>') \
+				if (lang.code != orig_locale.to_s) && (lang.code == I18n.default_locale.to_s)
 		end
 		I18n.locale = orig_locale
 		links
