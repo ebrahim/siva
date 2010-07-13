@@ -42,12 +42,4 @@ module ApplicationHelper
 		title_text += ' :: ' + t(action) if action
 		title title_text, :h2
 	end
-
-	def menu_to(label, controller, controller_path)
-		if current_page? :controller => controller
-			label
-		else
-			link_to label, controller_path
-		end
-	end
 end
