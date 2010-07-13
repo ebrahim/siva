@@ -5,6 +5,7 @@ div#flash-notice
 	margin: 3px;
 	padding: 3px;
 	border: 2px solid #456;
+	-moz-border-radius: 7px;
 }
 
 div#flash-warning
@@ -13,6 +14,7 @@ div#flash-warning
 	margin: 3px;
 	padding: 3px;
 	border: 2px solid #456;
+	-moz-border-radius: 7px;
 }
 
 div#flash-error
@@ -21,6 +23,7 @@ div#flash-error
 	margin: 3px;
 	padding: 3px;
 	border: 2px solid #456;
+	-moz-border-radius: 7px;
 }
 
 /* === ERROR MESSAGES === */
@@ -30,6 +33,7 @@ div#errorExplanation
 	margin: 3px;
 	padding: 3px 20px 3px;
 	border: 2px solid #456;
+	-moz-border-radius: 7px;
 }
 
 div#errorExplanation h2
@@ -107,7 +111,7 @@ table
 	font-size: 36pt;
 	font-weight: bolder;
 	border: 2px solid black;
-	-moz-border-radius: 10px;
+	-moz-border-radius: 15px 15px 0px 0px;
 }
 
 #taglineTD
@@ -124,7 +128,7 @@ table
 	border: 1px solid black;
 	height: 1px;
 	font-size: 18pt;
-	-moz-border-radius: 10px;
+	-moz-border-radius: 0px 0px 15px 15px;
 }
 
 #leftSidebarTD
@@ -136,7 +140,6 @@ table
 	font-size: 20pt;
 	font-weight: bolder;
 	text-align: center;
-	-moz-border-radius: 10px;
 }
 
 #leftSidebarTD a
@@ -154,7 +157,6 @@ table
 	font-size: 16pt;
 	font-weight: bolder;
 	text-align: center;
-	-moz-border-radius: 10px;
 }
 
 #rightSidebarTD a
@@ -191,7 +193,7 @@ input, select
     background-color: #445566;
     color: white;
     font-weight: bold;
-	-moz-border-radius: 5px;
+	-moz-border-radius: 7px;
 }
 
 .contentTable
@@ -205,7 +207,6 @@ input, select
     background-color: #8899AA;
     padding: 1px 4px 1px 4px;
     text-align: center;
-	-moz-border-radius: 5px;
 }
 
 .contentTable a
