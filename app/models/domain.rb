@@ -1,6 +1,8 @@
 class Domain < ActiveRecord::Base
 	acts_as_nested_set
 
+	has_localized :name
+
 	has_many :synonymies, :dependent => :nullify
 
 	validates_presence_of :name
