@@ -131,6 +131,15 @@ table
 	background-color: #8899AA;
 	padding: 5px;
 	border: 2px solid #456;
+	font-size: 20pt;
+	font-weight: bolder;
+	text-align: center;
+}
+
+#leftSidebarTD a
+{
+	font-size: 20pt;
+	font-weight: bolder;
 }
 
 #rightSidebarTD
@@ -139,6 +148,15 @@ table
 	background-color: #8899AA;
 	padding: 5px;
 	border: 2px solid #456;
+	font-size: 16pt;
+	font-weight: bolder;
+	text-align: center;
+}
+
+#rightSidebarTD a
+{
+	font-size: 16pt;
+	font-weight: bolder;
 }
 
 td fieldset ol li
