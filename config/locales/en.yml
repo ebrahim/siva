@@ -42,6 +42,7 @@ en:
   user_login_openid: 'Login with OpenID'
   user_openid_url: 'OpenID URL'
   user_update_password: 'Update Password'
+  user_change_password: 'Change Password'
   user_your_details: 'Your Details'
   user_enter_your_email: 'Enter Your Email Address'
   user_forgot_password: 'Forgot Your Password?'

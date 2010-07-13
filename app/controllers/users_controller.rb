@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 		redirect_to :logout unless current_user && @user && (current_user.id == @user.id || current_user.has_role?('admin'))
 	end
 
-	def edit
+	def passwd
 		@user = User.find params[:id]
 		redirect_to :logout unless current_user && @user && (current_user.id == @user.id || current_user.has_role?('admin'))
 	end
