@@ -1,8 +1,11 @@
 <% semantic_form_for @domain do |form| %>
 	<% form.inputs do %>
 		<%= form.input :parent_id, :collection => nested_set_options(Domain) { |i| "#{'-' * i.level} #{i.name}" } %>
+		<li class="string required">
+		<%= form.label Domain.human_attribute_name(:name) %>
 		<%= localization_select form %>
   		<%= localized_text_field(form, :name) %>
+		</li>
 	<% end %>
 	<%= form.buttons %>
 <% end %>

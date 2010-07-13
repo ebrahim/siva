@@ -200,8 +200,12 @@ fa:
           attributes:
             name:
               blank: 'نمی‌تواند خالی باشد'
+              too_short: 'بیش از حد کوچک است'
+              too_long: 'بیش از اندازه بزرگ است'
             code:
               blank: 'نمی‌تواند خالی باشد'
+              too_short: 'بیش از حد کوچک است'
+              too_long: 'بیش از اندازه بزرگ است'
         word:
           attributes:
             word_forms:

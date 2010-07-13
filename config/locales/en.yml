@@ -201,8 +201,12 @@ en:
           attributes:
             name:
               blank: 'cannot be empty'
+              too_short: 'is too short'
+              too_long: 'is too long'
             code:
               blank: 'cannot be empty'
+              too_short: 'is too short'
+              too_long: 'is too long'
         word:
           attributes:
             word_forms:

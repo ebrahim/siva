@@ -1,7 +1,11 @@
 <% semantic_form_for @language do |form| %>
 	<% form.inputs do %>
-		<%= form.input :name %>
-		<%= form.input :code %>
+		<li class="string required">
+		<%= form.label :name %>
+		<%= localization_select form %>
+  		<%= localized_text_field(form, :name) %>
+		</li>
+		<%= form.input :code, :input_html => { :style => 'width:40px' } %>
 		<%= form.input :rtl, :as => :radio, :collection => [[t('ltr'), false], [t('rtl'), true]] %>
 	<% end %>
 	<%= form.buttons %>
