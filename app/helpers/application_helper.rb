@@ -48,10 +48,11 @@ module ApplicationHelper
 		orig_locale = I18n.locale
 		Language.all.each do |language|
 			I18n.locale = language.code.to_sym
-			I18n.locale = orig_locale if language.name.blank?
-			links << link_to(language.name, '/' + language.code) + '<br/>' \
+			language_name = language.name
+			language_name = language.code if language_name.blank?
+			links << link_to(language_name, '/' + language.code) + '<br/>' \
 				unless (language.code == orig_locale.to_s) || (language.code == I18n.default_locale.to_s)
-			links << link_to(language.name, '/') + '<br/>' \
+			links << link_to(language_name, '/') + '<br/>' \
 			  if (language.code == I18n.default_locale.to_s) && (language.code != orig_locale.to_s)
 		end
 		I18n.locale = orig_locale
