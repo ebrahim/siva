@@ -20,7 +20,7 @@
 </table>
 
 <%= link_to t(:form_edit), edit_user_path(@user) %>
-<%= link_to t(:user_change_password), "#{passwd_users_path}/#{@user.id}" %>
+<%= link_to t(:user_change_password), passwd_user_path(@user) %>
 <%= link_to t(:form_remove), @user, :confirm => t(:user_remove_confirm), :method => :delete %>
 <%= link_to t(:form_index), users_path if current_user && current_user.has_role?('admin') %>
 <%= link_to_back %>
