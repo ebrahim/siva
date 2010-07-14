@@ -1,0 +1,250 @@
+/* === FLASH MESSAGES === */
+div#flash-notice
+{
+	background-color: #EEE;
+	margin: 3px;
+	padding: 3px;
+	border: 2px solid #456;
+	-moz-border-radius: 7px;
+}
+
+div#flash-warning
+{
+	background-color: yellow;
+	margin: 3px;
+	padding: 3px;
+	border: 2px solid #456;
+	-moz-border-radius: 7px;
+}
+
+div#flash-error
+{
+	background-color: #FF6666;
+	margin: 3px;
+	padding: 3px;
+	border: 2px solid #456;
+	-moz-border-radius: 7px;
+}
+
+/* === ERROR MESSAGES === */
+div#errorExplanation
+{
+	background-color: #FF6666;
+	margin: 3px;
+	padding: 3px 20px 3px;
+	border: 2px solid #456;
+	-moz-border-radius: 7px;
+}
+
+div#errorExplanation h2
+{
+}
+
+div#errorExplanation p
+{
+}
+
+div#errorExplanation ul
+{
+}
+
+div#errorExplanation ul li
+{
+}
+
+/* === FORMS === */
+div.fieldWithErrors
+{
+}
+
+div.fieldWithErrors label
+{
+}
+
+div.fieldWithErrors input, div.fieldWithErrors select, 
+div.fieldWithErrors textarea
+{
+	background-color: #F66;
+	border: 2px solid #456;
+}
+
+*
+{
+	margin: 1px;
+	padding: 1px;
+    font-family: Nazli;
+    font-size: 14pt;
+}
+
+html, body
+{
+	height: 99%;
+	margin: 1px;
+	padding: 1px;
+	color: black;
+    background-color: white;
+}
+
+table
+{
+	height: 100%;
+	width: 100%;
+}
+
+#container
+{
+	height: 100%;
+	width: 100%;
+}
+
+#contentTD
+{
+	padding: 10px 50px 20px 50px;
+	border: 2px solid #431;
+	background-color: #FE9;
+	-moz-border-radius: 15px;
+}
+
+#headerTD
+{
+	color: #FE7;
+	background-color: #985;
+	height: 80px;
+	width: 100%;
+	font-size: 36pt;
+	font-weight: bolder;
+	border: 2px solid black;
+	-moz-border-radius: 15px;
+}
+
+#taglineTD
+{
+	font-size: 16pt;
+	font-style: italic;
+	vertical-align: baseline;
+}
+
+#footerTD
+{
+	color: #FE7;
+	background-color: #763;
+	border: 1px solid black;
+	height: 1px;
+	font-size: 18pt;
+	-moz-border-radius: 15px;
+}
+
+#leftSidebarTD
+{
+	width: 16%;
+	padding: 5px;
+	background-color: #DC6;
+	border: 2px solid #431;
+	font-size: 20pt;
+	font-weight: bolder;
+	text-align: center;
+	vertical-align: top;
+	-moz-border-radius: 15px;
+}
+
+#leftSidebarTD a
+{
+	font-size: 20pt;
+	font-weight: bolder;
+}
+
+#rightSidebarTD
+{
+	width: 16%;
+	height: 1px;
+	padding: 5px;
+	background-color: #DC6;
+	border: 2px solid #431;
+	font-size: 16pt;
+	font-weight: bolder;
+	text-align: center;
+	vertical-align: middle;
+	-moz-border-radius: 15px;
+}
+
+#rightSidebarTD a
+{
+	font-size: 16pt;
+	font-weight: bolder;
+}
+
+td fieldset ol li
+{
+	list-style-type: none;
+}
+
+a, a:visited
+{
+	color: #320;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #840;
+	text-decoration: overline underline;
+}
+
+input, select
+{
+    color: black;
+}
+
+.contentTable
+{
+    padding: 3px;
+}
+
+.contentTable td
+{
+    border: 1px solid #431;
+    background-color: #DC6;
+    padding: 1px 4px 1px 4px;
+    text-align: center;
+}
+
+.contentTable td a, .contentTable td a:visited
+{
+    color: #320;
+}
+
+.contentTable td a:hover
+{
+    color: #840;
+}
+
+.formTable td
+{
+    padding: 15px 50px 15px 50px;
+}
+
+.contentTable th
+{
+    border: 1px solid #431;
+    background-color: #763;
+    color: #FFA;
+    font-weight: bold;
+	-moz-border-radius: 7px;
+}
+
+.contentTable th a, .contentTable th a:visited
+{
+	color: #DC6;
+}
+
+.contentTable th a:hover
+{
+	color: yellow;
+}
+
+h2
+{
+	color: #431;
+	font-size: 18pt;
+	font-weight: bold;
+}
