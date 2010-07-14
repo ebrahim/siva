@@ -1,6 +1,6 @@
 function remove_fields(link)
 {
-	$(link).previous('.hidden').down('input[type=hidden]').value = '1';
+	$(link).up('.inputs').down('.hidden').down('input[type=hidden]').value = '1';
 	$(link).up('.inputs').hide();
 }
 
