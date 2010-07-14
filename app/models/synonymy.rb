@@ -1,6 +1,6 @@
 class Synonymy < ActiveRecord::Base
 	cattr_reader :per_page
-	@@per_page = 10
+	@@per_page = 7
 
 	belongs_to :domain
 	belongs_to :word1, :class_name => 'Word'

@@ -1,6 +1,6 @@
 class Word < ActiveRecord::Base
 	cattr_reader :per_page
-	@@per_page = 10
+	@@per_page = 7
 
 	belongs_to :language
 	has_many :word_forms, :dependent => :destroy

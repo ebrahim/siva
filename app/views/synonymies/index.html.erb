@@ -3,7 +3,7 @@
 <% end %>
 
 <% semantic_form_for :search, :url => search_synonymies_path, :html => { :method => :get } do |form| %>
-	<% form.inputs do %>
+	<% form.inputs :name => t(:form_search) do %>
 		<%= form.input :domain, :input_html => { :name => 'domain_id' }, :required => false, \
 		  :include_blank => true, :label => Synonymy.human_attribute_name(:domain), \
 		  :collection => nested_set_options(Domain) { |i| "#{'-' * i.level} #{i.name}" } %>

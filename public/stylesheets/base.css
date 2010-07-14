@@ -78,7 +78,7 @@ div.fieldWithErrors textarea
 
 html, body
 {
-	height: 100%;
+	height: 99%;
 	margin: 1px;
 	padding: 1px;
 	color: black;
@@ -100,6 +100,8 @@ table
 #contentTD
 {
 	padding: 10px 50px 20px 50px;
+	border: 2px solid #456;
+	-moz-border-radius: 15px;
 }
 
 #headerTD
@@ -111,7 +113,7 @@ table
 	font-size: 36pt;
 	font-weight: bolder;
 	border: 2px solid black;
-	-moz-border-radius: 15px 15px 0px 0px;
+	-moz-border-radius: 15px;
 }
 
 #taglineTD
@@ -128,7 +130,7 @@ table
 	border: 1px solid black;
 	height: 1px;
 	font-size: 18pt;
-	-moz-border-radius: 0px 0px 15px 15px;
+	-moz-border-radius: 15px;
 }
 
 #leftSidebarTD
@@ -140,6 +142,8 @@ table
 	font-size: 20pt;
 	font-weight: bolder;
 	text-align: center;
+	vertical-align: top;
+	-moz-border-radius: 15px;
 }
 
 #leftSidebarTD a
@@ -151,12 +155,15 @@ table
 #rightSidebarTD
 {
 	width: 16%;
-	background-color: #99AABB;
+	height: 1px;
 	padding: 5px;
+	background-color: #99AABB;
 	border: 2px solid #456;
 	font-size: 16pt;
 	font-weight: bolder;
 	text-align: center;
+	vertical-align: middle;
+	-moz-border-radius: 15px;
 }
 
 #rightSidebarTD a
@@ -196,11 +203,6 @@ input, select
 	-moz-border-radius: 7px;
 }
 
-.contentTable th a
-{
-	color: orange;
-}
-
 .contentTable th a:hover
 {
 	color: yellow;
@@ -219,7 +221,7 @@ input, select
     text-align: center;
 }
 
-.contentTable a, .contentTable a:visited
+.contentTable td a, .contentTable td a:visited
 {
     color: #001122;
 }
@@ -232,6 +234,11 @@ input, select
 .formTable td
 {
     padding: 15px 50px 15px 50px;
+}
+
+.contentTable th a
+{
+	color: orange;
 }
 
 h2
