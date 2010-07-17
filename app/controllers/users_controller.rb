@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	skip_before_filter :verify_authenticity_token, :only => :create
-	require_role :admin, :except => [ :new, :create, :show, :edit, :update, :passwd, :destroy ]
+	require_role :admin, :except => [ :new, :create, :show, :edit, :update, :passwd, :destroy, :activate ]
 	require_role :editor, :except => [ :new, :create, :activate ]
 
 	def index
