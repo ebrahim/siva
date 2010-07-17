@@ -6,7 +6,7 @@
 	<% form.inputs :name => t(:form_search) do %>
 		<li class="string required">
 		<label><%= WordForm.human_name %></label>
-		<%= raw model_auto_completer 'word_form', '', 'word_id', '', :allow_free_text => true %><br/>
+		<%= raw model_auto_completer 'word_form', '', 'word_id', '', :allow_free_text => true, :submit_on_return => true %><br/>
 		</li>
 	<% end %>
 	<% form.buttons do %>
