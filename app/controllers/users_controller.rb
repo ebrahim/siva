@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	skip_before_filter :verify_authenticity_token, :only => :create
 	require_role :admin, :except => [ :new, :create, :show, :edit, :update, :passwd, :destroy ]
-	require_role :editor, :except => [ :new, :create ]
+	require_role :editor, :except => [ :new, :create, :activate ]
 
 	def index
 		@users = User.paginate :page => params[:page], :conditions => "state != 'deleted'"
@@ -104,7 +104,7 @@ class UsersController < ApplicationController
 		else
 			flash[:error]  = t :user_activation_invalid
 		end
-		redirect_to root_path
+		redirect_back_or_default root_path
 	end
   
 	protected
