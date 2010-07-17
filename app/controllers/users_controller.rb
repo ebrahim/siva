@@ -100,7 +100,7 @@ class UsersController < ApplicationController
 		else
 			flash[:error]  = t :user_activation_invalid
 		end
-		redirect_back_or_default(root_path)
+		redirect_back_or_default root_path
 	end
   
 	protected
@@ -127,8 +127,11 @@ class UsersController < ApplicationController
   
 	def successful_creation(user)
 		flash[:notice] = t(:user_signup_thanks)
-		flash[:notice] << " " + t(:user_sending_activation) if @user.not_using_openid?
-		flash[:notice] << " " + t(:user_openid_enabled) unless @user.not_using_openid?
+		if @user.not_using_openid?
+			flash[:notice] << " " + t(:user_sending_activation)
+		else
+			flash[:notice] << " " + t(:user_openid_enabled)
+		end
 		redirect_back_or_default(root_path)
 	end
   

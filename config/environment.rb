@@ -32,7 +32,7 @@ Rails::Initializer.run do |config|
 	config.gem 'formtastic'
 	config.gem 'ruby-openid', :lib => 'openid'
 	config.gem 'erubis'
-	config.gem 'rubyist-aasm', :lib => 'aasm', :source => 'http://gems.github.com'
+	config.gem 'aasm'
 
 	# These cause problems with irb. Left in for reference
 	# config.gem 'rspec-rails', :lib => 'spec/rails', :version => '1.1.11'

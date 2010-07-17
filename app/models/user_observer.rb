@@ -9,9 +9,6 @@ class UserObserver < ActiveRecord::Observer
 
 	def after_save(user)
 		UserMailer.deliver_activation user if user.recently_activated? && user.not_using_openid?
-	end
-
-	def after_unsuspend(user)
-		UserMailer.deliver_unsuspend_notification user
+		UserMailer.deliver_unsuspend_notification user if user.recently_unsuspended?
 	end
 end
