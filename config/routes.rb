@@ -24,6 +24,7 @@ ActionController::Routing::Routes.draw do |map|
 	map.resources :synonymies, :collection => { :search => :get }
 	map.resources :domains
 	map.resources :languages
+	map.resources :comments
 
 	# Install the default routes as the lowest priority.
 	map.connect ':controller/:action/:id'

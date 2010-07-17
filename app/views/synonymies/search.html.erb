@@ -3,37 +3,35 @@
 <% end %>
 
 <% unless @synonymies.blank? %>
-<table width="100%" class="contentTable">
+<table class="contentTable">
 	<tr>
-		<th colspan="2"><%= Synonymy.human_attribute_name :word1 %></th>
-		<th colspan="2"><%= Synonymy.human_attribute_name :word2 %></th>
-		<th><%= Synonymy.human_attribute_name :domain %></th>
-		<% if authorized? :remove, :synonymies %>
-		<th><%= t(:actions) %></th>
-		<% end %>
+		<th colspan="2"><%= Synonymy.human_attribute_name :word1 -%></th>
+		<th colspan="2"><%= Synonymy.human_attribute_name :word2 -%></th>
+		<th><%= Synonymy.human_attribute_name :domain -%></th>
+		<% if can_access?(:destroy, :synonymies) %><th><%= t(:actions) -%></th><% end %>
 	</tr>
 	<% @synonymies.each do |synonymy| %>
 	<tr>
-		<td><%= h synonymy.word1.language.name %></td>
-		<td><%= link_to forms_summary(synonymy.word1), synonymy %></td>
-		<td><%= h synonymy.word2.language.name %></td>
-		<td><%= link_to forms_summary(synonymy.word2), synonymy %></td>
-		<td><%= h synonymy.domain.name %></td>
-		<% if authorized? :remove, :synonymies %>
-		<td><%= link_to t(:form_remove), synonymy, :confirm => t(:synonymy_remove_confirm), :method => :delete %></td>
+		<td><%= h synonymy.word1.language.name -%></td>
+		<td><%= link_to forms_summary(synonymy.word1), synonymy -%></td>
+		<td><%= h synonymy.word2.language.name -%></td>
+		<td><%= link_to forms_summary(synonymy.word2), synonymy -%></td>
+		<td><%= h synonymy.domain.name -%></td>
+		<% if can_access?(:destroy, :synonymies) %>
+		<td><%= link_to t(:form_remove), synonymy, :confirm => t(:synonymy_remove_confirm), :method => :delete -%></td>
 		<% end %>
 	</tr>
 	<% end %>
 	<tr>
-		<% if authorized? :remove, :synonymies %>
-		<th colspan="6"><%= paginate @words %></th>
+		<% if can_access?(:destroy, :synonymies) %>
+		<th colspan="6"><%= paginate @words -%></th>
 		<% else %>
-		<th colspan="5"><%= paginate @words %></th>
+		<th colspan="5"><%= paginate @words -%></th>
 		<% end %>
 	</tr>
 </table>
 <% end %>
 
-<%= if_authorized?(:create, :synonymies) do link_to t(:form_create), new_synonymy_path end %>
+<%= link_to t(:form_create), new_synonymy_path if can_access?(:create, :synonymies) %>
 <%= link_to t(:form_index), synonymies_path %>
 <%= link_to_back %>

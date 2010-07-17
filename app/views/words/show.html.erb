@@ -4,7 +4,7 @@
 
 <%= render 'show', :word => @word %>
 
-<%= if_authorized?(:update, :words) do link_to t(:form_edit), edit_word_path end %>
-<%= if_authorized?(:remove, :words) do link_to t(:form_remove), @word, :confirm => t(:word_remove_confirm), :method => :delete end %>
+<%= link_to t(:form_edit), edit_word_path if can_access?(:update, :words) %>
+<%= link_to t(:form_remove), @word, :confirm => t(:word_remove_confirm), :method => :delete if can_access?(:destroy, :words) %>
 <%= link_to t(:form_index), words_path %>
 <%= link_to_back %>

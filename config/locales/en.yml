@@ -89,7 +89,7 @@ en:
   word_removed: 'Word was removed successfully'
 
   # Words views
-  word_remove_confirm: 'Are you sure?'
+  word_remove_confirm: 'Are you sure you want to remove the word?'
 
   # Domains controller
   domain_created: 'Domain was created successfully'
@@ -97,7 +97,7 @@ en:
   domain_removed: 'Domain was removed successfully'
 
   # Domains views
-  domain_remove_confirm: 'Are you sure?'
+  domain_remove_confirm: 'Are you sure you want to remove the domain?'
 
   # Synonymies controller
   synonymy_created: 'Synonymy was created successfully'
@@ -105,7 +105,7 @@ en:
   synonymy_removed: 'Synonymy was removed successfully'
 
   # Synonymies views
-  synonymy_remove_confirm: 'Are you sure?'
+  synonymy_remove_confirm: 'Are you sure you want to remove the synonymy?'
 
   # Users controller
   user_created: 'User was created successfully'
@@ -113,7 +113,15 @@ en:
   user_removed: 'User was removed successfully'
 
   # Users views
-  user_remove_confirm: 'Are you sure?'
+  user_remove_confirm: 'Are you sure you want to remove the user?'
+
+  # Comments controller
+  comment_created: 'Comment was created successfully'
+  comment_updated: 'Comment was updated successfully'
+  comment_removed: 'Comment was removed successfully'
+
+  # Comments views
+  comment_remove_confirm: 'Are you sure you want to remove the comment?'
 
   formtastic:
     yes: 'Yes'
@@ -167,6 +175,7 @@ en:
         word1: 'First Word'
         word2: 'Second Word'
         domain: 'Domain'
+        comments: 'Comments'
     errors:
       template:
         header: ''

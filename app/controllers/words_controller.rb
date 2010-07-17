@@ -1,5 +1,6 @@
 class WordsController < ApplicationController
 	require_role :editor, :except => [ :index, :search, :show, :auto_complete_model_for_word_form ]
+	require_role :admin, :only => [ :destroy ]
 
 	def index
 	end

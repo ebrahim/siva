@@ -2,16 +2,16 @@
 <%= siva_title :nav_synonymies, :form_show %>
 <% end %>
 
-<table width="100%" class="contentTable">
+<table class="contentTable">
 	<tr>
-		<th><%= Synonymy.human_attribute_name :domain %></th>
-		<td><%= h @synonymy.domain.name %></td>
+		<th><%= Synonymy.human_attribute_name :domain -%></th>
+		<td><%= h @synonymy.domain.name -%></td>
 	</tr>
 	<tr>
-		<td><%= render 'words/show', :word => @synonymy.word1 %></td>
-		<td><%= render 'words/show', :word => @synonymy.word2 %></td>
+		<td><%= render 'words/show', :word => @synonymy.word1 -%></td>
+		<td><%= render 'words/show', :word => @synonymy.word2 -%></td>
 	</tr>
-	<% if authorized? :update, :synonymies %>
+	<% if can_access?(:update, :synonymies) %>
 	<tr>
 		<td><%= link_to "#{t(:form_edit)} #{Word.human_name}", edit_word_path(@synonymy.word1) %></td>
 		<td><%= link_to "#{t(:form_edit)} #{Word.human_name}", edit_word_path(@synonymy.word2) %></td>
@@ -19,6 +19,27 @@
 	<% end %>
 </table>
 
-<%= if_authorized?(:remove, :synonymies) do link_to t(:form_remove), @synonymy, :confirm => t(:synonymy_remove_confirm), :method => :delete end %>
+<%= link_to t(:form_remove), @synonymy, :confirm => t(:synonymy_remove_confirm), :method => :delete if can_access?(:destroy, :synonymies) %>
 <%= link_to t(:form_index), synonymies_path %>
 <%= link_to_back %>
+
+<div align="center">
+<table class="contentTable commentTable">
+	<tr>
+		<th><%= Synonymy.human_attribute_name :comments -%></th>
+		<% if can_access?(:destroy, :comments) %><th><%= t(:actions) -%></th><% end %>
+	</tr>
+	<% @synonymy.comments.each do |comment| %>
+	<tr>
+		<td <%= comment.language.rtl ? 'dir="rtl" style="text-align: right"' : 'dir="ltr" style="text-align: left"' -%> class="commentTD">
+			<p class="commentTitle"><%= comment.title -%></p>
+			<p><%= comment.comment -%></p>
+			<p class="commentInfo"><%= comment.user.login -%> | <%= comment.created_at -%> | <%= comment.language.name -%></p>
+		</td>
+		<% if can_access?(:destroy, :comments) %>
+		<td><%= link_to t(:form_remove), comment, :confirm => t(:comment_remove_confirm), :method => :delete -%></td>
+		<% end %>
+	</tr>
+	<% end %>
+</table>
+</div>

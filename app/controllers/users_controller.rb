@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	skip_before_filter :verify_authenticity_token, :only => :create
-	require_role :admin, :only => [ :index ]
+	require_role :admin, :except => [ :new, :create, :show, :edit, :update, :passwd, :destroy ]
+	require_role :editor, :except => [ :new, :create ]
 
 	def index
 		@users = User.paginate :page => params[:page]

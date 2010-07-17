@@ -64,7 +64,7 @@ div.fieldWithErrors label
 div.fieldWithErrors input, div.fieldWithErrors select, 
 div.fieldWithErrors textarea
 {
-	background-color: #F66;
+	background-color: #FF6666;
 	border: 2px solid #456;
 }
 
@@ -82,7 +82,7 @@ html, body
 	margin: 1px;
 	padding: 1px;
 	color: black;
-    background-color: white;
+    background-color: #CCCCCC;
 }
 
 table
@@ -100,15 +100,14 @@ table
 #contentTD
 {
 	padding: 10px 50px 20px 50px;
-	border: 2px solid #431;
-	background-color: #FE9;
+	border: 2px solid #456;
 	-moz-border-radius: 15px;
 }
 
 #headerTD
 {
-	color: #FE7;
-	background-color: #985;
+	color: #CCDDEE;
+	background-color: #234;
 	height: 80px;
 	width: 100%;
 	font-size: 36pt;
@@ -126,8 +125,8 @@ table
 
 #footerTD
 {
-	color: #FE7;
-	background-color: #763;
+	color: white;
+	background-color: #234;
 	border: 1px solid black;
 	height: 1px;
 	font-size: 18pt;
@@ -137,9 +136,9 @@ table
 #leftSidebarTD
 {
 	width: 16%;
+	background-color: #99AABB;
 	padding: 5px;
-	background-color: #DC6;
-	border: 2px solid #431;
+	border: 2px solid #456;
 	font-size: 20pt;
 	font-weight: bolder;
 	text-align: center;
@@ -158,8 +157,8 @@ table
 	width: 16%;
 	height: 1px;
 	padding: 5px;
-	background-color: #DC6;
-	border: 2px solid #431;
+	background-color: #99AABB;
+	border: 2px solid #456;
 	font-size: 16pt;
 	font-weight: bolder;
 	text-align: center;
@@ -180,19 +179,33 @@ td fieldset ol li
 
 a, a:visited
 {
-	color: #320;
+	color: #051555;
 	text-decoration: none;
 }
 
 a:hover
 {
-	color: #840;
+	color: maroon;
 	text-decoration: overline underline;
 }
 
 input, select
 {
     color: black;
+}
+
+.contentTable th
+{
+    border: 1px solid #112233;
+    background-color: #445566;
+    color: white;
+    font-weight: bold;
+	-moz-border-radius: 7px;
+}
+
+.contentTable th a:hover
+{
+	color: yellow;
 }
 
 .contentTable
@@ -202,20 +215,20 @@ input, select
 
 .contentTable td
 {
-    border: 1px solid #431;
-    background-color: #DC6;
+    border: 1px solid #334455;
+    background-color: #8899AA;
     padding: 1px 4px 1px 4px;
     text-align: center;
 }
 
 .contentTable td a, .contentTable td a:visited
 {
-    color: #320;
+    color: #001122;
 }
 
-.contentTable td a:hover
+.contentTable a:hover
 {
-    color: #840;
+    color: maroon;
 }
 
 .formTable td
@@ -223,28 +236,14 @@ input, select
     padding: 15px 50px 15px 50px;
 }
 
-.contentTable th
+.contentTable th a
 {
-    border: 1px solid #431;
-    background-color: #763;
-    color: #FFA;
-    font-weight: bold;
-	-moz-border-radius: 7px;
-}
-
-.contentTable th a, .contentTable th a:visited
-{
-	color: #DC6;
-}
-
-.contentTable th a:hover
-{
-	color: yellow;
+	color: orange;
 }
 
 h2
 {
-	color: #431;
+	color: #445566;
 	font-size: 18pt;
 	font-weight: bold;
 }

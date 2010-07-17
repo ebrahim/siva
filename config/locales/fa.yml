@@ -97,7 +97,7 @@ fa:
   domain_removed: 'حوزه با موفقیت حذف شد'
   
   # Domains views
-  domain_remove_confirm: 'آیا مطمئنید؟'
+  domain_remove_confirm: 'آیا مطمئنید که می‌خواهید این حوزه را حذف کنید؟'
 
   # Synonymies controller
   synonymy_created: 'ترادف با موفقیت ایجاد شد'
@@ -105,7 +105,7 @@ fa:
   synonymy_removed: 'ترادف با موفقیت حذف شد'
 
   # Synonymies views
-  synonymy_remove_confirm: 'آیا مطمئنید؟'
+  synonymy_remove_confirm: 'آیا مطمئنید که می‌خواهید این ترادف را حذف کنید؟'
 
   # Users controller
   user_created: 'کاربر با موفقیت ایجاد شد'
@@ -113,7 +113,15 @@ fa:
   user_removed: 'کاربر با موفقیت حذف شد'
 
   # Users views
-  user_remove_confirm: 'آیا مطمئنید؟'
+  user_remove_confirm: 'آیا مطمئنید که می‌خواهید این کاربر را حذف کنید؟'
+
+  # Comments controller
+  comment_created: 'نظر با موفقیت ایجاد شد'
+  comment_updated: 'نظر با موفقیت به روز شد'
+  comment_removed: 'نظر با موفقیت حذف شد'
+
+  # Comments views
+  comment_remove_confirm: 'آیا مطمئنید که می‌خواهید این نظر را حذف کنید؟'
 
   formtastic:
     yes: 'بله'
@@ -166,6 +174,7 @@ fa:
         word1: 'کلمهٔ اول'
         word2: 'کلمهٔ دوم'
         domain: 'حوزه'
+        comments: 'نظرات'
     errors:
       template:
         header: ''

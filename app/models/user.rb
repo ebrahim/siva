@@ -2,7 +2,7 @@ require 'digest/sha1'
 
 class User < ActiveRecord::Base
 	cattr_reader :per_page
-	@@per_page = 10
+	@@per_page = 7
 
 	include Authentication
 	include Authentication::ByPassword
@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
 		list ||= self.roles.map(&:name)
 		list.include?(role.to_s) || list.include?('admin')
 	end
-  
+
 	# Not using open id
 	def not_using_openid?
 		identity_url.blank?

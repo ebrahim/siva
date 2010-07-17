@@ -20,24 +20,23 @@
 		<!-- Header -->
 		<tr>
 			<td colspan="3" valign="middle" align="center" id="headerTD">
-				<%= t(:siva) %>
-				<span id="taglineTD"><%= t(:siva_tagline) %></span>
+				<%= t(:siva) -%><span id="taglineTD"><%= t(:siva_tagline) -%></span>
 			</td>
 		</tr>
 		<tr>
 			<!-- Left sidebar -->
 			<td valign="top" id="leftSidebarTD">
-				<%= link_to_unless_current t(:nav_synonymies), synonymies_path %><br/>
-				<%= link_to_unless_current t(:nav_words), words_path %><br/>
+				<%= link_to_unless_current t(:nav_synonymies), synonymies_path -%><br/>
+				<%= link_to_unless_current t(:nav_words), words_path -%><br/>
 				<% if current_user && current_user.has_role?(:admin) %>
-				<%= link_to_unless_current t(:nav_domains), domains_path %><br/>
-				<%= link_to_unless_current t(:nav_languages), languages_path %><br/>
-				<%= link_to_unless_current t(:nav_users), users_path %><br/>
+				<%= link_to_unless_current t(:nav_domains), domains_path -%><br/>
+				<%= link_to_unless_current t(:nav_languages), languages_path -%><br/>
+				<%= link_to_unless_current t(:nav_users), users_path -%><br/>
 				<% end %>
 			</td>
 
 			<!-- Body -->
-			<td rowspan="3" valign="top" id="contentTD">
+			<td rowspan="4" valign="top" id="contentTD">
 				<div id="content">
 					<%= yield :head %>
 					<%= raw flash_messages %>
@@ -50,26 +49,19 @@
 		<tr>
 			<td id="rightSidebarTD">
 				<% if logged_in? %>
-				<%= t(:user_username) %>: <%= link_to_current_user %><br/>
-				<%= link_to t(:user_logout), logout_path %>
+				<%= t(:user_username) -%>: <%= link_to_current_user -%><br/>
+				<%= link_to t(:user_logout), logout_path -%>
 				<% else %>
-				<%= link_to t(:user_login), login_path %><br/>
-				<%= link_to t(:user_signup), signup_path %>
+				<%= link_to t(:user_login), login_path -%><br/>
+				<%= link_to t(:user_signup), signup_path -%>
 				<% end %>
 			</td>
 		</tr>
-		<tr>
-			<td id="rightSidebarTD">
-				<%= switch_language_links %>
-			</td>
-		</tr>
+		<tr><td id="rightSidebarTD"><%= switch_language_links -%></td></tr>
+		<tr><td></td></tr>
 
 		<!-- Footer -->
-		<tr>
-			<td colspan="3" valign="middle" align="center" id="footerTD">
-				<%= t(:siva) %>
-			</td>
-		</tr>
+		<tr><td colspan="3" valign="middle" align="center" id="footerTD"><%= t(:siva) -%></td></tr>
 		</table>
 		</div>
 	</body>

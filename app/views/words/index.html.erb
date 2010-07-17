@@ -14,4 +14,4 @@
 	<% end %>
 <% end %>
 
-<%= if_authorized?(:create, :words) do link_to t(:form_create), new_word_path end %>
+<%= link_to t(:form_create), new_word_path if can_access?(:create, :words) %>

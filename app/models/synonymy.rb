@@ -2,6 +2,8 @@ class Synonymy < ActiveRecord::Base
 	cattr_reader :per_page
 	@@per_page = 7
 
+	acts_as_commentable
+
 	belongs_to :domain
 	belongs_to :word1, :class_name => 'Word'
 	belongs_to :word2, :class_name => 'Word'

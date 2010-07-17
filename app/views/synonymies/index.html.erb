@@ -17,4 +17,4 @@
 	<% end %>
 <% end %>
 
-<%= if_authorized?(:create, :synonymies) do link_to t(:form_create), new_synonymy_path end %>
+<%= link_to t(:form_create), new_synonymy_path if can_access?(:create, :synonymies) %>

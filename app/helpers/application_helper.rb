@@ -60,4 +60,12 @@ module ApplicationHelper
 		I18n.locale = orig_locale
 		links
 	end
+	
+	# Only for hiding irrelevant links in views
+	def can_access?(action, resource)
+		return false unless logged_in? && current_user && !current_user.blank?
+		return true if current_user.has_role?('admin')
+		return false if action == :destroy || resource == :domains || resource == :languages
+		true
+	end
 end
