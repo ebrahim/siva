@@ -40,6 +40,7 @@ class SynonymiesController < ApplicationController
 
 	def show
 		@synonymy = Synonymy.find params[:id]
+		@comment = Comment.new :commentable => @synonymy
 		respond_to do |format|
 			format.html {}
 			format.json { render :json => synonymy_to_json(@synonymy) }

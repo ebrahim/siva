@@ -116,7 +116,7 @@ en:
   user_remove_confirm: 'Are you sure you want to remove the user?'
 
   # Comments controller
-  comment_created: 'Comment was created successfully'
+  comment_created: 'Comment was saved successfully'
   comment_updated: 'Comment was updated successfully'
   comment_removed: 'Comment was removed successfully'
 
@@ -148,6 +148,7 @@ en:
       session: 'Session'
       domain: 'Domain'
       synonymy: 'Synonymy'
+      comment: 'Comment'
     attributes:
       user:
         login: 'Username'
@@ -176,6 +177,10 @@ en:
         word2: 'Second Word'
         domain: 'Domain'
         comments: 'Comments'
+      comment:
+        language: 'Language'
+        title: 'Title'
+        comment: 'Comment'
     errors:
       template:
         header: ''

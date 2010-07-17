@@ -116,7 +116,7 @@ fa:
   user_remove_confirm: 'آیا مطمئنید که می‌خواهید این کاربر را حذف کنید؟'
 
   # Comments controller
-  comment_created: 'نظر با موفقیت ایجاد شد'
+  comment_created: 'نظر با موفقیت ذخیره شد'
   comment_updated: 'نظر با موفقیت به روز شد'
   comment_removed: 'نظر با موفقیت حذف شد'
 
@@ -147,6 +147,8 @@ fa:
       password: 'گذرواژه'
       session: 'نشست'
       domain: 'حوزه'
+      synonymy: 'ترادف'
+      comment: 'نظر'
     attributes:
       user:
         login: 'نام کاربری'
@@ -175,6 +177,10 @@ fa:
         word2: 'کلمهٔ دوم'
         domain: 'حوزه'
         comments: 'نظرات'
+      comment:
+        language: 'زبان'
+        title: 'عنوان'
+        comment: 'نظر'
     errors:
       template:
         header: ''
