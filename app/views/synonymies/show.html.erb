@@ -8,8 +8,8 @@
 		<td><%= h @synonymy.domain.name -%></td>
 	</tr>
 	<tr>
-		<td><%= render 'words/show', :word => @synonymy.word1 -%></td>
-		<td><%= render 'words/show', :word => @synonymy.word2 -%></td>
+		<td style="border: 0"><%= render 'words/show', :word => @synonymy.word1 -%></td>
+		<td style="border: 0"><%= render 'words/show', :word => @synonymy.word2 -%></td>
 	</tr>
 	<% if can_access?(:update, :synonymies) %>
 	<tr>
