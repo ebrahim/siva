@@ -81,7 +81,7 @@ class SynonymiesController < ApplicationController
 	end
 
 	def auto_complete_model_for_word_form_verbose
-		@word_forms = WordForm.find :all, :limit => 10, :select => :word_id, :group => :word_id, \
+		@word_forms = WordForm.find :all, :limit => 10, :select => :word_id, :group => :word_id, :order => nil, \
 			:conditions => [ 'LOWER(text) LIKE ?', "%#{params[:word_form_verbose]}%" ]
 		render :inline => '<ul>
 <% for word_form in @word_forms %>
