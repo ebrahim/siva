@@ -68,7 +68,7 @@ module Authorization
       end
 
       def do_activate
-        @activated = true
+        @activated = true if self.activation_code
         self.activated_at = Time.now.utc
         self.deleted_at = self.activation_code = nil
       end
