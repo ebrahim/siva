@@ -25,7 +25,7 @@
 		</tr>
 		<tr>
 			<!-- Left sidebar -->
-			<td valign="top" id="leftSidebarTD">
+			<td valign="top" class="leftSidebarTD">
 				<%= link_to_unless_current t(:nav_synonymies), synonymies_path -%><br/>
 				<%= link_to_unless_current t(:nav_words), words_path -%><br/>
 				<% if current_user && current_user.has_role?(:admin) %>
@@ -47,7 +47,7 @@
 
 		<!-- Right sidebar -->
 		<tr>
-			<td id="rightSidebarTD">
+			<td class="rightSidebarTD">
 				<% if logged_in? %>
 				<%= t(:user_username) -%>: <%= link_to_current_user -%><br/>
 				<%= link_to t(:user_logout), logout_path -%>
@@ -57,8 +57,8 @@
 				<% end %>
 			</td>
 		</tr>
-		<tr><td id="rightSidebarTD"><%= switch_language_links -%></td></tr>
-		<tr><td></td></tr>
+		<tr><td class="rightSidebarTD"><%= switch_language_links -%></td></tr>
+		<tr><td align="center" valign="top"><a href='http://www.mozilla.com/?from=sfx&amp;uid=0&amp;t=560'><img src='http://sfx-images.mozilla.org/firefox/3.6/120x240_orange.png' alt='Spread Firefox Affiliate Button' border='0' /></a></td></tr>
 
 		<!-- Footer -->
 		<tr><td colspan="3" valign="middle" align="center" id="footerTD"><%= t(:siva) -%></td></tr>

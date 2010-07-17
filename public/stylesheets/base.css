@@ -133,7 +133,7 @@ table
 	-moz-border-radius: 15px;
 }
 
-#leftSidebarTD
+.leftSidebarTD
 {
 	width: 16%;
 	height: 1px;
@@ -147,13 +147,13 @@ table
 	-moz-border-radius: 15px;
 }
 
-#leftSidebarTD a
+.leftSidebarTD a
 {
 	font-size: 20pt;
 	font-weight: bolder;
 }
 
-#rightSidebarTD
+.rightSidebarTD
 {
 	width: 16%;
 	height: 1px;
@@ -167,7 +167,7 @@ table
 	-moz-border-radius: 15px;
 }
 
-#rightSidebarTD a
+.rightSidebarTD a
 {
 	font-size: 16pt;
 	font-weight: bolder;
