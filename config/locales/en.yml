@@ -241,3 +241,13 @@ en:
                 blank: 'cannot be empty'
             word2:
                 blank: 'cannot be empty'
+        comment:
+          attributes:
+            title:
+              too_short: 'is too short'
+              too_long: 'is too long'
+              blank: 'cannot be empty'
+            comment:
+              blank: 'cannot be empty'
+            language:
+              blank: 'cannot be empty'

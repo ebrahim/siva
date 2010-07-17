@@ -7,7 +7,11 @@ class CommentsController < ApplicationController
 		@comment.user = current_user
 		@synonymy = Synonymy.find @comment.commentable_id
 		@synonymy.comments << @comment
-		flash[:notice] = t :comment_created
+		if @comment.errors.blank?
+			flash[:notice] = t :comment_created
+		else
+			flash[:error] = @comment.errors.full_messages
+		end
 		redirect_to @synonymy
 	end
 

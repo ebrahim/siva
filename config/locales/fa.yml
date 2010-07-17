@@ -241,3 +241,13 @@ fa:
                 blank: 'نمی‌تواند خالی باشد'
             word2:
                 blank: 'نمی‌تواند خالی باشد'
+        comment:
+          attributes:
+            title:
+              too_short: 'بیش از حد کوچک است'
+              too_long: 'بیش از اندازه بزرگ است'
+              blank: 'نمی‌تواند خالی باشد'
+            comment:
+              blank: 'نمی‌تواند خالی باشد'
+            language:
+              blank: 'نمی‌تواند خالی باشد'
