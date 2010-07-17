@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 	require_role :editor, :except => [ :new, :create ]
 
 	def index
-		@users = User.paginate :page => params[:page]
+		@users = User.paginate :page => params[:page], :conditions => "state != 'deleted'"
 	end
 
 	def new
@@ -42,6 +42,28 @@ class UsersController < ApplicationController
 		redirect_to :logout unless current_user && @user && (current_user.id == @user.id || current_user.has_role?('admin'))
 	end
 
+	def suspend
+		@user = User.find params[:id]
+
+		if current_user && current_user.has_role?('admin') && @user && !@user.has_role?('admin') && @user.suspend!
+			flash[:notice] = t :user_was_suspended
+		else
+			flash[:error] = t :user_fail
+		end
+		redirect_to :action => :index
+	end
+
+	def unsuspend
+		@user = User.find params[:id]
+
+		if current_user && current_user.has_role?('admin') && @user && @user.unsuspend!
+			flash[:notice] = t :user_was_unsuspended
+		else
+			flash[:error] = t :user_fail
+		end
+		redirect_to :action => :index
+	end
+
 	def update
 		@user = User.find params[:id]
 
@@ -56,8 +78,8 @@ class UsersController < ApplicationController
 
 	def destroy
 		@user = User.find params[:id]
-		if current_user && @user && (current_user.id == @user.id || current_user.has_role?('admin')) and !@user.has_role?('admin')
-			@user.destroy
+		if current_user && @user && (current_user.id == @user.id || current_user.has_role?('admin')) && !@user.has_role?('admin')
+			@user.delete!
 			flash[:notice] = t :user_removed
 		else
 			flash[:error] = t :user_fail

@@ -24,6 +24,8 @@ fa:
   form_search: 'جست و جو'
   form_previous: 'قبل'
   form_next: 'بعد'
+  form_suspend: 'تعلیق'
+  form_unsuspend: 'رفع تعلیق'
 
   ltr: 'چپ به راست'
   rtl: 'راست به چپ'
@@ -74,6 +76,15 @@ fa:
   openid_canceled: 'اعتبارسنجی اپن‌آی‌دی لغو شد'
   openid_failed: 'اعتبارسنجی اپن‌آی‌دی موفق نبود'
   openid_setup_needed: 'اعتبارسنجی اپن‌آی‌دی به برپاسازی نیاز دارد'
+  user_was_suspended: 'کاربر به خوبی معلق شد'
+  user_was_unsuspended: 'کاربر به خوبی رفع تعلیق شد'
+
+  # User states
+  user_state_active: 'فعال'
+  user_state_passive: 'منفعل'
+  user_state_pending: 'معطل'
+  user_state_suspended: 'معلق'
+  user_state_deleted: 'محذوف'
 
   # Languages controller
   language_created: 'زبان با موفقیت ایجاد شد'
@@ -157,6 +168,7 @@ fa:
         email: 'نشانی رایانامه'
         identity_url: 'نشانی شناسه'
         name: 'نام واقعی'
+        state: 'وضعیت'
       password:
         user: 'کاربر'
         email: 'نشانی رایانامه'

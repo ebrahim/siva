@@ -53,6 +53,10 @@ class User < ActiveRecord::Base
 		new_record? ? not_using_openid? && (crypted_password.blank? || !password.blank?) : !password.blank?
 	end
 
+	def state_name
+		I18n.t :"user_state_#{state}"
+	end
+
 	protected
     
 	def make_activation_code

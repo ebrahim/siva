@@ -65,7 +65,7 @@ module ApplicationHelper
 	def can_access?(action, resource)
 		return false unless logged_in? && current_user && !current_user.blank?
 		return true if current_user.has_role?('admin')
-		return false if action == :destroy || resource == :domains || resource == :languages
+		return false if action == :destroy || action == :suspend || action == :unsuspend || resource == :domains || resource == :languages
 		true
 	end
 end

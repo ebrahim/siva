@@ -24,6 +24,8 @@ en:
   form_search: 'Search'
   form_previous: 'Previous'
   form_next: 'Next'
+  form_suspend: 'Suspend'
+  form_unsuspend: 'Unsuspend'
 
   ltr: 'Left-to-Right'
   rtl: 'Right-to-Left'
@@ -74,6 +76,15 @@ en:
   openid_canceled: 'OpenID verification was canceled'
   openid_failed: 'OpenID verification failed'
   openid_setup_needed: 'OpenID verification needs setup'
+  user_was_suspended: 'User was suspended successfully'
+  user_was_unsuspended: 'User was unsuspended successfully'
+
+  # User states
+  user_state_active: 'Active'
+  user_state_passive: 'Passive'
+  user_state_pending: 'Pending'
+  user_state_suspended: 'Suspended'
+  user_state_deleted: 'Deleted'
 
   # Languages controller
   language_created: 'Language was created successfully'
@@ -157,6 +168,7 @@ en:
         email: 'Email address'
         identity_url: 'Identity URL'
         name: 'Real name'
+        state: 'State'
       password:
         user: 'User'
         email: 'Email address'

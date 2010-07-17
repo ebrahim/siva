@@ -4,20 +4,27 @@
 
 <table class="contentTable">
 	<tr>
-		<th><%= User.human_attribute_name :login %></th>
-		<th><%= User.human_attribute_name :email %></th>
-		<th><%= User.human_attribute_name :identity_url %></th>
-		<th colspan="3"><%= t(:actions) %></th>
+		<th><%= User.human_attribute_name :login -%></th>
+		<th><%= User.human_attribute_name :email -%></th>
+		<th><%= User.human_attribute_name :identity_url -%></th>
+		<th><%= User.human_attribute_name :state -%></th>
+		<th colspan="5"><%= t(:actions) -%></th>
 	</tr>
 	<% @users.each do |user| %>
 	<tr>
-		<td><%= link_to user.login, user %></td>
-		<td dir="ltr"><%= mail_to user.email %></td>
-		<td dir="ltr"><%= link_to user.identity_url, user.identity_url unless user.not_using_openid? %></td>
-		<td><%= link_to t(:form_edit), edit_user_path(user) %></td>
-		<td><%= link_to t(:user_change_password), passwd_user_path(user) %></td>
-		<td><%= link_to t(:form_remove), user, :confirm => t(:user_remove_confirm), :method => :delete %></td>
+		<td><%= link_to user.login, user -%></td>
+		<td dir="ltr"><%= mail_to user.email -%></td>
+		<td dir="ltr"><%= link_to user.identity_url, user.identity_url unless user.not_using_openid? -%></td>
+		<td><%= user.state_name -%></td>
+		<td><%= link_to t(:form_edit), edit_user_path(user) -%></td>
+		<td><%= link_to t(:user_change_password), passwd_user_path(user) -%></td>
+		<% if user.state == 'suspended' %>
+		<td><%= link_to t(:form_unsuspend), unsuspend_user_path(user) -%></td>
+		<% else %>
+		<td><%= link_to t(:form_suspend), suspend_user_path(user) -%></td>
+		<% end %>
+		<td><%= link_to t(:form_remove), user, :confirm => t(:user_remove_confirm), :method => :delete -%></td>
 	</tr>
 	<% end %>
-	<tr><th colspan="6"><%= paginate @users %></th></tr>
+	<tr><th colspan="8"><%= paginate @users -%></th></tr>
 </table>
