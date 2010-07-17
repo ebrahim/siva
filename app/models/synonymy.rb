@@ -2,7 +2,7 @@ class Synonymy < ActiveRecord::Base
 	cattr_reader :per_page
 	@@per_page = 7
 
-	default_scope :order => 'category_id ASC'
+	default_scope :order => 'domain_id ASC'
 
 	acts_as_commentable
 
