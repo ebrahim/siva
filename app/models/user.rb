@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 	cattr_reader :per_page
 	@@per_page = 7
 
+	default_scope :order => 'login ASC'
+
 	include Authentication
 	include Authentication::ByPassword
 	include Authentication::ByCookieToken
