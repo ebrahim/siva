@@ -79,7 +79,11 @@ class UsersController < ApplicationController
 	def destroy
 		@user = User.find params[:id]
 		if current_user && @user && (current_user.id == @user.id || current_user.has_role?('admin')) && !@user.has_role?('admin')
-			@user.delete!
+			if @user.deleted_at		# If already deleted
+				@user.destroy		# Purge
+			else
+				@user.delete!
+			end
 			flash[:notice] = t :user_removed
 		else
 			flash[:error] = t :user_fail
