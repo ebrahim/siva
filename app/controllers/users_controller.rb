@@ -84,7 +84,7 @@ class UsersController < ApplicationController
 		else
 			flash[:error] = t :user_fail
 		end
-		if current_user && current_user.has_role('admin')
+		if current_user && current_user.has_role?('admin')
 			redirect_to :action => :index
 		else
 			redirect_to :logout
