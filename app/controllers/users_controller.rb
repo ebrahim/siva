@@ -68,7 +68,7 @@ class UsersController < ApplicationController
 		@user = User.find params[:id]
 
 		if @user.update_attributes params[:user]
-			flash[:notice] = t(:user_password_updated)
+			flash[:notice] = t :user_password_updated
 			redirect_to @user
 		else
 			flash[:error] = @user.errors.full_messages
@@ -91,17 +91,16 @@ class UsersController < ApplicationController
 		logout_keeping_session!
 		user = User.find_by_activation_code(params[:activation_code]) unless params[:activation_code].blank?
 		case
-		when (!params[:activation_code].blank?) && user && !user.active?
+		when !params[:activation_code].blank? && user && !user.active?
 			user.activate!
-			flash[:notice] = t(:user_singup_complete)
-			redirect_to login_path
+			user.suspend!
+			flash[:notice] = t :user_singup_complete
 		when params[:activation_code].blank?
-			flash[:error] = t(:user_activation_missing)
-			redirect_back_or_default(root_path)
+			flash[:error] = t :user_activation_missing
 		else
-			flash[:error]  = t(:user_activation_invalid)
-			redirect_back_or_default(root_path)
+			flash[:error]  = t :user_activation_invalid
 		end
+		redirect_back_or_default(root_path)
 	end
   
 	protected
@@ -113,23 +112,24 @@ class UsersController < ApplicationController
 				@user.register!
 			else
 				@user.register_openid!
+				@user.suspend!
 			end
 		end
 
 		@user.roles << Role.find_by_name('editor')
     
 		if @user.errors.empty?
-			successful_creation(@user)
+			successful_creation @user
 		else
 			failed_creation
 		end
 	end
   
 	def successful_creation(user)
-		redirect_back_or_default(root_path)
 		flash[:notice] = t(:user_signup_thanks)
 		flash[:notice] << " " + t(:user_sending_activation) if @user.not_using_openid?
 		flash[:notice] << " " + t(:user_openid_enabled) unless @user.not_using_openid?
+		redirect_back_or_default(root_path)
 	end
   
 	def failed_creation(message = t(:user_signup_error))
