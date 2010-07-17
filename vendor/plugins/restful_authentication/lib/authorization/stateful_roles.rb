@@ -13,7 +13,7 @@ module Authorization
         state :passive
         state :pending, :enter => :make_activation_code
         state :active,  :enter => :do_activate
-        state :suspended
+        state :suspended, :exit => :do_unsuspend
         state :deleted, :enter => :do_delete
 
         event :register do
@@ -47,8 +47,17 @@ module Authorization
     module StatefulRolesInstanceMethods
       # Returns true if the user has just been activated.
       def recently_activated?
-        @activated
+        result = @activated
+        @activated = false
+		result
       end
+
+      def recently_unsuspended?
+        result = @unsuspended
+        @unsuspended = false
+		result
+      end
+
       def do_delete
         self.deleted_at = Time.now.utc
       end
@@ -58,6 +67,10 @@ module Authorization
         self.activated_at = Time.now.utc
         self.deleted_at = self.activation_code = nil
       end
+
+	  def do_unsuspend
+		@unsuspended = true
+	  end
     end # instance methods
   end
 end
