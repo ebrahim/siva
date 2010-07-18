@@ -8,14 +8,25 @@ class WordsController < ApplicationController
 	def search
 		word_form = params[:word_form]
 		word_form_set = !word_form.nil? && !word_form.blank?
+		language_id = params[:language_id]
+		language_id_set = !language_id.nil? && !language_id.blank?
 		if word_form_set
-			@words = Word.paginate :page => params[:page], :include => :word_forms, \
-			  :conditions => [ 'LOWER(word_forms.text) LIKE ?', "%#{word_form.downcase}%" ]
+			if language_id_set
+				@words = Word.paginate :page => params[:page], :include => :word_forms, \
+				  :conditions => [ 'LOWER(word_forms.text) LIKE ? AND language_id = ?', "%#{word_form.downcase}%", language_id ]
+			else
+				@words = Word.paginate :page => params[:page], :include => :word_forms, \
+				  :conditions => [ 'LOWER(word_forms.text) LIKE ?', "%#{word_form.downcase}%" ]
+			end
 		else
-			@words = Word.paginate :page => params[:page]
+			if language_id_set
+				@words = Word.paginate_by_language_id language_id, :page => params[:page]
+			else
+				@words = Word.paginate :page => params[:page]
+			end
 		end
 		if @words.blank?
-			flash[:warning] = t(:not_found)
+			flash[:warning] = t :not_found
 		end
 		@words.each { |w| w.word_forms(true) }		# Fetch all 'word_forms'es from DB
 		respond_to do |format|

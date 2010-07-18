@@ -4,6 +4,9 @@
 
 <% semantic_form_for :search, :url => search_words_path, :html => { :method => :get } do |form| %>
 	<% form.inputs :name => t(:form_search) do %>
+		<%= form.input :language, :include_blank => true, :label => Word.human_attribute_name(:language), \
+		  :input_html => { :name => 'language_id' }, \
+		  :collection => Language.all.sort { |a,b| a.name <=> b.name } %>
 		<li class="string required">
 		<label><%= WordForm.human_name %></label>
 		<%= raw model_auto_completer 'word_form', '', 'word_id', '', :allow_free_text => true, :submit_on_return => true %><br/>
