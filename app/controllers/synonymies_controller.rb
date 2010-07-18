@@ -13,7 +13,7 @@ class SynonymiesController < ApplicationController
 		if word_form_set and domain_set
 			@synonymies = Synonymy.paginate :page => params[:page], \
 			  :joins => [ { :word1 => :word_forms }, { :word2 => :word_forms } ], :select => 'DISTINCT "synonymies".*', \
-			  :conditions => [ '(LOWER(word_forms.text) LIKE ? OR LOWER(word_forms_words.text)) AND domain_id = ?', "%#{word_form.downcase}%", "%#{word_form.downcase}%", domain_id ]
+			  :conditions => [ '(LOWER(word_forms.text) LIKE ? OR LOWER(word_forms_words.text) LIKE ?) AND domain_id = ?', "%#{word_form.downcase}%", "%#{word_form.downcase}%", domain_id ]
 		elsif word_form_set
 			@synonymies = Synonymy.paginate :page => params[:page], \
 			  :joins => [ { :word1 => :word_forms }, { :word2 => :word_forms } ], :select => 'DISTINCT "synonymies".*', \
