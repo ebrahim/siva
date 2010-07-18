@@ -16,6 +16,12 @@ class UserMailer < ActionMailer::Base
 		@body[:url] = "#{APP_CONFIG[:site_url]}/login"
 	end
 
+	def review_notification(user, admin)
+		setup_email admin
+		@subject << 'A new account is waiting to be reviewed'
+		@body[:url] = "#{APP_CONFIG[:site_url]}/users/#{user.id}"
+	end
+
 	protected
 
 	def setup_email(user)
