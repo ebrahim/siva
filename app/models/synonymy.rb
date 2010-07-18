@@ -10,6 +10,14 @@ class Synonymy < ActiveRecord::Base
 	belongs_to :word1, :class_name => 'Word'
 	belongs_to :word2, :class_name => 'Word'
 
+	before_save do |synonymy|
+		return true unless synonymy.word1.language.id > synonymy.word2.language.id
+		temp = synonymy.word1
+		synonymy.word1 = synonymy.word2
+		synonymy.word2 = temp
+		true
+	end
+
 	validates_presence_of :word1
 	validates_presence_of :word2
 	validate do |synonymy|
