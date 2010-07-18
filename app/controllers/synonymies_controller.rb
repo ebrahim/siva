@@ -12,12 +12,12 @@ class SynonymiesController < ApplicationController
 		domain_set = !domain_id.nil? && !domain_id.blank?
 		if word_form_set and domain_set
 			@synonymies = Synonymy.paginate :page => params[:page], \
-			  :include => [ { :word1 => :word_forms }, { :word2 => :word_forms } ], \
-			  :conditions => [ 'LOWER(word_forms.text) LIKE ? AND domain_id = ?', "%#{word_form.downcase}%", domain_id ]
+			  :joins => [ { :word1 => :word_forms }, { :word2 => :word_forms } ], :select => 'DISTINCT "synonymies".*', \
+			  :conditions => [ '(LOWER(word_forms.text) LIKE ? OR LOWER(word_forms_words.text)) AND domain_id = ?', "%#{word_form.downcase}%", "%#{word_form.downcase}%", domain_id ]
 		elsif word_form_set
 			@synonymies = Synonymy.paginate :page => params[:page], \
-			  :include => [ { :word1 => :word_forms }, { :word2 => :word_forms } ], \
-			  :conditions => [ 'LOWER(word_forms.text) LIKE ?', "%#{word_form.downcase}%" ]
+			  :joins => [ { :word1 => :word_forms }, { :word2 => :word_forms } ], :select => 'DISTINCT "synonymies".*', \
+			  :conditions => [ 'LOWER(word_forms.text) LIKE ? OR LOWER(word_forms_words.text) LIKE ?', "%#{word_form.downcase}%", "%#{word_form.downcase}%" ]
 		elsif domain_set
 			@synonymies = Synonymy.paginate :page => params[:page], \
 			  :conditions => { :domain_id => domain_id }
