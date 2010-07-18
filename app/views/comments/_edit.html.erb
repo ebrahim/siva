@@ -3,7 +3,7 @@
 		<%= form.input :language, :include_blank => false %>
 		<%= form.input :title %>
 		<%= form.input :comment %>
-		<%= form.input :commentable_id, :as => :hidden, :value => synonymy.id %>
+		<%= form.input :commentable_id, :as => :hidden, :value => comment.commentable_id %>
 	<% end %>
 	<%= form.buttons %>
 <% end %>

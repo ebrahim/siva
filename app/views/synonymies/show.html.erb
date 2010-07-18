@@ -11,7 +11,7 @@
 		<td style="border: 0"><%= render 'words/show', :word => @synonymy.word1 -%></td>
 		<td style="border: 0"><%= render 'words/show', :word => @synonymy.word2 -%></td>
 	</tr>
-	<% if can_access?(:update, :synonymies) %>
+	<% if can_access?(:update, :words) %>
 	<tr>
 		<td><%= link_to "#{t(:form_edit)} #{Word.human_name}", edit_word_path(@synonymy.word1) %></td>
 		<td><%= link_to "#{t(:form_edit)} #{Word.human_name}", edit_word_path(@synonymy.word2) %></td>
@@ -27,7 +27,7 @@
 <table class="contentTable commentTable">
 	<tr>
 		<th><%= Synonymy.human_attribute_name :comments -%></th>
-		<% if can_access?(:destroy, :comments) %><th><%= t(:actions) -%></th><% end %>
+		<% if can_access?(:destroy, :comments) %><th colspan="2"><%= t(:actions) -%></th><% end %>
 	</tr>
 	<% @synonymy.comments.each do |comment| %>
 	<tr>
@@ -35,13 +35,14 @@
 			<%= render 'comments/show', :comment => comment %>
 		</td>
 		<% if can_access?(:destroy, :comments) %>
+		<td><%= link_to t(:form_edit), edit_comment_path(comment) -%></td>
 		<td><%= link_to t(:form_remove), comment, :confirm => t(:comment_remove_confirm), :method => :delete -%></td>
 		<% end %>
 	</tr>
 	<% end %>
 	<% if can_access?(:create, :comments) %>
 	<tr>
-		<td style="text-align: <%= t(:dir) == 'rtl' ? 'right' : 'left' -%>"<%= ' colspan="2"' if can_access?(:destroy, :comments) -%>>
+		<td style="text-align: <%= t(:dir) == 'rtl' ? 'right' : 'left' -%>"<%= ' colspan="3"' if can_access?(:destroy, :comments) -%>>
 			<%= render 'comments/edit', :comment => @comment, :synonymy => @synonymy %>
 		</td>
 	</tr>
