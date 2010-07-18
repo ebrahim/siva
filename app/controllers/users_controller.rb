@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 	require_role :editor, :except => [ :new, :create, :activate ]
 
 	def index
-		@users = User.paginate :page => params[:page], :conditions => "state != 'deleted'"
+		@users = User.paginate :page => params[:page], :conditions => "state != 'deleted'", :order => :login
 	end
 
 	def new
