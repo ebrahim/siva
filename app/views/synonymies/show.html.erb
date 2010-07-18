@@ -27,7 +27,7 @@
 <table class="contentTable commentTable">
 	<tr>
 		<th><%= Synonymy.human_attribute_name :comments -%></th>
-		<% if can_access?(:destroy, :comments) %><th colspan="2"><%= t(:actions) -%></th><% end %>
+		<% if can_access?(:destroy, :comments) && !@synonymy.comments.blank? %><th colspan="2"><%= t(:actions) -%></th><% end %>
 	</tr>
 	<% @synonymy.comments.each do |comment| %>
 	<tr>
