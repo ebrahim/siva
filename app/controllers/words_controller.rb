@@ -10,7 +10,7 @@ class WordsController < ApplicationController
 		word_form_set = !word_form.nil? && !word_form.blank?
 		if word_form_set
 			@words = Word.paginate :page => params[:page], :include => :word_forms, \
-			  :conditions => [ 'LOWER(word_forms.text) LIKE ?', "%#{word_form}%" ]
+			  :conditions => [ 'LOWER(word_forms.text) LIKE ?', "%#{word_form.downcase}%" ]
 		else
 			@words = Word.paginate :page => params[:page]
 		end
