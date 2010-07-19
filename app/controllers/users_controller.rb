@@ -68,7 +68,7 @@ class UsersController < ApplicationController
 		@user = User.find params[:id]
 
 		if @user.update_attributes params[:user]
-			flash[:notice] = t :user_password_updated
+			flash[:notice] = t :user_updated
 			redirect_to @user
 		else
 			flash[:error] = @user.errors.full_messages

@@ -119,9 +119,9 @@ fa:
   synonymy_remove_confirm: 'آیا مطمئنید که می‌خواهید این ترادف را حذف کنید؟'
 
   # Users controller
-  user_created: 'کاربر با موفقیت ایجاد شد'
-  user_updated: 'کاربر با موفقیت به روز شد'
-  user_removed: 'کاربر با موفقیت حذف شد'
+  user_created: 'حساب کاربر با موفقیت ایجاد شد'
+  user_updated: 'حساب کاربر با موفقیت به روز شد'
+  user_removed: 'حساب کاربر با موفقیت حذف شد'
 
   # Users views
   user_remove_confirm: 'آیا مطمئنید که می‌خواهید این کاربر را حذف کنید؟'
