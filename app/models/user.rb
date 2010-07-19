@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
 	# Validations
 	validates_presence_of :login, :if => :not_using_openid?
 	validates_length_of :login, :within => 3..40, :if => :not_using_openid?
-	validates_uniqueness_of :login, :case_sensitive => false, :if => :not_using_openid?
+	validates_uniqueness_of :login, :case_sensitive => false
 	validates_format_of :login, :with => RE_LOGIN_OK, :message => I18n.t(:'activerecord.errors.models.user.attributes.login.bad_chars'), :if => :not_using_openid?
 	validates_format_of :name, :with => RE_NAME_OK, :message => I18n.t(:'activerecord.errors.models.user.attributes.name.bad_chars'), :allow_nil => true
 	validates_length_of :name, :maximum => 100
